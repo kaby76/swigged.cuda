@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 using SizeT = System.UInt64;
+using CUdeviceptr = System.IntPtr;
 
 namespace Swigged.cuda {
 
@@ -367,7 +368,7 @@ class cudaPINVOKE {
   public static extern int cuModuleGetFunction(out CUfunction jarg1, CUmodule jarg2, string jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuModuleGetGlobal_v2___")]
-  public static extern int cuModuleGetGlobal_v2(out uint jarg1, out SizeT jarg2, CUmodule jarg3, string jarg4);
+  public static extern int cuModuleGetGlobal_v2(out CUdeviceptr jarg1, out SizeT jarg2, CUmodule jarg3, string jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuLinkDestroy___")]
   public static extern int cuLinkDestroy(CUlinkState jarg1);
@@ -376,16 +377,16 @@ class cudaPINVOKE {
   public static extern int cuMemGetInfo_v2(out SizeT jarg1, out SizeT jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemAlloc_v2___")]
-  public static extern int cuMemAlloc_v2(out uint jarg1, uint jarg2);
+  public static extern int cuMemAlloc_v2(out CUdeviceptr jarg1, uint jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemAllocPitch_v2___")]
-  public static extern int cuMemAllocPitch_v2(out uint jarg1, out SizeT jarg2, uint jarg3, uint jarg4, uint jarg5);
+  public static extern int cuMemAllocPitch_v2(out CUdeviceptr jarg1, out SizeT jarg2, uint jarg3, uint jarg4, uint jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemFree_v2___")]
   public static extern int cuMemFree_v2(System.IntPtr jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemGetAddressRange_v2___")]
-  public static extern int cuMemGetAddressRange_v2(out uint jarg1, out SizeT jarg2, System.IntPtr jarg3);
+  public static extern int cuMemGetAddressRange_v2(out CUdeviceptr jarg1, out SizeT jarg2, System.IntPtr jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemAllocHost_v2___")]
   public static extern int cuMemAllocHost_v2(out System.IntPtr jarg1, uint jarg2);
@@ -397,13 +398,13 @@ class cudaPINVOKE {
   public static extern int cuMemHostAlloc(out System.IntPtr jarg1, uint jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemHostGetDevicePointer_v2___")]
-  public static extern int cuMemHostGetDevicePointer_v2(out uint jarg1, System.IntPtr jarg2, uint jarg3);
+  public static extern int cuMemHostGetDevicePointer_v2(out CUdeviceptr jarg1, System.IntPtr jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemHostGetFlags___")]
   public static extern int cuMemHostGetFlags(out uint jarg1, System.IntPtr jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuMemAllocManaged___")]
-  public static extern int cuMemAllocManaged(out uint jarg1, uint jarg2, uint jarg3);
+  public static extern int cuMemAllocManaged(out CUdeviceptr jarg1, uint jarg2, uint jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuDeviceGetByPCIBusId___")]
   public static extern int cuDeviceGetByPCIBusId(out int jarg1, string jarg2);
@@ -481,7 +482,7 @@ class cudaPINVOKE {
   public static extern int cuFuncSetSharedMemConfig(CUfunction jarg1, CUsharedconfig jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuLaunchKernel___")]
-  public static extern int cuLaunchKernel(CUfunction jarg1, uint jarg2, uint jarg3, uint jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, CUstream jarg9, out System.IntPtr jarg10, out System.IntPtr jarg11);
+  public static extern int cuLaunchKernel(CUfunction jarg1, uint jarg2, uint jarg3, uint jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, CUstream jarg9, System.IntPtr jarg10, System.IntPtr jarg11);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_Swiggedfcuda_cuFuncSetBlockShape___")]
   public static extern int cuFuncSetBlockShape(CUfunction jarg1, int jarg2, int jarg3, int jarg4);

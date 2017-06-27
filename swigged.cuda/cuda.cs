@@ -8,6 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 using SizeT = System.UInt64;
+using CUdeviceptr = System.IntPtr;
 
 namespace Swigged.cuda {
 
@@ -207,7 +208,7 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuModuleGetGlobal_v2(out uint dptr, out SizeT bytes, CUmodule hmod, string name) {
+  public static CUresult cuModuleGetGlobal_v2(out CUdeviceptr dptr, out SizeT bytes, CUmodule hmod, string name) {
     CUresult ret = (CUresult)cudaPINVOKE.cuModuleGetGlobal_v2(out dptr, out bytes, hmod, name);
     return ret;
   }
@@ -222,12 +223,12 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuMemAlloc_v2(out uint dptr, uint bytesize) {
+  public static CUresult cuMemAlloc_v2(out CUdeviceptr dptr, uint bytesize) {
     CUresult ret = (CUresult)cudaPINVOKE.cuMemAlloc_v2(out dptr, bytesize);
     return ret;
   }
 
-  public static CUresult cuMemAllocPitch_v2(out uint dptr, out SizeT pPitch, uint WidthInBytes, uint Height, uint ElementSizeBytes) {
+  public static CUresult cuMemAllocPitch_v2(out CUdeviceptr dptr, out SizeT pPitch, uint WidthInBytes, uint Height, uint ElementSizeBytes) {
     CUresult ret = (CUresult)cudaPINVOKE.cuMemAllocPitch_v2(out dptr, out pPitch, WidthInBytes, Height, ElementSizeBytes);
     return ret;
   }
@@ -237,7 +238,7 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuMemGetAddressRange_v2(out uint pbase, out SizeT psize, System.IntPtr dptr) {
+  public static CUresult cuMemGetAddressRange_v2(out CUdeviceptr pbase, out SizeT psize, System.IntPtr dptr) {
     CUresult ret = (CUresult)cudaPINVOKE.cuMemGetAddressRange_v2(out pbase, out psize, dptr);
     return ret;
   }
@@ -257,7 +258,7 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuMemHostGetDevicePointer_v2(out uint pdptr, System.IntPtr p, uint Flags) {
+  public static CUresult cuMemHostGetDevicePointer_v2(out CUdeviceptr pdptr, System.IntPtr p, uint Flags) {
     CUresult ret = (CUresult)cudaPINVOKE.cuMemHostGetDevicePointer_v2(out pdptr, p, Flags);
     return ret;
   }
@@ -267,7 +268,7 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuMemAllocManaged(out uint dptr, uint bytesize, uint flags) {
+  public static CUresult cuMemAllocManaged(out CUdeviceptr dptr, uint bytesize, uint flags) {
     CUresult ret = (CUresult)cudaPINVOKE.cuMemAllocManaged(out dptr, bytesize, flags);
     return ret;
   }
@@ -397,8 +398,8 @@ public class cuda {
     return ret;
   }
 
-  public static CUresult cuLaunchKernel(CUfunction f, uint gridDimX, uint gridDimY, uint gridDimZ, uint blockDimX, uint blockDimY, uint blockDimZ, uint sharedMemBytes, CUstream hStream, out System.IntPtr kernelParams, out System.IntPtr extra) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuLaunchKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, out kernelParams, out extra);
+  public static CUresult cuLaunchKernel(CUfunction f, uint gridDimX, uint gridDimY, uint gridDimZ, uint blockDimX, uint blockDimY, uint blockDimZ, uint sharedMemBytes, CUstream hStream, System.IntPtr kernelParams, System.IntPtr extra) {
+    CUresult ret = (CUresult)cudaPINVOKE.cuLaunchKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, kernelParams, extra);
     return ret;
   }
 

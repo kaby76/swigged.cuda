@@ -6,127 +6,122 @@
 #include "cuda.h"
 %}
 
-%ignore CUuuid;
-%ignore CUuuid_st;
+// enums, ints, bools, longs, unsigned.
 
-%typemap(cstype) const CUuuid * "ref CUuuid"
-%typemap(imtype) const CUuuid * "ref CUuuid"
-%typemap(csin) const CUuuid * "ref $csinput"
-%typemap(cstype) CUuuid "CUuuid"
-%typemap(imtype) CUuuid "CUuuid"
-%typemap(csin) CUuuid "$csinput"
-
+// CUaddress_mode = CUaddress_mode_enum, but SWIG seems to get
+// confused because one is a typedef. Make sure it's mapped to
+// same type.
 %typemap(cstype) CUaddress_mode_enum * "out CUaddress_mode"
 %typemap(imtype) CUaddress_mode_enum * "out CUaddress_mode"
 %typemap(csin) CUaddress_mode_enum * "out $csinput"
-
 %typemap(cstype) CUaddress_mode * "out CUaddress_mode"
 %typemap(imtype) CUaddress_mode * "out CUaddress_mode"
 %typemap(csin) CUaddress_mode * "out $csinput"
 
-%typemap(cstype) int * device "out int"
-%typemap(imtype) int * device "out int"
-%typemap(csin) int * device "out $csinput"
 
+%typemap(cstype) CUdeviceptr * "out CUdeviceptr"
+%typemap(imtype) CUdeviceptr * "out CUdeviceptr"
+%typemap(csin) CUdeviceptr * "out $csinput"
+%typemap(cstype) CUdeviceptr "CUdeviceptr"
+%typemap(imtype) CUdeviceptr "CUdeviceptr"
+%typemap(csin) CUdeviceptr "$csinput"
+%typemap(ctype) CUdeviceptr "void *"
+
+
+// Various parameters in functions. A pointer to an int is just an
+// "out" parameter. Functions that use these are noted in a comment
+// where it is used.
+%typemap(cstype) int * active "out int"
+%typemap(imtype) int * active "out int"
+%typemap(csin) int * active "out $csinput"
+%typemap(cstype) int * blockSize "out int"
+%typemap(imtype) int * blockSize "out int"
+%typemap(csin) int * blockSize "out $csinput"
+%typemap(cstype) int * canAccessPeer "out int"
+%typemap(imtype) int * canAccessPeer "out int"
+%typemap(csin) int * canAccessPeer "out $csinput"
 %typemap(cstype) int * count "out int"
 %typemap(imtype) int * count "out int"
 %typemap(csin) int * count "out $csinput"
-
-%typemap(cstype) int * major "out int"
-%typemap(imtype) int * major "out int"
-%typemap(csin) int * major "out $csinput"
-
-%typemap(cstype) int * minor "out int"
-%typemap(imtype) int * minor "out int"
-%typemap(csin) int * minor "out $csinput"
-
+%typemap(cstype) int * dev "out int"
+%typemap(imtype) int * dev "out int"
+%typemap(csin) int * dev "out $csinput"
+%typemap(cstype) int * device "out int"
+%typemap(imtype) int * device "out int"
+%typemap(csin) int * device "out $csinput"
 %typemap(cstype) int * driverVersion "out int"
 %typemap(imtype) int * driverVersion "out int"
 %typemap(csin) int * driverVersion "out $csinput"
+%typemap(cstype) int * greatestPriority "out int"
+%typemap(imtype) int * greatestPriority "out int"
+%typemap(csin) int * greatestPriority "out $csinput"
+%typemap(cstype) int * leastPriority "out int"
+%typemap(imtype) int * leastPriority "out int"
+%typemap(csin) int * leastPriority "out $csinput"
+%typemap(cstype) int * major "out int"
+%typemap(imtype) int * major "out int"
+%typemap(csin) int * major "out $csinput"
+%typemap(cstype) int * minor "out int"
+%typemap(imtype) int * minor "out int"
+%typemap(csin) int * minor "out $csinput"
+%typemap(cstype) int * minGridSize "out int"
+%typemap(imtype) int * minGridSize "out int"
+%typemap(csin) int * minGridSize "out $csinput"
+%typemap(cstype) int * numBlocks "out int"
+%typemap(imtype) int * numBlocks "out int"
+%typemap(csin) int * numBlocks "out $csinput"
+%typemap(cstype) int * pi "out int"
+%typemap(imtype) int * pi "out int"
+%typemap(csin) int * pi "out $csinput"
+%typemap(cstype) int * value "out int"
+%typemap(imtype) int * value "out int"
+%typemap(csin) int * value "out $csinput"
+
+
 
 %typemap(cstype) char ** pStr "out System.IntPtr"
 %typemap(imtype) char ** pStr "out System.IntPtr"
 %typemap(csin) char ** pStr "out $csinput"
 
+
+// The standard C type "size_t" is mapped to "SizeT" which gets mapped
+// to a Int64 via a "using" directive at the beginning of the output
+// files.
 %typemap(cstype) size_t * bytes "out SizeT"
 %typemap(imtype) size_t * bytes "out SizeT"
 %typemap(csin) size_t * bytes "out $csinput"
 
-   %typemap(cstype) size_t * pvalue "out SizeT"
-   %typemap(imtype) size_t * pvalue "out SizeT"
-   %typemap(csin) size_t * pvalue "out $csinput"
+%typemap(cstype) size_t * pvalue "out SizeT"
+%typemap(imtype) size_t * pvalue "out SizeT"
+%typemap(csin) size_t * pvalue "out $csinput"
 
-   %typemap(cstype) size_t * free "out SizeT"
-   %typemap(imtype) size_t * free "out SizeT"
-   %typemap(csin) size_t * free "out $csinput"
+%typemap(cstype) size_t * free "out SizeT"
+%typemap(imtype) size_t * free "out SizeT"
+%typemap(csin) size_t * free "out $csinput"
 
-   %typemap(cstype) size_t * pPitch "out SizeT"
-   %typemap(imtype) size_t * pPitch "out SizeT"
-   %typemap(csin) size_t * pPitch "out $csinput"
+%typemap(cstype) size_t * pPitch "out SizeT"
+%typemap(imtype) size_t * pPitch "out SizeT"
+%typemap(csin) size_t * pPitch "out $csinput"
 
-   %typemap(cstype) size_t * psize "out SizeT"
-   %typemap(imtype) size_t * psize "out SizeT"
-   %typemap(csin) size_t * psize "out $csinput"
+%typemap(cstype) size_t * psize "out SizeT"
+%typemap(imtype) size_t * psize "out SizeT"
+%typemap(csin) size_t * psize "out $csinput"
 
-   %typemap(cstype) size_t * dataSizes "out SizeT"
-   %typemap(imtype) size_t * dataSizes "out SizeT"
-   %typemap(csin) size_t * dataSizes "out $csinput"
+%typemap(cstype) size_t * dataSizes "out SizeT"
+%typemap(imtype) size_t * dataSizes "out SizeT"
+%typemap(csin) size_t * dataSizes "out $csinput"
 
-   %typemap(cstype) size_t * total "out SizeT"
-   %typemap(imtype) size_t * total "out SizeT"
-   %typemap(csin) size_t * total "out $csinput"
-      
-%typemap(cstype) int * pi "out int"
-%typemap(imtype) int * pi "out int"
-%typemap(csin) int * pi "out $csinput"
+%typemap(cstype) size_t * total "out SizeT"
+%typemap(imtype) size_t * total "out SizeT"
+%typemap(csin) size_t * total "out $csinput"
 
-   %typemap(cstype) int * minGridSize "out int"
-   %typemap(imtype) int * minGridSize "out int"
-   %typemap(csin) int * minGridSize "out $csinput"
+%typemap(cstype) unsigned int * "out uint"
+%typemap(imtype) unsigned int * "out uint"
+%typemap(csin) unsigned int * "out $csinput"
 
-   %typemap(cstype) int * blockSize "out int"
-   %typemap(imtype) int * blockSize "out int"
-   %typemap(csin) int * blockSize "out $csinput"
-
-   %typemap(cstype) int * blockSize "out int"
-   %typemap(imtype) int * blockSize "out int"
-   %typemap(csin) int * blockSize "out $csinput"
-
-   %typemap(cstype) int * numBlocks "out int"
-   %typemap(imtype) int * numBlocks "out int"
-   %typemap(csin) int * numBlocks "out $csinput"
-
-   %typemap(cstype) int * active "out int"
-   %typemap(imtype) int * active "out int"
-   %typemap(csin) int * active "out $csinput"
-
-   %typemap(cstype) int * leastPriority "out int"
-   %typemap(imtype) int * leastPriority "out int"
-   %typemap(csin) int * leastPriority "out $csinput"
-
-   %typemap(cstype) int * dev "out int"
-   %typemap(imtype) int * dev "out int"
-   %typemap(csin) int * dev "out $csinput"
-
-   %typemap(cstype) int * canAccessPeer "out int"
-   %typemap(imtype) int * canAccessPeer "out int"
-   %typemap(csin) int * canAccessPeer "out $csinput"
-
-   %typemap(cstype) int * value "out int"
-   %typemap(imtype) int * value "out int"
-   %typemap(csin) int * value "out $csinput"
-   
-   %typemap(cstype) int * greatestPriority "out int"
-   %typemap(imtype) int * greatestPriority "out int"
-   %typemap(csin) int * greatestPriority "out $csinput"
-   
-   %typemap(cstype) unsigned int * "out uint"
-   %typemap(imtype) unsigned int * "out uint"
-   %typemap(csin) unsigned int * "out $csinput"
-
-   %typemap(cstype) void * "System.IntPtr"
-   %typemap(imtype) void * "System.IntPtr"
-   %typemap(csin) void * "$csinput"
+%typemap(cstype) void * "System.IntPtr"
+%typemap(imtype) void * "System.IntPtr"
+%typemap(csin) void * "$csinput"
 
 %typemap(cstype)  CUcontext * pctx "out CUcontext"
 %typemap(imtype)  CUcontext * pctx "out CUcontext"
@@ -144,33 +139,33 @@
 %typemap(imtype)  void *srcHost "System.IntPtr"
 %typemap(csin)  void *srcHost "$csinput"
 
-   %typemap(cstype) void ** data "out System.IntPtr"
-   %typemap(imtype)  void ** data "out System.IntPtr"
-   %typemap(csin)  void ** data "out $csinput"
+%typemap(cstype) void ** data "out System.IntPtr"
+%typemap(imtype)  void ** data "out System.IntPtr"
+%typemap(csin)  void ** data "out $csinput"
 
-   %typemap(cstype) void ** kernelParams "out System.IntPtr"
-   %typemap(imtype)  void ** kernelParams "out System.IntPtr"
-   %typemap(csin)  void ** kernelParams "out $csinput"
+%typemap(cstype) void ** kernelParams "System.IntPtr"
+%typemap(imtype)  void ** kernelParams "System.IntPtr"
+%typemap(csin)  void ** kernelParams "$csinput"
 
-   %typemap(cstype) void ** extra "out System.IntPtr"
-   %typemap(imtype)  void ** extra "out System.IntPtr"
-   %typemap(csin)  void ** extra "out $csinput"
+%typemap(cstype) void ** extra "System.IntPtr"
+%typemap(imtype)  void ** extra "System.IntPtr"
+%typemap(csin)  void ** extra "$csinput"
 
-   %typemap(cstype) void ** ppExportTable "out System.IntPtr"
-   %typemap(imtype)  void ** ppExportTable "out System.IntPtr"
-   %typemap(csin)  void ** ppExportTable "out $csinput"
-   
+%typemap(cstype) void ** ppExportTable "out System.IntPtr"
+%typemap(imtype)  void ** ppExportTable "out System.IntPtr"
+%typemap(csin)  void ** ppExportTable "out $csinput"
+
 %typemap(cstype) void *dstHost "System.IntPtr"
 %typemap(imtype)  void *dstHost "System.IntPtr"
 %typemap(csin)  void *dstHost "$csinput"
 
-   %typemap(cstype) void ** pp "out System.IntPtr"
-   %typemap(imtype)  void ** pp "out System.IntPtr"
-   %typemap(csin)  void ** pp "out $csinput"
+%typemap(cstype) void ** pp "out System.IntPtr"
+%typemap(imtype)  void ** pp "out System.IntPtr"
+%typemap(csin)  void ** pp "out $csinput"
 
-   %typemap(cstype) void * p "System.IntPtr"
-   %typemap(imtype)  void * p "System.IntPtr"
-   %typemap(csin)  void * p "$csinput"
+%typemap(cstype) void * p "System.IntPtr"
+%typemap(imtype)  void * p "System.IntPtr"
+%typemap(csin)  void * p "$csinput"
 
 
 %typemap(cstype) CUfunction* "out CUfunction"
@@ -242,7 +237,24 @@
 
 
 
-  
+
+
+%typemap(cstype) const CUuuid * "ref CUuuid"
+%typemap(imtype) const CUuuid * "ref CUuuid"
+%typemap(csin) const CUuuid * "ref $csinput"
+%typemap(cstype) CUuuid "CUuuid"
+%typemap(imtype) CUuuid "CUuuid"
+%typemap(csin) CUuuid "$csinput"
+
+   
+
+
+// Ignored types. If a type (a struct, e.g.) is ignored, we don't want
+// SWIG to output a class corresponding to the type. In that case, we
+// aren't implementing functions in the API that use the type, or we
+// offer a hand-drafted version of the class.  
+%ignore CUuuid;
+%ignore CUuuid_st;
 %ignore cuArray3DCreate;
 %ignore cuArray3DCreate_v2;
 %ignore cuArray3DGetDescriptor_v2;

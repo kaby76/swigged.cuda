@@ -302,9 +302,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_cuda(SWIG_CSharpStringHel
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, msg, ""); return nullreturn; } else
 
 
-
 #include "cuda.h"
-
 
 
 #include <stdint.h>		// Use the C99 official header
@@ -313,7 +311,6 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_cuda(SWIG_CSharpStringHel
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda___CUDA_API_VERSION_get___() {
   int jresult ;
@@ -1111,7 +1108,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemAllocPitch_v2___(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemFree_v2___(unsigned int jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemFree_v2___(void * jarg1) {
   int jresult ;
   CUdeviceptr arg1 ;
   CUresult result;
@@ -1123,7 +1120,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemFree_v2___(unsigned int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemGetAddressRange_v2___(void * jarg1, void * jarg2, unsigned int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemGetAddressRange_v2___(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   CUdeviceptr *arg1 = (CUdeviceptr *) 0 ;
   size_t *arg2 = (size_t *) 0 ;
@@ -1257,7 +1254,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuDeviceGetPCIBusId___(char * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuIpcCloseMemHandle___(unsigned int jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuIpcCloseMemHandle___(void * jarg1) {
   int jresult ;
   CUdeviceptr arg1 ;
   CUresult result;
@@ -1297,7 +1294,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemHostUnregister___(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpy___(unsigned int jarg1, unsigned int jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpy___(void * jarg1, void * jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   CUdeviceptr arg2 ;
@@ -1313,7 +1310,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpy___(unsigned int jarg1, u
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyPeer___(unsigned int jarg1, void * jarg2, unsigned int jarg3, void * jarg4, unsigned long jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyPeer___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned long jarg5) {
   int jresult ;
   CUdeviceptr arg1 ;
   CUcontext arg2 = (CUcontext) 0 ;
@@ -1333,7 +1330,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyPeer___(unsigned int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyHtoD_v2___(unsigned int jarg1, void * jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyHtoD_v2___(void * jarg1, void * jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   void *arg2 = (void *) 0 ;
@@ -1349,7 +1346,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyHtoD_v2___(unsigned int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoH_v2___(void * jarg1, unsigned int jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoH_v2___(void * jarg1, void * jarg2, unsigned long jarg3) {
   int jresult ;
   void *arg1 = (void *) 0 ;
   CUdeviceptr arg2 ;
@@ -1365,7 +1362,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoH_v2___(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoD_v2___(unsigned int jarg1, unsigned int jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoD_v2___(void * jarg1, void * jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   CUdeviceptr arg2 ;
@@ -1381,7 +1378,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemcpyDtoD_v2___(unsigned int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD8_v2___(unsigned int jarg1, unsigned char jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD8_v2___(void * jarg1, unsigned char jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   unsigned char arg2 ;
@@ -1397,7 +1394,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD8_v2___(unsigned int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD16_v2___(unsigned int jarg1, unsigned short jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD16_v2___(void * jarg1, unsigned short jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   unsigned short arg2 ;
@@ -1413,7 +1410,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD16_v2___(unsigned int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD32_v2___(unsigned int jarg1, unsigned int jarg2, unsigned long jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD32_v2___(void * jarg1, unsigned int jarg2, unsigned long jarg3) {
   int jresult ;
   CUdeviceptr arg1 ;
   unsigned int arg2 ;
@@ -1429,7 +1426,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD32_v2___(unsigned int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D8_v2___(unsigned int jarg1, unsigned long jarg2, unsigned char jarg3, unsigned long jarg4, unsigned long jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D8_v2___(void * jarg1, unsigned long jarg2, unsigned char jarg3, unsigned long jarg4, unsigned long jarg5) {
   int jresult ;
   CUdeviceptr arg1 ;
   size_t arg2 ;
@@ -1449,7 +1446,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D8_v2___(unsigned int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D16_v2___(unsigned int jarg1, unsigned long jarg2, unsigned short jarg3, unsigned long jarg4, unsigned long jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D16_v2___(void * jarg1, unsigned long jarg2, unsigned short jarg3, unsigned long jarg4, unsigned long jarg5) {
   int jresult ;
   CUdeviceptr arg1 ;
   size_t arg2 ;
@@ -1469,7 +1466,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D16_v2___(unsigned int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D32_v2___(unsigned int jarg1, unsigned long jarg2, unsigned int jarg3, unsigned long jarg4, unsigned long jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D32_v2___(void * jarg1, unsigned long jarg2, unsigned int jarg3, unsigned long jarg4, unsigned long jarg5) {
   int jresult ;
   CUdeviceptr arg1 ;
   size_t arg2 ;
@@ -1489,7 +1486,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemsetD2D32_v2___(unsigned int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerGetAttribute___(void * jarg1, int jarg2, unsigned int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerGetAttribute___(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   void *arg1 = (void *) 0 ;
   CUpointer_attribute arg2 ;
@@ -1505,7 +1502,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerGetAttribute___(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemAdvise___(unsigned int jarg1, unsigned long jarg2, int jarg3, int jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemAdvise___(void * jarg1, unsigned long jarg2, int jarg3, int jarg4) {
   int jresult ;
   CUdeviceptr arg1 ;
   size_t arg2 ;
@@ -1523,7 +1520,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemAdvise___(unsigned int jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttribute___(void * jarg1, unsigned long jarg2, int jarg3, unsigned int jarg4, unsigned long jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttribute___(void * jarg1, unsigned long jarg2, int jarg3, void * jarg4, unsigned long jarg5) {
   int jresult ;
   void *arg1 = (void *) 0 ;
   size_t arg2 ;
@@ -1543,7 +1540,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttribute___(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttributes___(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4, unsigned int jarg5, unsigned long jarg6) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttributes___(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4, void * jarg5, unsigned long jarg6) {
   int jresult ;
   void **arg1 = (void **) 0 ;
   size_t *arg2 = (size_t *) 0 ;
@@ -1565,7 +1562,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuMemRangeGetAttributes___(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerSetAttribute___(void * jarg1, int jarg2, unsigned int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerSetAttribute___(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   void *arg1 = (void *) 0 ;
   CUpointer_attribute arg2 ;
@@ -1581,7 +1578,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerSetAttribute___(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerGetAttributes___(unsigned int jarg1, void * jarg2, void * jarg3, unsigned int jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuPointerGetAttributes___(unsigned int jarg1, void * jarg2, void * jarg3, void * jarg4) {
   int jresult ;
   unsigned int arg1 ;
   CUpointer_attribute *arg2 = (CUpointer_attribute *) 0 ;
@@ -1938,5 +1935,4 @@ SWIGEXPORT int SWIGSTDCALL CSharp_Swiggedfcuda_cuGetExportTable___(void * jarg1,
 #ifdef __cplusplus
 }
 #endif
-
 
