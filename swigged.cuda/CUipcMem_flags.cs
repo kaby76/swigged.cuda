@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUipcMem_flags {
   CU_IPC_MEM_LAZY_ENABLE_PEER_ACCESS = 0x1

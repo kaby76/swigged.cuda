@@ -10,504 +10,504 @@
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
-public class cuda {
+public class Cuda {
   public static CUresult cuGetErrorString(CUresult error, out System.IntPtr pStr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuGetErrorString((int)error, out pStr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuGetErrorString((int)error, out pStr);
     return ret;
   }
 
   public static CUresult cuGetErrorName(CUresult error, out System.IntPtr pStr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuGetErrorName((int)error, out pStr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuGetErrorName((int)error, out pStr);
     return ret;
   }
 
   public static CUresult cuInit(uint Flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuInit(Flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuInit(Flags);
     return ret;
   }
 
   public static CUresult cuDriverGetVersion(out int driverVersion) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDriverGetVersion(out driverVersion);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDriverGetVersion(out driverVersion);
     return ret;
   }
 
   public static CUresult cuDeviceGet(out int device, int ordinal) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGet(out device, ordinal);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGet(out device, ordinal);
     return ret;
   }
 
   public static CUresult cuDeviceGetCount(out int count) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetCount(out count);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetCount(out count);
     return ret;
   }
 
   public static CUresult cuDeviceGetName(string name, int len, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetName(name, len, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetName(name, len, dev);
     return ret;
   }
 
   public static CUresult cuDeviceTotalMem_v2(out SizeT bytes, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceTotalMem_v2(out bytes, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceTotalMem_v2(out bytes, dev);
     return ret;
   }
 
   public static CUresult cuDeviceGetAttribute(out int pi, CUdevice_attribute attrib, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetAttribute(out pi, (int)attrib, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetAttribute(out pi, (int)attrib, dev);
     return ret;
   }
 
   public static CUresult cuDeviceComputeCapability(out int major, out int minor, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceComputeCapability(out major, out minor, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceComputeCapability(out major, out minor, dev);
     return ret;
   }
 
   public static CUresult cuDevicePrimaryCtxRetain(out CUcontext pctx, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDevicePrimaryCtxRetain(out pctx, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDevicePrimaryCtxRetain(out pctx, dev);
     return ret;
   }
 
   public static CUresult cuDevicePrimaryCtxRelease(int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDevicePrimaryCtxRelease(dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDevicePrimaryCtxRelease(dev);
     return ret;
   }
 
   public static CUresult cuDevicePrimaryCtxSetFlags(int dev, uint flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDevicePrimaryCtxSetFlags(dev, flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDevicePrimaryCtxSetFlags(dev, flags);
     return ret;
   }
 
   public static CUresult cuDevicePrimaryCtxGetState(int dev, out uint flags, out int active) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDevicePrimaryCtxGetState(dev, out flags, out active);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDevicePrimaryCtxGetState(dev, out flags, out active);
     return ret;
   }
 
   public static CUresult cuDevicePrimaryCtxReset(int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDevicePrimaryCtxReset(dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDevicePrimaryCtxReset(dev);
     return ret;
   }
 
   public static CUresult cuCtxCreate_v2(out CUcontext pctx, uint flags, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxCreate_v2(out pctx, flags, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxCreate_v2(out pctx, flags, dev);
     return ret;
   }
 
   public static CUresult cuCtxDestroy_v2(CUcontext ctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxDestroy_v2(ctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxDestroy_v2(ctx);
     return ret;
   }
 
   public static CUresult cuCtxPushCurrent_v2(CUcontext ctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxPushCurrent_v2(ctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxPushCurrent_v2(ctx);
     return ret;
   }
 
   public static CUresult cuCtxPopCurrent_v2(out CUcontext pctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxPopCurrent_v2(out pctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxPopCurrent_v2(out pctx);
     return ret;
   }
 
   public static CUresult cuCtxSetCurrent(CUcontext ctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxSetCurrent(ctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxSetCurrent(ctx);
     return ret;
   }
 
   public static CUresult cuCtxGetCurrent(out CUcontext pctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetCurrent(out pctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetCurrent(out pctx);
     return ret;
   }
 
   public static CUresult cuCtxGetDevice(out int device) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetDevice(out device);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetDevice(out device);
     return ret;
   }
 
   public static CUresult cuCtxGetFlags(out uint flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetFlags(out flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetFlags(out flags);
     return ret;
   }
 
   public static CUresult cuCtxSynchronize() {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxSynchronize();
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxSynchronize();
     return ret;
   }
 
   public static CUresult cuCtxSetLimit(CUlimit limit, uint value) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxSetLimit((int)limit, value);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxSetLimit((int)limit, value);
     return ret;
   }
 
   public static CUresult cuCtxGetLimit(out SizeT pvalue, CUlimit limit) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetLimit(out pvalue, (int)limit);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetLimit(out pvalue, (int)limit);
     return ret;
   }
 
   public static CUresult cuCtxGetCacheConfig(out CUfunc_cache pconfig) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetCacheConfig(out pconfig);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetCacheConfig(out pconfig);
     return ret;
   }
 
   public static CUresult cuCtxSetCacheConfig(CUfunc_cache config) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxSetCacheConfig((int)config);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxSetCacheConfig((int)config);
     return ret;
   }
 
   public static CUresult cuCtxGetSharedMemConfig(out CUsharedconfig pConfig) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetSharedMemConfig(out pConfig);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetSharedMemConfig(out pConfig);
     return ret;
   }
 
   public static CUresult cuCtxSetSharedMemConfig(CUsharedconfig config) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxSetSharedMemConfig(config);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxSetSharedMemConfig(config);
     return ret;
   }
 
   public static CUresult cuCtxGetApiVersion(CUcontext ctx, out uint version) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetApiVersion(ctx, out version);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetApiVersion(ctx, out version);
     return ret;
   }
 
   public static CUresult cuCtxGetStreamPriorityRange(out int leastPriority, out int greatestPriority) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxGetStreamPriorityRange(out leastPriority, out greatestPriority);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxGetStreamPriorityRange(out leastPriority, out greatestPriority);
     return ret;
   }
 
   public static CUresult cuCtxAttach(out CUcontext pctx, uint flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxAttach(out pctx, flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxAttach(out pctx, flags);
     return ret;
   }
 
   public static CUresult cuCtxDetach(CUcontext ctx) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxDetach(ctx);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxDetach(ctx);
     return ret;
   }
 
   public static CUresult cuModuleLoad(out CUmodule module, string fname) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleLoad(out module, fname);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleLoad(out module, fname);
     return ret;
   }
 
   public static CUresult cuModuleLoadData(out CUmodule module, System.IntPtr image) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleLoadData(out module, image);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleLoadData(out module, image);
     return ret;
   }
 
   public static CUresult cuModuleLoadFatBinary(out CUmodule module, System.IntPtr fatCubin) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleLoadFatBinary(out module, fatCubin);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleLoadFatBinary(out module, fatCubin);
     return ret;
   }
 
   public static CUresult cuModuleUnload(CUmodule hmod) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleUnload(hmod);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleUnload(hmod);
     return ret;
   }
 
   public static CUresult cuModuleGetFunction(out CUfunction hfunc, CUmodule hmod, string name) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleGetFunction(out hfunc, hmod, name);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleGetFunction(out hfunc, hmod, name);
     return ret;
   }
 
   public static CUresult cuModuleGetGlobal_v2(out CUdeviceptr dptr, out SizeT bytes, CUmodule hmod, string name) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuModuleGetGlobal_v2(out dptr, out bytes, hmod, name);
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleGetGlobal_v2(out dptr, out bytes, hmod, name);
     return ret;
   }
 
   public static CUresult cuLinkDestroy(CUlinkState state) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuLinkDestroy(state);
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkDestroy(state);
     return ret;
   }
 
   public static CUresult cuMemGetInfo_v2(out SizeT free, out SizeT total) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemGetInfo_v2(out free, out total);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemGetInfo_v2(out free, out total);
     return ret;
   }
 
   public static CUresult cuMemAlloc_v2(out CUdeviceptr dptr, uint bytesize) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemAlloc_v2(out dptr, bytesize);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemAlloc_v2(out dptr, bytesize);
     return ret;
   }
 
   public static CUresult cuMemAllocPitch_v2(out CUdeviceptr dptr, out SizeT pPitch, uint WidthInBytes, uint Height, uint ElementSizeBytes) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemAllocPitch_v2(out dptr, out pPitch, WidthInBytes, Height, ElementSizeBytes);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemAllocPitch_v2(out dptr, out pPitch, WidthInBytes, Height, ElementSizeBytes);
     return ret;
   }
 
   public static CUresult cuMemFree_v2(System.IntPtr dptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemFree_v2(dptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemFree_v2(dptr);
     return ret;
   }
 
   public static CUresult cuMemGetAddressRange_v2(out CUdeviceptr pbase, out SizeT psize, System.IntPtr dptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemGetAddressRange_v2(out pbase, out psize, dptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemGetAddressRange_v2(out pbase, out psize, dptr);
     return ret;
   }
 
   public static CUresult cuMemAllocHost_v2(out System.IntPtr pp, uint bytesize) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemAllocHost_v2(out pp, bytesize);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemAllocHost_v2(out pp, bytesize);
     return ret;
   }
 
   public static CUresult cuMemFreeHost(System.IntPtr p) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemFreeHost(p);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemFreeHost(p);
     return ret;
   }
 
   public static CUresult cuMemHostAlloc(out System.IntPtr pp, uint bytesize, uint Flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemHostAlloc(out pp, bytesize, Flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemHostAlloc(out pp, bytesize, Flags);
     return ret;
   }
 
   public static CUresult cuMemHostGetDevicePointer_v2(out CUdeviceptr pdptr, System.IntPtr p, uint Flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemHostGetDevicePointer_v2(out pdptr, p, Flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemHostGetDevicePointer_v2(out pdptr, p, Flags);
     return ret;
   }
 
   public static CUresult cuMemHostGetFlags(out uint pFlags, System.IntPtr p) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemHostGetFlags(out pFlags, p);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemHostGetFlags(out pFlags, p);
     return ret;
   }
 
   public static CUresult cuMemAllocManaged(out CUdeviceptr dptr, uint bytesize, uint flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemAllocManaged(out dptr, bytesize, flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemAllocManaged(out dptr, bytesize, flags);
     return ret;
   }
 
   public static CUresult cuDeviceGetByPCIBusId(out int dev, string pciBusId) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetByPCIBusId(out dev, pciBusId);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetByPCIBusId(out dev, pciBusId);
     return ret;
   }
 
   public static CUresult cuDeviceGetPCIBusId(string pciBusId, int len, int dev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetPCIBusId(pciBusId, len, dev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetPCIBusId(pciBusId, len, dev);
     return ret;
   }
 
   public static CUresult cuIpcCloseMemHandle(System.IntPtr dptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuIpcCloseMemHandle(dptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuIpcCloseMemHandle(dptr);
     return ret;
   }
 
   public static CUresult cuMemHostRegister_v2(System.IntPtr p, uint bytesize, uint Flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemHostRegister_v2(p, bytesize, Flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemHostRegister_v2(p, bytesize, Flags);
     return ret;
   }
 
   public static CUresult cuMemHostUnregister(System.IntPtr p) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemHostUnregister(p);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemHostUnregister(p);
     return ret;
   }
 
   public static CUresult cuMemcpy(System.IntPtr dst, System.IntPtr src, uint ByteCount) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemcpy(dst, src, ByteCount);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy(dst, src, ByteCount);
     return ret;
   }
 
   public static CUresult cuMemcpyPeer(System.IntPtr dstDevice, CUcontext dstContext, System.IntPtr srcDevice, CUcontext srcContext, uint ByteCount) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemcpyPeer(dstDevice, dstContext, srcDevice, srcContext, ByteCount);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyPeer(dstDevice, dstContext, srcDevice, srcContext, ByteCount);
     return ret;
   }
 
   public static CUresult cuMemcpyHtoD_v2(System.IntPtr dstDevice, System.IntPtr srcHost, uint ByteCount) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemcpyHtoD_v2(dstDevice, srcHost, ByteCount);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyHtoD_v2(dstDevice, srcHost, ByteCount);
     return ret;
   }
 
   public static CUresult cuMemcpyDtoH_v2(System.IntPtr dstHost, System.IntPtr srcDevice, uint ByteCount) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemcpyDtoH_v2(dstHost, srcDevice, ByteCount);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoH_v2(dstHost, srcDevice, ByteCount);
     return ret;
   }
 
   public static CUresult cuMemcpyDtoD_v2(System.IntPtr dstDevice, System.IntPtr srcDevice, uint ByteCount) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemcpyDtoD_v2(dstDevice, srcDevice, ByteCount);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoD_v2(dstDevice, srcDevice, ByteCount);
     return ret;
   }
 
   public static CUresult cuMemsetD8_v2(System.IntPtr dstDevice, byte uc, uint N) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD8_v2(dstDevice, uc, N);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD8_v2(dstDevice, uc, N);
     return ret;
   }
 
   public static CUresult cuMemsetD16_v2(System.IntPtr dstDevice, ushort us, uint N) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD16_v2(dstDevice, us, N);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD16_v2(dstDevice, us, N);
     return ret;
   }
 
   public static CUresult cuMemsetD32_v2(System.IntPtr dstDevice, uint ui, uint N) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD32_v2(dstDevice, ui, N);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD32_v2(dstDevice, ui, N);
     return ret;
   }
 
   public static CUresult cuMemsetD2D8_v2(System.IntPtr dstDevice, uint dstPitch, byte uc, uint Width, uint Height) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD2D8_v2(dstDevice, dstPitch, uc, Width, Height);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D8_v2(dstDevice, dstPitch, uc, Width, Height);
     return ret;
   }
 
   public static CUresult cuMemsetD2D16_v2(System.IntPtr dstDevice, uint dstPitch, ushort us, uint Width, uint Height) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD2D16_v2(dstDevice, dstPitch, us, Width, Height);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D16_v2(dstDevice, dstPitch, us, Width, Height);
     return ret;
   }
 
   public static CUresult cuMemsetD2D32_v2(System.IntPtr dstDevice, uint dstPitch, uint ui, uint Width, uint Height) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemsetD2D32_v2(dstDevice, dstPitch, ui, Width, Height);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D32_v2(dstDevice, dstPitch, ui, Width, Height);
     return ret;
   }
 
   public static CUresult cuPointerGetAttribute(System.IntPtr data, CUpointer_attribute attribute, System.IntPtr ptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuPointerGetAttribute(data, attribute, ptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuPointerGetAttribute(data, attribute, ptr);
     return ret;
   }
 
   public static CUresult cuMemAdvise(System.IntPtr devPtr, uint count, CUmem_advise advice, int device) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemAdvise(devPtr, count, (int)advice, device);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemAdvise(devPtr, count, (int)advice, device);
     return ret;
   }
 
   public static CUresult cuMemRangeGetAttribute(System.IntPtr data, uint dataSize, CUmem_range_attribute attribute, System.IntPtr devPtr, uint count) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemRangeGetAttribute(data, dataSize, attribute, devPtr, count);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemRangeGetAttribute(data, dataSize, attribute, devPtr, count);
     return ret;
   }
 
   public static CUresult cuMemRangeGetAttributes(out System.IntPtr data, out SizeT dataSizes, out CUmem_range_attribute attributes, uint numAttributes, System.IntPtr devPtr, uint count) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuMemRangeGetAttributes(out data, out dataSizes, out attributes, numAttributes, devPtr, count);
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemRangeGetAttributes(out data, out dataSizes, out attributes, numAttributes, devPtr, count);
     return ret;
   }
 
   public static CUresult cuPointerSetAttribute(System.IntPtr value, CUpointer_attribute attribute, System.IntPtr ptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuPointerSetAttribute(value, attribute, ptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuPointerSetAttribute(value, attribute, ptr);
     return ret;
   }
 
   public static CUresult cuPointerGetAttributes(uint numAttributes, out CUpointer_attribute attributes, out System.IntPtr data, System.IntPtr ptr) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuPointerGetAttributes(numAttributes, out attributes, out data, ptr);
+    CUresult ret = (CUresult)CudaPINVOKE.cuPointerGetAttributes(numAttributes, out attributes, out data, ptr);
     return ret;
   }
 
   public static CUresult cuFuncGetAttribute(out int pi, CUfunction_attribute attrib, CUfunction hfunc) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuFuncGetAttribute(out pi, (int)attrib, hfunc);
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncGetAttribute(out pi, (int)attrib, hfunc);
     return ret;
   }
 
   public static CUresult cuFuncSetCacheConfig(CUfunction hfunc, CUfunc_cache config) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuFuncSetCacheConfig(hfunc, (int)config);
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncSetCacheConfig(hfunc, (int)config);
     return ret;
   }
 
   public static CUresult cuFuncSetSharedMemConfig(CUfunction hfunc, CUsharedconfig config) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuFuncSetSharedMemConfig(hfunc, config);
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncSetSharedMemConfig(hfunc, config);
     return ret;
   }
 
   public static CUresult cuLaunchKernel(CUfunction f, uint gridDimX, uint gridDimY, uint gridDimZ, uint blockDimX, uint blockDimY, uint blockDimZ, uint sharedMemBytes, CUstream hStream, System.IntPtr kernelParams, System.IntPtr extra) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuLaunchKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, kernelParams, extra);
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunchKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, kernelParams, extra);
     return ret;
   }
 
   public static CUresult cuFuncSetBlockShape(CUfunction hfunc, int x, int y, int z) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuFuncSetBlockShape(hfunc, x, y, z);
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncSetBlockShape(hfunc, x, y, z);
     return ret;
   }
 
   public static CUresult cuFuncSetSharedSize(CUfunction hfunc, uint bytes) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuFuncSetSharedSize(hfunc, bytes);
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncSetSharedSize(hfunc, bytes);
     return ret;
   }
 
   public static CUresult cuParamSetSize(CUfunction hfunc, uint numbytes) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuParamSetSize(hfunc, numbytes);
+    CUresult ret = (CUresult)CudaPINVOKE.cuParamSetSize(hfunc, numbytes);
     return ret;
   }
 
   public static CUresult cuParamSeti(CUfunction hfunc, int offset, uint value) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuParamSeti(hfunc, offset, value);
+    CUresult ret = (CUresult)CudaPINVOKE.cuParamSeti(hfunc, offset, value);
     return ret;
   }
 
   public static CUresult cuParamSetf(CUfunction hfunc, int offset, float value) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuParamSetf(hfunc, offset, value);
+    CUresult ret = (CUresult)CudaPINVOKE.cuParamSetf(hfunc, offset, value);
     return ret;
   }
 
   public static CUresult cuParamSetv(CUfunction hfunc, int offset, System.IntPtr ptr, uint numbytes) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuParamSetv(hfunc, offset, ptr, numbytes);
+    CUresult ret = (CUresult)CudaPINVOKE.cuParamSetv(hfunc, offset, ptr, numbytes);
     return ret;
   }
 
   public static CUresult cuLaunch(CUfunction f) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuLaunch(f);
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunch(f);
     return ret;
   }
 
   public static CUresult cuLaunchGrid(CUfunction f, int grid_width, int grid_height) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuLaunchGrid(f, grid_width, grid_height);
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunchGrid(f, grid_width, grid_height);
     return ret;
   }
 
   public static CUresult cuOccupancyMaxActiveBlocksPerMultiprocessor(out int numBlocks, CUfunction func, int blockSize, uint dynamicSMemSize) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuOccupancyMaxActiveBlocksPerMultiprocessor(out numBlocks, func, blockSize, dynamicSMemSize);
+    CUresult ret = (CUresult)CudaPINVOKE.cuOccupancyMaxActiveBlocksPerMultiprocessor(out numBlocks, func, blockSize, dynamicSMemSize);
     return ret;
   }
 
   public static CUresult cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(out int numBlocks, CUfunction func, int blockSize, uint dynamicSMemSize, uint flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(out numBlocks, func, blockSize, dynamicSMemSize, flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(out numBlocks, func, blockSize, dynamicSMemSize, flags);
     return ret;
   }
 
   public static CUresult cuTexObjectDestroy(ulong texObject) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuTexObjectDestroy(texObject);
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectDestroy(texObject);
     return ret;
   }
 
   public static CUresult cuSurfObjectDestroy(ulong surfObject) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuSurfObjectDestroy(surfObject);
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectDestroy(surfObject);
     return ret;
   }
 
   public static CUresult cuDeviceCanAccessPeer(out int canAccessPeer, int dev, int peerDev) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceCanAccessPeer(out canAccessPeer, dev, peerDev);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceCanAccessPeer(out canAccessPeer, dev, peerDev);
     return ret;
   }
 
   public static CUresult cuDeviceGetP2PAttribute(out int value, CUdevice_P2PAttribute attrib, int srcDevice, int dstDevice) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuDeviceGetP2PAttribute(out value, (int)attrib, srcDevice, dstDevice);
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetP2PAttribute(out value, (int)attrib, srcDevice, dstDevice);
     return ret;
   }
 
   public static CUresult cuCtxEnablePeerAccess(CUcontext peerContext, uint Flags) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxEnablePeerAccess(peerContext, Flags);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxEnablePeerAccess(peerContext, Flags);
     return ret;
   }
 
   public static CUresult cuCtxDisablePeerAccess(CUcontext peerContext) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuCtxDisablePeerAccess(peerContext);
+    CUresult ret = (CUresult)CudaPINVOKE.cuCtxDisablePeerAccess(peerContext);
     return ret;
   }
 
   public static CUresult cuGetExportTable(out System.IntPtr ppExportTable, ref CUuuid pExportTableId) {
-    CUresult ret = (CUresult)cudaPINVOKE.cuGetExportTable(out ppExportTable, ref pExportTableId);
+    CUresult ret = (CUresult)CudaPINVOKE.cuGetExportTable(out ppExportTable, ref pExportTableId);
     return ret;
   }
 
-  public static readonly int __CUDA_API_VERSION = cudaPINVOKE.__CUDA_API_VERSION_get();
-  public static readonly int CUDA_VERSION = cudaPINVOKE.CUDA_VERSION_get();
-  public static readonly int CU_IPC_HANDLE_SIZE = cudaPINVOKE.CU_IPC_HANDLE_SIZE_get();
-  public static readonly int CU_MEMHOSTALLOC_PORTABLE = cudaPINVOKE.CU_MEMHOSTALLOC_PORTABLE_get();
-  public static readonly int CU_MEMHOSTALLOC_DEVICEMAP = cudaPINVOKE.CU_MEMHOSTALLOC_DEVICEMAP_get();
-  public static readonly int CU_MEMHOSTALLOC_WRITECOMBINED = cudaPINVOKE.CU_MEMHOSTALLOC_WRITECOMBINED_get();
-  public static readonly int CU_MEMHOSTREGISTER_PORTABLE = cudaPINVOKE.CU_MEMHOSTREGISTER_PORTABLE_get();
-  public static readonly int CU_MEMHOSTREGISTER_DEVICEMAP = cudaPINVOKE.CU_MEMHOSTREGISTER_DEVICEMAP_get();
-  public static readonly int CU_MEMHOSTREGISTER_IOMEMORY = cudaPINVOKE.CU_MEMHOSTREGISTER_IOMEMORY_get();
-  public static readonly int CUDA_ARRAY3D_LAYERED = cudaPINVOKE.CUDA_ARRAY3D_LAYERED_get();
-  public static readonly int CUDA_ARRAY3D_2DARRAY = cudaPINVOKE.CUDA_ARRAY3D_2DARRAY_get();
-  public static readonly int CUDA_ARRAY3D_SURFACE_LDST = cudaPINVOKE.CUDA_ARRAY3D_SURFACE_LDST_get();
-  public static readonly int CUDA_ARRAY3D_CUBEMAP = cudaPINVOKE.CUDA_ARRAY3D_CUBEMAP_get();
-  public static readonly int CUDA_ARRAY3D_TEXTURE_GATHER = cudaPINVOKE.CUDA_ARRAY3D_TEXTURE_GATHER_get();
-  public static readonly int CUDA_ARRAY3D_DEPTH_TEXTURE = cudaPINVOKE.CUDA_ARRAY3D_DEPTH_TEXTURE_get();
-  public static readonly int CU_TRSA_OVERRIDE_FORMAT = cudaPINVOKE.CU_TRSA_OVERRIDE_FORMAT_get();
-  public static readonly int CU_TRSF_READ_AS_INTEGER = cudaPINVOKE.CU_TRSF_READ_AS_INTEGER_get();
-  public static readonly int CU_TRSF_NORMALIZED_COORDINATES = cudaPINVOKE.CU_TRSF_NORMALIZED_COORDINATES_get();
-  public static readonly int CU_TRSF_SRGB = cudaPINVOKE.CU_TRSF_SRGB_get();
-  public static readonly int CU_PARAM_TR_DEFAULT = cudaPINVOKE.CU_PARAM_TR_DEFAULT_get();
+  public static readonly int __CUDA_API_VERSION = CudaPINVOKE.__CUDA_API_VERSION_get();
+  public static readonly int CUDA_VERSION = CudaPINVOKE.CUDA_VERSION_get();
+  public static readonly int CU_IPC_HANDLE_SIZE = CudaPINVOKE.CU_IPC_HANDLE_SIZE_get();
+  public static readonly int CU_MEMHOSTALLOC_PORTABLE = CudaPINVOKE.CU_MEMHOSTALLOC_PORTABLE_get();
+  public static readonly int CU_MEMHOSTALLOC_DEVICEMAP = CudaPINVOKE.CU_MEMHOSTALLOC_DEVICEMAP_get();
+  public static readonly int CU_MEMHOSTALLOC_WRITECOMBINED = CudaPINVOKE.CU_MEMHOSTALLOC_WRITECOMBINED_get();
+  public static readonly int CU_MEMHOSTREGISTER_PORTABLE = CudaPINVOKE.CU_MEMHOSTREGISTER_PORTABLE_get();
+  public static readonly int CU_MEMHOSTREGISTER_DEVICEMAP = CudaPINVOKE.CU_MEMHOSTREGISTER_DEVICEMAP_get();
+  public static readonly int CU_MEMHOSTREGISTER_IOMEMORY = CudaPINVOKE.CU_MEMHOSTREGISTER_IOMEMORY_get();
+  public static readonly int CUDA_ARRAY3D_LAYERED = CudaPINVOKE.CUDA_ARRAY3D_LAYERED_get();
+  public static readonly int CUDA_ARRAY3D_2DARRAY = CudaPINVOKE.CUDA_ARRAY3D_2DARRAY_get();
+  public static readonly int CUDA_ARRAY3D_SURFACE_LDST = CudaPINVOKE.CUDA_ARRAY3D_SURFACE_LDST_get();
+  public static readonly int CUDA_ARRAY3D_CUBEMAP = CudaPINVOKE.CUDA_ARRAY3D_CUBEMAP_get();
+  public static readonly int CUDA_ARRAY3D_TEXTURE_GATHER = CudaPINVOKE.CUDA_ARRAY3D_TEXTURE_GATHER_get();
+  public static readonly int CUDA_ARRAY3D_DEPTH_TEXTURE = CudaPINVOKE.CUDA_ARRAY3D_DEPTH_TEXTURE_get();
+  public static readonly int CU_TRSA_OVERRIDE_FORMAT = CudaPINVOKE.CU_TRSA_OVERRIDE_FORMAT_get();
+  public static readonly int CU_TRSF_READ_AS_INTEGER = CudaPINVOKE.CU_TRSF_READ_AS_INTEGER_get();
+  public static readonly int CU_TRSF_NORMALIZED_COORDINATES = CudaPINVOKE.CU_TRSF_NORMALIZED_COORDINATES_get();
+  public static readonly int CU_TRSF_SRGB = CudaPINVOKE.CU_TRSF_SRGB_get();
+  public static readonly int CU_PARAM_TR_DEFAULT = CudaPINVOKE.CU_PARAM_TR_DEFAULT_get();
 }
 
 }

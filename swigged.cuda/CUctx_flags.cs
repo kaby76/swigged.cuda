@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUctx_flags {
   CU_CTX_SCHED_AUTO = 0x00,

@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUresourceViewFormat {
   CU_RES_VIEW_FORMAT_NONE = 0x00,

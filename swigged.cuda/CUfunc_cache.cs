@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUfunc_cache {
   CU_FUNC_CACHE_PREFER_NONE = 0x00,

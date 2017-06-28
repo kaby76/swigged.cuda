@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUmem_range_attribute {
   CU_MEM_RANGE_ATTRIBUTE_READ_MOSTLY = 1,

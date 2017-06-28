@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUgraphicsMapResourceFlags {
   CU_GRAPHICS_MAP_RESOURCE_FLAGS_NONE = 0x00,

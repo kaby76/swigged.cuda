@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUarray_format {
   CU_AD_FORMAT_UNSIGNED_INT8 = 0x01,

@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUstreamBatchMemOpType {
   CU_STREAM_MEM_OP_WAIT_VALUE_32 = 1,

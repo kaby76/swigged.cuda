@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUarray_cubemap_face {
   CU_CUBEMAP_FACE_POSITIVE_X = 0x00,

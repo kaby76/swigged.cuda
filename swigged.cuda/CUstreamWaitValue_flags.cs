@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUstreamWaitValue_flags {
   CU_STREAM_WAIT_VALUE_GEQ = 0x0,

@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUpointer_attribute {
   CU_POINTER_ATTRIBUTE_CONTEXT = 1,

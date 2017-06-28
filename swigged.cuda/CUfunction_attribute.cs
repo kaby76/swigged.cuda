@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUfunction_attribute {
   CU_FUNC_ATTRIBUTE_MAX_THREADS_PER_BLOCK = 0,

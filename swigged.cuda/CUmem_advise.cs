@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUmem_advise {
   CU_MEM_ADVISE_SET_READ_MOSTLY = 1,

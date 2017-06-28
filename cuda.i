@@ -1,6 +1,6 @@
 %include "typemaps.i"
 
-%module cuda
+%module Cuda
 
 %{
 #include "cuda.h"

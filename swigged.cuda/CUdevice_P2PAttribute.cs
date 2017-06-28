@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUdevice_P2PAttribute {
   CU_DEVICE_P2P_ATTRIBUTE_PERFORMANCE_RANK = 0x01,

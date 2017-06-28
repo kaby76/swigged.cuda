@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <!-- The identifier that must be unique within the hosting gallery -->
+    <id>swigged.cuda</id>
+    <title>swigged.cuda</title>
+
+    <version>8.0.1-alpha</version>
+
+    <!-- Authors contain text that appears directly on the gallery -->
+    <authors>Ken Domino</authors>
+    
+    <!-- Owners are typically nuget.org identities that allow gallery
+            users to easily find other packages by the same owners.
+    -->
+    <owners>Ken Domino</owners>
+
+    <!-- License, project, icon links for the gallery -->
+    <projectUrl>https://github.com/kaby76/swigged.cuda.8.0</projectUrl>
+<!--    <iconUrl>https://raw.github.com/kaby76/swigged-cuda/master/logo.png</iconUrl> -->
+    <licenseUrl>https://raw.github.com/kaby76/swigged.cuda.8.0/master/LICENSE</licenseUrl>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# wrapper API of CUDA Driver API (v8.0) for Windows (x86, x64), Ubuntu (x64).</description>
+    <releaseNotes>
+* Version 8.0.1
+Initial revision.
+       
+Object files provided in this package are a Release build in Net Standard 1.1.
+
+When building with Swigged.CUDA, select Platform = "AnyCPU", config = "Debug" or "Release".
+
+On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
+If you are building an app with Net Framework 4.5 through 4.6.1, you must manually copy the file swigged-cuda-native.dll to your executable directory. With 4.6.2 and beyond, it will find the library in your packages/ directory.
+If you are delivering your app, you will need to copy the dll to the directory containing your app.
+
+For further information, see https://github.com/kaby76/swigged-cuda.
+    </releaseNotes>
+
+    <!-- Copyright information -->
+    <copyright>Copyright © 2017</copyright>
+
+    <!-- Tags appear in the gallery and can be used for tag searches -->
+    <tags>CUDA SWIG native c# compilers bindings pinvoke Windows </tags>
+
+    <!-- Dependencies are automatically installed when the package is
+    installed -->
+    <!-- For full list, see 
+    https://docs.microsoft.com/en-us/nuget/schema/target-frameworks
+    Note, I have seen some targetFramework="..." with some
+    undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
+    ... Not sure if they work. --> 
+    <dependencies>
+      <group targetFramework="net45" />
+      <group targetFramework="net451" />
+      <group targetFramework="net452" />
+      <group targetFramework="net46" />
+      <group targetFramework="net461" />
+      <group targetFramework="net462">
+	<dependency id="System.Console" version="[4.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
+	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
+	<dependency id="System.Runtime.InteropServices" version="[4.1.0,)" />
+      </group>
+      <group targetFramework="net47">
+	<dependency id="System.Console" version="[4.0.0,)" />
+	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
+	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
+	<dependency id="System.Runtime" version="[4.1.0,)" />
+	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
+	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
+      </group>
+
+      <group targetFramework="netcore1.0" />
+      <group targetFramework="netcore1.1" />
+      <group targetFramework="netstandard1.5" />
+      <group targetFramework="netstandard1.6" />
+      <group targetFramework="netstandard2.0" />
+      
+<!--      <group targetFramework="Xamarin.iOS10">
+      <group targetFramework="Xamarin.Mac20">      
+      <group targetFramework="MonoAndroid">
+-->
+      
+    </dependencies>
+
+  </metadata>
+  
+  <files>
+    <!-- There are two possible native dll's, for
+     Release configuration, and x86 or x64 platform targets. As Nuget
+     does not understand "x86" or "x64" platform targets, place these
+     in an non-Nuget directory (i.e., not "build", "lib", etc.).
+     -->
+    <file src="swigged.cuda.native\x86\Release\swigged-cuda-native.dll" target="win10\lib\x86" />
+    <file src="swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
+
+    <file src="swigged.cuda\bin\Release\netstandard1.1\swigged.cuda.dll" target="lib\netstandard1.1" />
+    
+  </files>
+</package>

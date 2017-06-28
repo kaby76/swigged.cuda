@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUstreamWriteValue_flags {
   CU_STREAM_WRITE_VALUE_DEFAULT = 0x0,

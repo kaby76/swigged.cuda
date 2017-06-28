@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Swigged.cuda;
+using Swigged.Cuda;
 
 namespace ConsoleApp1
 {
@@ -12,10 +12,10 @@ namespace ConsoleApp1
     {
         static unsafe void Main(string[] args)
         {
-            cuda.cuInit(0);
-            var res = cuda.cuDeviceGet(out int device, 0);
+            Cuda.cuInit(0);
+            var res = Cuda.cuDeviceGet(out int device, 0);
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
-            res = cuda.cuCtxCreate_v2(out CUcontext cuContext, 0, device);
+            res = Cuda.cuCtxCreate_v2(out CUcontext cuContext, 0, device);
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
             string cu_kernel = @"
 #include <stdio.h>
@@ -72,17 +72,17 @@ BB0_2:
 }
 ";
             IntPtr ptr = Marshal.StringToHGlobalAnsi(kernel);
-            res = cuda.cuModuleLoadData(out CUmodule cuModule, ptr);
+            res = Cuda.cuModuleLoadData(out CUmodule cuModule, ptr);
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
-            res = cuda.cuModuleGetFunction(out CUfunction helloWorld, cuModule, "_Z4kernPi");
+            res = Cuda.cuModuleGetFunction(out CUfunction helloWorld, cuModule, "_Z4kernPi");
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
             int[] v = { 'G', 'd', 'k', 'k', 'n', (char)31, 'v', 'n', 'q', 'k', 'c' };
             GCHandle handle = GCHandle.Alloc(v, GCHandleType.Pinned);
             IntPtr pointer = IntPtr.Zero;
             pointer = handle.AddrOfPinnedObject();
-            res = cuda.cuMemAlloc_v2(out IntPtr dptr, 11*sizeof(int));
+            res = Cuda.cuMemAlloc_v2(out IntPtr dptr, 11*sizeof(int));
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
-            res = cuda.cuMemcpyHtoD_v2(dptr, pointer, 11*sizeof(int));
+            res = Cuda.cuMemcpyHtoD_v2(dptr, pointer, 11*sizeof(int));
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
 
             IntPtr[] x = new IntPtr[] { dptr };
@@ -93,7 +93,7 @@ BB0_2:
             IntPtr[] kp = new IntPtr[] { pointer2 };
             fixed (IntPtr* kernelParams = kp)
             {
-                res = cuda.cuLaunchKernel(helloWorld,
+                res = Cuda.cuLaunchKernel(helloWorld,
                     1, 1, 1, // grid has one block.
                     11, 1, 1, // block has 11 threads.
                     0, // no shared memory
@@ -103,9 +103,9 @@ BB0_2:
                 );
             }
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
-            res = cuda.cuMemcpyDtoH_v2(pointer, dptr, 11*sizeof(int));
+            res = Cuda.cuMemcpyDtoH_v2(pointer, dptr, 11*sizeof(int));
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
-            cuda.cuCtxDestroy_v2(cuContext);
+            Cuda.cuCtxDestroy_v2(cuContext);
         }
     }
 }

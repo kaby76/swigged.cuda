@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 public enum CUsharedconfig {
   CU_SHARED_MEM_CONFIG_DEFAULT_BANK_SIZE = 0x00,

@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Swigged.cuda {
+namespace Swigged.Cuda {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct CUcontext
