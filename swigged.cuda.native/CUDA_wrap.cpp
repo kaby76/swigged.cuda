@@ -301,6 +301,9 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_Cuda(SWIG_CSharpStringHel
 
 #include "cuda.h"
 
+ 
+ CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+
 
 #include <stdint.h>		// Use the C99 official header
 
@@ -308,6 +311,22 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_Cuda(SWIG_CSharpStringHel
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetName_private___(char * jarg1, int jarg2, int jarg3) {
+  int jresult ;
+  char *arg1 = (char *) 0 ;
+  int arg2 ;
+  CUdevice arg3 ;
+  CUresult result;
+  
+  arg1 = (char *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CUdevice)jarg3; 
+  result = (CUresult)cuDeviceGetName(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
 
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda___CUDA_API_VERSION_get___() {
   int jresult ;
@@ -582,22 +601,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetCount___(void * jarg1)
   
   arg1 = (int *)jarg1; 
   result = (CUresult)cuDeviceGetCount(arg1);
-  jresult = (int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetName___(char * jarg1, int jarg2, int jarg3) {
-  int jresult ;
-  char *arg1 = (char *) 0 ;
-  int arg2 ;
-  CUdevice arg3 ;
-  CUresult result;
-  
-  arg1 = (char *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (CUdevice)jarg3; 
-  result = (CUresult)cuDeviceGetName(arg1,arg2,arg3);
   jresult = (int)result; 
   return jresult;
 }

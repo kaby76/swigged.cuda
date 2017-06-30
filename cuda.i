@@ -424,6 +424,52 @@
 %ignore cuArray3DGetDescriptor;
 
 
+//%typemap(ctype) (char *name, int len, CUdevice dev) "char * jarg1, int jarg2, CUdevice jarg3"
+//%typemap(imtype) (char *name, int len, CUdevice dev) "(asdf2, sdfg2)"
+//%typemap(cstype) (char *name, int len, CUdevice dev) "(asdf3, sdfg3)"
+//%typemap(csin) (char *name, int len, CUdevice dev) "(asdf4, sdfg4)"
 
+// CUresult CUDAAPI cuModuleLoad(CUmodule *module, const char *fname);
+// CUresult CUDAAPI cuModuleGetFunction(CUfunction *hfunc, CUmodule hmod, const char *name);
+// CUresult CUDAAPI cuModuleGetGlobal(CUdeviceptr *dptr, size_t *bytes, CUmodule hmod, const char *name);
+// CUresult CUDAAPI cuModuleGetTexRef(CUtexref *pTexRef, CUmodule hmod, const char *name);
+// CUresult CUDAAPI cuModuleGetSurfRef(CUsurfref *pSurfRef, CUmodule hmod, const char *name);
+// cuLinkAddData(CUlinkState state, CUjitInputType type, void *data, size_t size, const char *name,
+//	      unsigned int numOptions, CUjit_option *options, void **optionValues);
+// cuLinkAddFile(CUlinkState state, CUjitInputType type, const char *path,
+//	      unsigned int numOptions, CUjit_option *options, void **optionValues);
+// CUresult CUDAAPI cuDeviceGetByPCIBusId(CUdevice *dev, const char *pciBusId);
+// CUresult CUDAAPI cuModuleGetGlobal(CUdeviceptr *dptr, unsigned int *bytes, CUmodule hmod, const char *name);
+
+%typemap(ctype) const char * "char *"
+%typemap(imtype) const char * "string"
+%typemap(cstype) const char * "string"
+%typemap(ctype) char * pciBusId "char *"
+%typemap(imtype) char * pciBusId "string"
+%typemap(cstype) char * pciBusId "string"
+
+// This conversion from
+// http://swig.10945.n7.nabble.com/Turning-output-arg-char-to-StringBuilder-in-C-td4208.html
+// 
+// CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+%typemap(ctype) char * "char *"
+%typemap(imtype) char * "System.Text.StringBuilder"
+%typemap(cstype) char * "System.Text.StringBuilder"
+%csmethodmodifiers cuDeviceGetName "private";
+%rename(cuDeviceGetName_private) cuDeviceGetName; 
+%pragma(csharp) modulecode=%{ 
+ public static CUresult cuDeviceGetName(out string name, int len, int dev) {
+    System.Text.StringBuilder temp = new System.Text.StringBuilder();
+    cuDeviceGetName_private(temp, len, dev);
+    name = temp.ToString();
+   }
+%}
+%inline %{ 
+ CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+%} 
+
+// CUresult CUDAAPI cuDeviceGetPCIBusId(char *pciBusId, int len, CUdevice dev);
+
+   
 %include <stdint.i>
 %include "cuda.h"

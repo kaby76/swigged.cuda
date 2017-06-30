@@ -13,6 +13,19 @@ using CUdeviceptr = System.IntPtr;
 namespace Swigged.Cuda {
 
 public class Cuda {
+ 
+ public static CUresult cuDeviceGetName(out string name, int len, int dev) {
+    System.Text.StringBuilder temp = new System.Text.StringBuilder();
+    CUresult res = cuDeviceGetName_private(temp, len, dev);
+    name = temp.ToString();
+    return res;
+   }
+
+  private static CUresult cuDeviceGetName_private(System.Text.StringBuilder name, int len, int dev) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetName_private(name, len, dev);
+    return ret;
+  }
+
   public static CUresult cuGetErrorString(CUresult error, out System.IntPtr pStr) {
     CUresult ret = (CUresult)CudaPINVOKE.cuGetErrorString((int)error, out pStr);
     return ret;
@@ -40,11 +53,6 @@ public class Cuda {
 
   public static CUresult cuDeviceGetCount(out int count) {
     CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetCount(out count);
-    return ret;
-  }
-
-  public static CUresult cuDeviceGetName(string name, int len, int dev) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetName(name, len, dev);
     return ret;
   }
 

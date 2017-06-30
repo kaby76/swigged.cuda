@@ -190,6 +190,9 @@ class CudaPINVOKE {
   }
 
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetName_private___")]
+  public static extern int cuDeviceGetName_private(System.Text.StringBuilder jarg1, int jarg2, int jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda___CUDA_API_VERSION_get___")]
   public static extern int __CUDA_API_VERSION_get();
 
@@ -267,9 +270,6 @@ class CudaPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetCount___")]
   public static extern int cuDeviceGetCount(out int jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetName___")]
-  public static extern int cuDeviceGetName(string jarg1, int jarg2, int jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceTotalMem_v2___")]
   public static extern int cuDeviceTotalMem_v2(out SizeT jarg1, int jarg2);

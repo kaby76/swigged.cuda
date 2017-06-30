@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>8.0.1-alpha</version>
+    <version>8.0.3-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v8.0) for Windows (x86, x64), Ubuntu (x64).</description>
     <releaseNotes>
+* Version 8.0.3
+Only Windows released. Fixed cuDeviceGetName.
+       
+* Version 8.0.2
+Only Windows released. Fixed cuDeviceGetName.
+       
 * Version 8.0.1
 Initial revision. Only Windows released.
        
@@ -31,7 +37,7 @@ Object files provided in this package are a Release build in Net Standard 1.1.
 When building with Swigged.CUDA, select Platform = "AnyCPU", config = "Debug" or "Release".
 
 On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
-If you are building an app with Net Framework 4.5 through 4.6.1, you must manually copy the file swigged-cuda-native.dll to your executable directory.
+You must manually copy the file swigged-cuda-native.dll to your executable directory.
 If you are delivering your app, you will need to copy the dll to the directory containing your app.
 
 For further information, see https://github.com/kaby76/swigged.cuda.8.0.
