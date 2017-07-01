@@ -391,6 +391,16 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuEventCreate(out CUcontext phEvent, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventCreate(out phEvent, Flags);
+    return ret;
+  }
+
+  public static CUresult cuEventDestroy_v2(CUevent hEvent) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventDestroy_v2(hEvent);
+    return ret;
+  }
+
   public static CUresult cuFuncGetAttribute(out int pi, CUfunction_attribute attrib, CUfunction hfunc) {
     CUresult ret = (CUresult)CudaPINVOKE.cuFuncGetAttribute(out pi, (int)attrib, hfunc);
     return ret;

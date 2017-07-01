@@ -1596,6 +1596,32 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuPointerGetAttributes___(unsigne
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuEventCreate___(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  CUevent *arg1 = (CUevent *) 0 ;
+  unsigned int arg2 ;
+  CUresult result;
+  
+  arg1 = (CUevent *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  result = (CUresult)cuEventCreate(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuEventDestroy_v2___(void * jarg1) {
+  int jresult ;
+  CUevent arg1 = (CUevent) 0 ;
+  CUresult result;
+  
+  arg1 = (CUevent)jarg1; 
+  result = (CUresult)cuEventDestroy_v2(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuFuncGetAttribute___(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   int *arg1 = (int *) 0 ;

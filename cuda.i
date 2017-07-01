@@ -6,6 +6,7 @@
 #include "cuda.h"
 %}
 
+
 // enums, ints, bools, longs, unsigned.
 
 // CUaddress_mode = CUaddress_mode_enum, but SWIG seems to get
@@ -17,7 +18,6 @@
 %typemap(cstype) CUaddress_mode * "out CUaddress_mode"
 %typemap(imtype) CUaddress_mode * "out CUaddress_mode"
 %typemap(csin) CUaddress_mode * "out $csinput"
-
 
 %typemap(cstype) CUdeviceptr * "out CUdeviceptr"
 %typemap(imtype) CUdeviceptr * "out CUdeviceptr"
@@ -123,14 +123,7 @@
 %typemap(imtype) void * "System.IntPtr"
 %typemap(csin) void * "$csinput"
 
-%typemap(cstype)  CUcontext * pctx "out CUcontext"
-%typemap(imtype)  CUcontext * pctx "out CUcontext"
-%typemap(csin)  CUcontext * pctx "out $csinput"
-
-%typemap(cstype)  CUcontext "CUcontext"
-%typemap(imtype)  CUcontext "CUcontext"
-%typemap(csin)  CUcontext "$csinput"
-
+   
 %typemap(cstype) CUdeviceptr "System.IntPtr"
 %typemap(imtype)  CUdeviceptr "System.IntPtr"
 %typemap(csin)  CUdeviceptr "$csinput"
@@ -168,6 +161,20 @@
 %typemap(csin)  void * p "$csinput"
 
 
+%typemap(cstype)  CUcontext * pctx "out CUcontext"
+%typemap(imtype)  CUcontext * pctx "out CUcontext"
+%typemap(csin)  CUcontext * pctx "out $csinput"
+%typemap(cstype)  CUcontext "CUcontext"
+%typemap(imtype)  CUcontext "CUcontext"
+%typemap(csin)  CUcontext "$csinput"
+
+%typemap(cstype)  CUevent * "out CUcontext"
+%typemap(imtype)  CUevent * "out CUcontext"
+%typemap(csin)  CUevent * "out $csinput"
+%typemap(cstype)  CUevent "CUevent"
+%typemap(imtype)  CUevent "CUevent"
+%typemap(csin)  CUevent "$csinput"
+   
 %typemap(cstype) CUfunction* "out CUfunction"
 %typemap(imtype)  CUfunction* "out CUfunction"
 %typemap(csin)  CUfunction* "out $csinput"
@@ -284,8 +291,8 @@
 %ignore cuDeviceGetProperties;
 %ignore CUdevprop;
 %ignore CUdevprop_st;
-%ignore cuEventCreate;
-%ignore cuEventDestroy_v2;
+//%ignore cuEventCreate;
+//%ignore cuEventDestroy_v2;
 %ignore cuEventElapsedTime;
 %ignore cuEventQuery;
 %ignore cuEventRecord;
@@ -460,8 +467,9 @@
 %pragma(csharp) modulecode=%{ 
  public static CUresult cuDeviceGetName(out string name, int len, int dev) {
     System.Text.StringBuilder temp = new System.Text.StringBuilder();
-    cuDeviceGetName_private(temp, len, dev);
+    CUresult res = cuDeviceGetName_private(temp, len, dev);
     name = temp.ToString();
+    return res;
    }
 %}
 %inline %{ 

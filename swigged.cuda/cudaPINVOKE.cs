@@ -472,6 +472,12 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuPointerGetAttributes___")]
   public static extern int cuPointerGetAttributes(uint jarg1, out CUpointer_attribute jarg2, out System.IntPtr jarg3, System.IntPtr jarg4);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventCreate___")]
+  public static extern int cuEventCreate(out CUcontext jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventDestroy_v2___")]
+  public static extern int cuEventDestroy_v2(CUevent jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuFuncGetAttribute___")]
   public static extern int cuFuncGetAttribute(out int jarg1, int jarg2, CUfunction jarg3);
 
