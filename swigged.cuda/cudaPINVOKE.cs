@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
+using CUdevprop = System.IntPtr;
 
 namespace Swigged.Cuda {
 
@@ -193,6 +194,9 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetName_private___")]
   public static extern int cuDeviceGetName_private(System.Text.StringBuilder jarg1, int jarg2, int jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetPCIBusId_private___")]
+  public static extern int cuDeviceGetPCIBusId_private(System.Text.StringBuilder jarg1, int jarg2, int jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda___CUDA_API_VERSION_get___")]
   public static extern int __CUDA_API_VERSION_get();
 
@@ -276,6 +280,9 @@ class CudaPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetAttribute___")]
   public static extern int cuDeviceGetAttribute(out int jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetProperties___")]
+  public static extern int cuDeviceGetProperties(ref CUdevprop jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceComputeCapability___")]
   public static extern int cuDeviceComputeCapability(out int jarg1, out int jarg2, int jarg3);
@@ -408,9 +415,6 @@ class CudaPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetByPCIBusId___")]
   public static extern int cuDeviceGetByPCIBusId(out int jarg1, string jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetPCIBusId___")]
-  public static extern int cuDeviceGetPCIBusId(string jarg1, int jarg2, int jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcCloseMemHandle___")]
   public static extern int cuIpcCloseMemHandle(System.IntPtr jarg1);

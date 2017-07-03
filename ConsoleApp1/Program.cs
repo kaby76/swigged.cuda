@@ -13,8 +13,19 @@ namespace ConsoleApp1
         static unsafe void Main(string[] args)
         {
             Cuda.cuInit(0);
+
+            // Device api.
             var res = Cuda.cuDeviceGet(out int device, 0);
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
+            res = Cuda.cuDeviceGetPCIBusId(out string pciBusId, 100, device);
+            if (res != CUresult.CUDA_SUCCESS) throw new Exception();
+            res = Cuda.cuDeviceGetName(out string name, 100, device);
+            if (res != CUresult.CUDA_SUCCESS) throw new Exception();
+
+
+
+
+
             res = Cuda.cuCtxCreate_v2(out CUcontext cuContext, 0, device);
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
             string cu_kernel = @"

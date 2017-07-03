@@ -302,7 +302,10 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_Cuda(SWIG_CSharpStringHel
 #include "cuda.h"
 
  
- CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+	CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+	
+ 
+	CUresult CUDAAPI cuDeviceGetPCIBusId(char *name, int len, CUdevice dev);
 
 
 #include <stdint.h>		// Use the C99 official header
@@ -323,6 +326,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetName_private___(char *
   arg2 = (int)jarg2; 
   arg3 = (CUdevice)jarg3; 
   result = (CUresult)cuDeviceGetName(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetPCIBusId_private___(char * jarg1, int jarg2, int jarg3) {
+  int jresult ;
+  char *arg1 = (char *) 0 ;
+  int arg2 ;
+  CUdevice arg3 ;
+  CUresult result;
+  
+  arg1 = (char *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CUdevice)jarg3; 
+  result = (CUresult)cuDeviceGetPCIBusId(arg1,arg2,arg3);
   jresult = (int)result; 
   return jresult;
 }
@@ -631,6 +650,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetAttribute___(void * ja
   arg2 = (CUdevice_attribute)jarg2; 
   arg3 = (CUdevice)jarg3; 
   result = (CUresult)cuDeviceGetAttribute(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetProperties___(void * jarg1, int jarg2) {
+  int jresult ;
+  CUdevprop *arg1 = (CUdevprop *) 0 ;
+  CUdevice arg2 ;
+  CUresult result;
+  
+  arg1 = (CUdevprop *)jarg1; 
+  arg2 = (CUdevice)jarg2; 
+  result = (CUresult)cuDeviceGetProperties(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }
@@ -1233,22 +1266,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetByPCIBusId___(void * j
   arg1 = (CUdevice *)jarg1; 
   arg2 = (char *)jarg2; 
   result = (CUresult)cuDeviceGetByPCIBusId(arg1,(char const *)arg2);
-  jresult = (int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetPCIBusId___(char * jarg1, int jarg2, int jarg3) {
-  int jresult ;
-  char *arg1 = (char *) 0 ;
-  int arg2 ;
-  CUdevice arg3 ;
-  CUresult result;
-  
-  arg1 = (char *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (CUdevice)jarg3; 
-  result = (CUresult)cuDeviceGetPCIBusId(arg1,arg2,arg3);
   jresult = (int)result; 
   return jresult;
 }

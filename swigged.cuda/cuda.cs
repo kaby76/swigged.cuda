@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
+using CUdevprop = System.IntPtr;
 
 namespace Swigged.Cuda {
 
@@ -23,6 +24,19 @@ public class Cuda {
 
   private static CUresult cuDeviceGetName_private(System.Text.StringBuilder name, int len, int dev) {
     CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetName_private(name, len, dev);
+    return ret;
+  }
+
+ 
+	public static CUresult cuDeviceGetPCIBusId(out string name, int len, int dev) {
+		System.Text.StringBuilder temp = new System.Text.StringBuilder();
+		CUresult res = cuDeviceGetPCIBusId_private(temp, len, dev);
+		name = temp.ToString();
+		return res;
+	}
+
+  private static CUresult cuDeviceGetPCIBusId_private(System.Text.StringBuilder name, int len, int dev) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetPCIBusId_private(name, len, dev);
     return ret;
   }
 
@@ -63,6 +77,11 @@ public class Cuda {
 
   public static CUresult cuDeviceGetAttribute(out int pi, CUdevice_attribute attrib, int dev) {
     CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetAttribute(out pi, (int)attrib, dev);
+    return ret;
+  }
+
+  public static CUresult cuDeviceGetProperties(ref CUdevprop prop, int dev) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetProperties(ref prop, dev);
     return ret;
   }
 
@@ -283,11 +302,6 @@ public class Cuda {
 
   public static CUresult cuDeviceGetByPCIBusId(out int dev, string pciBusId) {
     CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetByPCIBusId(out dev, pciBusId);
-    return ret;
-  }
-
-  public static CUresult cuDeviceGetPCIBusId(string pciBusId, int len, int dev) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetPCIBusId(pciBusId, len, dev);
     return ret;
   }
 

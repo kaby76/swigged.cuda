@@ -253,7 +253,12 @@
 %typemap(imtype) CUuuid "CUuuid"
 %typemap(csin) CUuuid "$csinput"
 
-   
+%typemap(cstype) CUdevprop * "ref CUdevprop"
+%typemap(imtype) CUdevprop * "ref CUdevprop"
+%typemap(csin) CUdevprop * "ref $csinput"
+%typemap(cstype) CUdevprop "CUdevprop"
+%typemap(imtype) CUdevprop "CUuuid"
+%typemap(csin) CUdevprop "$csinput"
 
 
 // Ignored types. If a type (a struct, e.g.) is ignored, we don't want
@@ -288,7 +293,7 @@
 %ignore CUDA_RESOURCE_VIEW_DESC_st;
 %ignore CUDA_TEXTURE_DESC;
 %ignore CUDA_TEXTURE_DESC_st;
-%ignore cuDeviceGetProperties;
+//%ignore cuDeviceGetProperties;
 %ignore CUdevprop;
 %ignore CUdevprop_st;
 //%ignore cuEventCreate;
@@ -431,6 +436,10 @@
 %ignore cuArray3DGetDescriptor;
 
 
+
+
+
+
 //%typemap(ctype) (char *name, int len, CUdevice dev) "char * jarg1, int jarg2, CUdevice jarg3"
 //%typemap(imtype) (char *name, int len, CUdevice dev) "(asdf2, sdfg2)"
 //%typemap(cstype) (char *name, int len, CUdevice dev) "(asdf3, sdfg3)"
@@ -473,7 +482,21 @@
    }
 %}
 %inline %{ 
- CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+	CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);
+	%}
+
+%csmethodmodifiers cuDeviceGetPCIBusId "private";
+%rename(cuDeviceGetPCIBusId_private) cuDeviceGetPCIBusId; 
+%pragma(csharp) modulecode=%{ 
+	public static CUresult cuDeviceGetPCIBusId(out string name, int len, int dev) {
+		System.Text.StringBuilder temp = new System.Text.StringBuilder();
+		CUresult res = cuDeviceGetPCIBusId_private(temp, len, dev);
+		name = temp.ToString();
+		return res;
+	}
+%}
+%inline %{ 
+	CUresult CUDAAPI cuDeviceGetPCIBusId(char *name, int len, CUdevice dev);
 %} 
 
 // CUresult CUDAAPI cuDeviceGetPCIBusId(char *pciBusId, int len, CUdevice dev);
