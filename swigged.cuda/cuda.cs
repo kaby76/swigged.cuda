@@ -305,6 +305,28 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuIpcGetEventHandle(out CUipcEventHandle pHandle, CUevent arg1) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuIpcGetEventHandle(out pHandle, arg1);
+    return ret;
+  }
+
+  public static CUresult cuIpcOpenEventHandle(out CUcontext phEvent, CUipcEventHandle handle) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuIpcOpenEventHandle(out phEvent, handle);
+    if (CudaPINVOKE.SWIGPendingException.Pending) throw CudaPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
+  public static CUresult cuIpcGetMemHandle(out CUipcMemHandle pHandle, System.IntPtr dptr) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuIpcGetMemHandle(out pHandle, dptr);
+    return ret;
+  }
+
+  public static CUresult cuIpcOpenMemHandle(out CUdeviceptr pdptr, CUipcMemHandle handle, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuIpcOpenMemHandle(out pdptr, handle, Flags);
+    if (CudaPINVOKE.SWIGPendingException.Pending) throw CudaPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
   public static CUresult cuIpcCloseMemHandle(System.IntPtr dptr) {
     CUresult ret = (CUresult)CudaPINVOKE.cuIpcCloseMemHandle(dptr);
     return ret;

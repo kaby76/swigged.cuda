@@ -416,6 +416,18 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceGetByPCIBusId___")]
   public static extern int cuDeviceGetByPCIBusId(out int jarg1, string jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcGetEventHandle___")]
+  public static extern int cuIpcGetEventHandle(out CUipcEventHandle jarg1, CUevent jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcOpenEventHandle___")]
+  public static extern int cuIpcOpenEventHandle(out CUcontext jarg1, CUipcEventHandle jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcGetMemHandle___")]
+  public static extern int cuIpcGetMemHandle(out CUipcMemHandle jarg1, System.IntPtr jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcOpenMemHandle___")]
+  public static extern int cuIpcOpenMemHandle(out CUdeviceptr jarg1, CUipcMemHandle jarg2, uint jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuIpcCloseMemHandle___")]
   public static extern int cuIpcCloseMemHandle(System.IntPtr jarg1);
 

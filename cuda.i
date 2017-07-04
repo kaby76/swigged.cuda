@@ -317,12 +317,12 @@
 %ignore cuGraphicsUnregisterResource;
 %ignore CUipcEventHandle;
 %ignore CUipcEventHandle_st;
-%ignore cuIpcGetEventHandle;
-%ignore cuIpcGetMemHandle;
+//%ignore cuIpcGetEventHandle;
+//%ignore cuIpcGetMemHandle;
 %ignore CUipcMemHandle;
 %ignore CUipcMemHandle_st;
-%ignore cuIpcOpenEventHandle;
-%ignore cuIpcOpenMemHandle;
+//%ignore cuIpcOpenEventHandle;
+//%ignore cuIpcOpenMemHandle;
 %ignore cuLaunchGridAsync;
 %ignore cuLinkAddData_v2;
 %ignore cuLinkAddFile_v2;
@@ -499,8 +499,32 @@
 	CUresult CUDAAPI cuDeviceGetPCIBusId(char *name, int len, CUdevice dev);
 %} 
 
-// CUresult CUDAAPI cuDeviceGetPCIBusId(char *pciBusId, int len, CUdevice dev);
 
+
+%typemap(cstype) CUipcEventHandle * "out CUipcEventHandle"
+%typemap(imtype) CUipcEventHandle * "out CUipcEventHandle"
+%typemap(csin) CUipcEventHandle * "out $csinput"
+%typemap(cstype) CUipcEventHandle "CUipcEventHandle"
+%typemap(imtype) CUipcEventHandle "CUipcEventHandle"
+%typemap(csin) CUipcEventHandle "$csinput"
+
+%typemap(cstype) CUipcMemHandle * "out CUipcMemHandle"
+%typemap(imtype) CUipcMemHandle * "out CUipcMemHandle"
+%typemap(csin) CUipcMemHandle * "out $csinput"
+%typemap(cstype) CUipcMemHandle "CUipcMemHandle"
+%typemap(imtype) CUipcMemHandle "CUipcMemHandle"
+%typemap(csin) CUipcMemHandle "$csinput"
+
+
+// int cuIpcGetEventHandle(out CUipcEventHandle jarg1, CUevent jarg2); OK
+// int cuIpcOpenEventHandle(out CUcontext jarg1, CUipcEventHandle
+// jarg2); OK
+// int cuIpcGetMemHandle(out CUipcMemHandle jarg1, System.IntPtr
+// jarg2); Note: Pointer to user allocated CUipcMemHandle to return the handle in.
+// int cuIpcOpenMemHandle(out CUdeviceptr jarg1, CUipcMemHandle jarg2,
+// uint jarg3); OK
+
+   
    
 %include <stdint.i>
 %include "cuda.h"

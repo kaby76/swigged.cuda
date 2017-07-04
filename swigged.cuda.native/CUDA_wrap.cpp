@@ -1271,6 +1271,76 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetByPCIBusId___(void * j
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuIpcGetEventHandle___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUipcEventHandle *arg1 = (CUipcEventHandle *) 0 ;
+  CUevent arg2 = (CUevent) 0 ;
+  CUresult result;
+  
+  arg1 = (CUipcEventHandle *)jarg1; 
+  arg2 = (CUevent)jarg2; 
+  result = (CUresult)cuIpcGetEventHandle(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuIpcOpenEventHandle___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUevent *arg1 = (CUevent *) 0 ;
+  CUipcEventHandle arg2 ;
+  CUipcEventHandle *argp2 ;
+  CUresult result;
+  
+  arg1 = (CUevent *)jarg1; 
+  argp2 = (CUipcEventHandle *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null CUipcEventHandle", 0);
+    return 0;
+  }
+  arg2 = *argp2; 
+  result = (CUresult)cuIpcOpenEventHandle(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuIpcGetMemHandle___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUipcMemHandle *arg1 = (CUipcMemHandle *) 0 ;
+  CUdeviceptr arg2 ;
+  CUresult result;
+  
+  arg1 = (CUipcMemHandle *)jarg1; 
+  arg2 = (CUdeviceptr)jarg2; 
+  result = (CUresult)cuIpcGetMemHandle(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuIpcOpenMemHandle___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUdeviceptr *arg1 = (CUdeviceptr *) 0 ;
+  CUipcMemHandle arg2 ;
+  unsigned int arg3 ;
+  CUipcMemHandle *argp2 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr *)jarg1; 
+  argp2 = (CUipcMemHandle *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null CUipcMemHandle", 0);
+    return 0;
+  }
+  arg2 = *argp2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuIpcOpenMemHandle(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuIpcCloseMemHandle___(void * jarg1) {
   int jresult ;
   CUdeviceptr arg1 ;
