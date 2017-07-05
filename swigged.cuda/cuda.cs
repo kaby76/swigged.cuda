@@ -397,6 +397,11 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuMemcpyHtoA_v2(CUfunction dstArray, uint dstOffset, System.IntPtr srcHost, uint ByteCount) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyHtoA_v2(dstArray, dstOffset, srcHost, ByteCount);
+    return ret;
+  }
+
   public static CUresult cuMemcpyAtoH_v2(System.IntPtr dstHost, CUfunction srcArray, uint srcOffset, uint ByteCount) {
     CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAtoH_v2(dstHost, srcArray, srcOffset, ByteCount);
     return ret;
@@ -412,6 +417,16 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuMemcpyPeerAsync(System.IntPtr dstDevice, CUcontext dstContext, System.IntPtr srcDevice, CUcontext srcContext, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyPeerAsync(dstDevice, dstContext, srcDevice, srcContext, ByteCount, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyHtoDAsync_v2(System.IntPtr dstDevice, System.IntPtr srcHost, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyHtoDAsync_v2(dstDevice, srcHost, ByteCount, hStream);
+    return ret;
+  }
+
   public static CUresult cuMemcpyDtoHAsync_v2(System.IntPtr dstHost, System.IntPtr srcDevice, uint ByteCount, CUstream hStream) {
     CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoHAsync_v2(dstHost, srcDevice, ByteCount, hStream);
     return ret;
@@ -419,6 +434,11 @@ public class Cuda {
 
   public static CUresult cuMemcpyDtoDAsync_v2(System.IntPtr dstDevice, System.IntPtr srcDevice, uint ByteCount, CUstream hStream) {
     CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoDAsync_v2(dstDevice, srcDevice, ByteCount, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyHtoAAsync_v2(CUfunction dstArray, uint dstOffset, System.IntPtr srcHost, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyHtoAAsync_v2(dstArray, dstOffset, srcHost, ByteCount, hStream);
     return ret;
   }
 
@@ -457,8 +477,58 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuMemsetD8Async(System.IntPtr dstDevice, byte uc, uint N, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD8Async(dstDevice, uc, N, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemsetD16Async(System.IntPtr dstDevice, ushort us, uint N, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD16Async(dstDevice, us, N, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemsetD32Async(System.IntPtr dstDevice, uint ui, uint N, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD32Async(dstDevice, ui, N, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemsetD2D8Async(System.IntPtr dstDevice, uint dstPitch, byte uc, uint Width, uint Height, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D8Async(dstDevice, dstPitch, uc, Width, Height, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemsetD2D16Async(System.IntPtr dstDevice, uint dstPitch, ushort us, uint Width, uint Height, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D16Async(dstDevice, dstPitch, us, Width, Height, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemsetD2D32Async(System.IntPtr dstDevice, uint dstPitch, uint ui, uint Width, uint Height, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD2D32Async(dstDevice, dstPitch, ui, Width, Height, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMipmappedArrayCreate(out CUmipmappedArray pHandle, out CUDA_ARRAY3D_DESCRIPTOR pMipmappedArrayDesc, uint numMipmapLevels) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMipmappedArrayCreate(out pHandle, out pMipmappedArrayDesc, numMipmapLevels);
+    return ret;
+  }
+
+  public static CUresult cuMipmappedArrayGetLevel(out CUarray pLevelArray, CUmipmappedArray hMipmappedArray, uint level) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMipmappedArrayGetLevel(out pLevelArray, hMipmappedArray, level);
+    return ret;
+  }
+
+  public static CUresult cuMipmappedArrayDestroy(CUmipmappedArray hMipmappedArray) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMipmappedArrayDestroy(hMipmappedArray);
+    return ret;
+  }
+
   public static CUresult cuPointerGetAttribute(System.IntPtr data, CUpointer_attribute attribute, System.IntPtr ptr) {
     CUresult ret = (CUresult)CudaPINVOKE.cuPointerGetAttribute(data, attribute, ptr);
+    return ret;
+  }
+
+  public static CUresult cuMemPrefetchAsync(System.IntPtr devPtr, uint count, int dstDevice, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemPrefetchAsync(devPtr, count, dstDevice, hStream);
     return ret;
   }
 

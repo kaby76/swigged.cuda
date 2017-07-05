@@ -1583,6 +1583,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAtoD_v2___(void * jarg1, 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyHtoA_v2___(void * jarg1, unsigned long jarg2, void * jarg3, unsigned long jarg4) {
+  int jresult ;
+  CUarray arg1 = (CUarray) 0 ;
+  size_t arg2 ;
+  void *arg3 = (void *) 0 ;
+  size_t arg4 ;
+  CUresult result;
+  
+  arg1 = (CUarray)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (void *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  result = (CUresult)cuMemcpyHtoA_v2(arg1,arg2,(void const *)arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAtoH_v2___(void * jarg1, void * jarg2, unsigned long jarg3, unsigned long jarg4) {
   int jresult ;
   void *arg1 = (void *) 0 ;
@@ -1639,6 +1657,46 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAsync___(void * jarg1, vo
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyPeerAsync___(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned long jarg5, void * jarg6) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  CUcontext arg2 = (CUcontext) 0 ;
+  CUdeviceptr arg3 ;
+  CUcontext arg4 = (CUcontext) 0 ;
+  size_t arg5 ;
+  CUstream arg6 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (CUcontext)jarg2; 
+  arg3 = (CUdeviceptr)jarg3; 
+  arg4 = (CUcontext)jarg4; 
+  arg5 = (size_t)jarg5; 
+  arg6 = (CUstream)jarg6; 
+  result = (CUresult)cuMemcpyPeerAsync(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyHtoDAsync_v2___(void * jarg1, void * jarg2, unsigned long jarg3, void * jarg4) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  void *arg2 = (void *) 0 ;
+  size_t arg3 ;
+  CUstream arg4 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (void *)jarg2; 
+  arg3 = (size_t)jarg3; 
+  arg4 = (CUstream)jarg4; 
+  result = (CUresult)cuMemcpyHtoDAsync_v2(arg1,(void const *)arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyDtoHAsync_v2___(void * jarg1, void * jarg2, unsigned long jarg3, void * jarg4) {
   int jresult ;
   void *arg1 = (void *) 0 ;
@@ -1670,6 +1728,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyDtoDAsync_v2___(void * ja
   arg3 = (size_t)jarg3; 
   arg4 = (CUstream)jarg4; 
   result = (CUresult)cuMemcpyDtoDAsync_v2(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyHtoAAsync_v2___(void * jarg1, unsigned long jarg2, void * jarg3, unsigned long jarg4, void * jarg5) {
+  int jresult ;
+  CUarray arg1 = (CUarray) 0 ;
+  size_t arg2 ;
+  void *arg3 = (void *) 0 ;
+  size_t arg4 ;
+  CUstream arg5 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUarray)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (void *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (CUstream)jarg5; 
+  result = (CUresult)cuMemcpyHtoAAsync_v2(arg1,arg2,(void const *)arg3,arg4,arg5);
   jresult = (int)result; 
   return jresult;
 }
@@ -1803,6 +1881,170 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD2D32_v2___(void * jarg1,
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD8Async___(void * jarg1, unsigned char jarg2, unsigned long jarg3, void * jarg4) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  unsigned char arg2 ;
+  size_t arg3 ;
+  CUstream arg4 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (unsigned char)jarg2; 
+  arg3 = (size_t)jarg3; 
+  arg4 = (CUstream)jarg4; 
+  result = (CUresult)cuMemsetD8Async(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD16Async___(void * jarg1, unsigned short jarg2, unsigned long jarg3, void * jarg4) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  unsigned short arg2 ;
+  size_t arg3 ;
+  CUstream arg4 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (unsigned short)jarg2; 
+  arg3 = (size_t)jarg3; 
+  arg4 = (CUstream)jarg4; 
+  result = (CUresult)cuMemsetD16Async(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD32Async___(void * jarg1, unsigned int jarg2, unsigned long jarg3, void * jarg4) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  unsigned int arg2 ;
+  size_t arg3 ;
+  CUstream arg4 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (size_t)jarg3; 
+  arg4 = (CUstream)jarg4; 
+  result = (CUresult)cuMemsetD32Async(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD2D8Async___(void * jarg1, unsigned long jarg2, unsigned char jarg3, unsigned long jarg4, unsigned long jarg5, void * jarg6) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  size_t arg2 ;
+  unsigned char arg3 ;
+  size_t arg4 ;
+  size_t arg5 ;
+  CUstream arg6 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (unsigned char)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (size_t)jarg5; 
+  arg6 = (CUstream)jarg6; 
+  result = (CUresult)cuMemsetD2D8Async(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD2D16Async___(void * jarg1, unsigned long jarg2, unsigned short jarg3, unsigned long jarg4, unsigned long jarg5, void * jarg6) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  size_t arg2 ;
+  unsigned short arg3 ;
+  size_t arg4 ;
+  size_t arg5 ;
+  CUstream arg6 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (unsigned short)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (size_t)jarg5; 
+  arg6 = (CUstream)jarg6; 
+  result = (CUresult)cuMemsetD2D16Async(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemsetD2D32Async___(void * jarg1, unsigned long jarg2, unsigned int jarg3, unsigned long jarg4, unsigned long jarg5, void * jarg6) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  size_t arg2 ;
+  unsigned int arg3 ;
+  size_t arg4 ;
+  size_t arg5 ;
+  CUstream arg6 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (size_t)jarg5; 
+  arg6 = (CUstream)jarg6; 
+  result = (CUresult)cuMemsetD2D32Async(arg1,arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMipmappedArrayCreate___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUmipmappedArray *arg1 = (CUmipmappedArray *) 0 ;
+  CUDA_ARRAY3D_DESCRIPTOR *arg2 = (CUDA_ARRAY3D_DESCRIPTOR *) 0 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUmipmappedArray *)jarg1; 
+  arg2 = (CUDA_ARRAY3D_DESCRIPTOR *)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuMipmappedArrayCreate(arg1,(CUDA_ARRAY3D_DESCRIPTOR_st const *)arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMipmappedArrayGetLevel___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUarray *arg1 = (CUarray *) 0 ;
+  CUmipmappedArray arg2 = (CUmipmappedArray) 0 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUarray *)jarg1; 
+  arg2 = (CUmipmappedArray)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuMipmappedArrayGetLevel(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMipmappedArrayDestroy___(void * jarg1) {
+  int jresult ;
+  CUmipmappedArray arg1 = (CUmipmappedArray) 0 ;
+  CUresult result;
+  
+  arg1 = (CUmipmappedArray)jarg1; 
+  result = (CUresult)cuMipmappedArrayDestroy(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuPointerGetAttribute___(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   void *arg1 = (void *) 0 ;
@@ -1814,6 +2056,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuPointerGetAttribute___(void * j
   arg2 = (CUpointer_attribute)jarg2; 
   arg3 = (CUdeviceptr)jarg3; 
   result = (CUresult)cuPointerGetAttribute(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemPrefetchAsync___(void * jarg1, unsigned long jarg2, int jarg3, void * jarg4) {
+  int jresult ;
+  CUdeviceptr arg1 ;
+  size_t arg2 ;
+  CUdevice arg3 ;
+  CUstream arg4 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (CUdevice)jarg3; 
+  arg4 = (CUstream)jarg4; 
+  result = (CUresult)cuMemPrefetchAsync(arg1,arg2,arg3,arg4);
   jresult = (int)result; 
   return jresult;
 }

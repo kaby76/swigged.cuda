@@ -28,6 +28,21 @@
 %typemap(ctype) CUdeviceptr "void *"
 
 
+%typemap(cstype) CUmipmappedArray * "out CUmipmappedArray"
+%typemap(imtype) CUmipmappedArray * "out CUmipmappedArray"
+%typemap(csin) CUmipmappedArray * "out $csinput"
+%typemap(cstype) CUmipmappedArray "CUmipmappedArray"
+%typemap(imtype) CUmipmappedArray "CUmipmappedArray"
+%typemap(csin) CUmipmappedArray "$csinput"
+
+
+%typemap(cstype) CUDA_ARRAY3D_DESCRIPTOR * "out CUDA_ARRAY3D_DESCRIPTOR"
+%typemap(imtype) CUDA_ARRAY3D_DESCRIPTOR * "out CUDA_ARRAY3D_DESCRIPTOR"
+%typemap(csin) CUDA_ARRAY3D_DESCRIPTOR * "out $csinput"
+%typemap(cstype) CUDA_ARRAY3D_DESCRIPTOR "CUDA_ARRAY3D_DESCRIPTOR"
+%typemap(imtype) CUDA_ARRAY3D_DESCRIPTOR "CUDA_ARRAY3D_DESCRIPTOR"
+%typemap(csin) CUDA_ARRAY3D_DESCRIPTOR "$csinput"
+   
 // Various parameters in functions. A pointer to an int is just an
 // "out" parameter. Functions that use these are noted in a comment
 // where it is used.
@@ -375,22 +390,22 @@
 //%ignore cuMemcpyDtoDAsync_v2;
 //%ignore cuMemcpyDtoHAsync;
 //%ignore cuMemcpyDtoHAsync_v2;
-%ignore cuMemcpyHtoA_v2;
-%ignore cuMemcpyHtoAAsync;
-%ignore cuMemcpyHtoAAsync_v2;
-%ignore cuMemcpyHtoDAsync;
-%ignore cuMemcpyHtoDAsync_v2;
-%ignore cuMemcpyPeerAsync;
-%ignore cuMemPrefetchAsync;
-%ignore cuMemsetD16Async;
-%ignore cuMemsetD2D16Async;
-%ignore cuMemsetD2D32Async;
-%ignore cuMemsetD2D8Async;
-%ignore cuMemsetD32Async;
-%ignore cuMemsetD8Async;
-%ignore cuMipmappedArrayCreate;
-%ignore cuMipmappedArrayDestroy;
-%ignore cuMipmappedArrayGetLevel;
+//%ignore cuMemcpyHtoA_v2;
+//%ignore cuMemcpyHtoAAsync;
+//%ignore cuMemcpyHtoAAsync_v2;
+//%ignore cuMemcpyHtoDAsync;
+//%ignore cuMemcpyHtoDAsync_v2;
+//%ignore cuMemcpyPeerAsync;
+//%ignore cuMemPrefetchAsync;
+//%ignore cuMemsetD16Async;
+//%ignore cuMemsetD2D16Async;
+//%ignore cuMemsetD2D32Async;
+//%ignore cuMemsetD2D8Async;
+//%ignore cuMemsetD32Async;
+//%ignore cuMemsetD8Async;
+//%ignore cuMipmappedArrayCreate;
+//%ignore cuMipmappedArrayDestroy;
+//%ignore cuMipmappedArrayGetLevel;
 %ignore cuModuleGetSurfRef;
 %ignore cuModuleGetTexRef;
 %ignore cuModuleLoadDataEx;

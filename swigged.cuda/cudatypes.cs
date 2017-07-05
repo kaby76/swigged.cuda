@@ -105,4 +105,26 @@ public struct CUlinkState
             b60, b61, b62, b63, b64, b65, b66, b67, b68, b69,
             b70, b71, b72, b73;
     }
+
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CUDA_ARRAY_DESCRIPTOR
+    {
+        uint Width; /**< Width of array */
+        uint Height; /**< Height of array */
+
+        CUarray_format Format; /**< Array format */
+        uint NumChannels; /**< Channels per array element */
+    };
+
+    public struct CUDA_ARRAY3D_DESCRIPTOR
+    {
+        uint Width;         /**< Width of 3D array */
+        uint Height;        /**< Height of 3D array */
+        uint Depth;         /**< Depth of 3D array */
+
+        CUarray_format Format;      /**< Array format */
+        uint NumChannels;   /**< Channels per array element */
+        uint Flags;         /**< Flags */
+    }
 }
