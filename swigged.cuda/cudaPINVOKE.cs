@@ -10,6 +10,7 @@
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 using CUdevprop = System.IntPtr;
+using CUsurfObject = System.IntPtr;
 
 namespace Swigged.Cuda {
 
@@ -662,11 +663,23 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags___")]
   public static extern int cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(out int jarg1, CUfunction jarg2, int jarg3, uint jarg4, uint jarg5);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuSurfRefSetArray___")]
+  public static extern int cuSurfRefSetArray(CUsurfref jarg1, CUfunction jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuSurfRefGetArray___")]
+  public static extern int cuSurfRefGetArray(out CUarray jarg1, CUsurfref jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexObjectDestroy___")]
   public static extern int cuTexObjectDestroy(ulong jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuSurfObjectCreate___")]
+  public static extern int cuSurfObjectCreate(out CUsurfObject jarg1, out CUDA_RESOURCE_DESC jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuSurfObjectDestroy___")]
-  public static extern int cuSurfObjectDestroy(ulong jarg1);
+  public static extern int cuSurfObjectDestroy(CUsurfObject jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuSurfObjectGetResourceDesc___")]
+  public static extern int cuSurfObjectGetResourceDesc(out CUDA_RESOURCE_DESC jarg1, CUsurfObject jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuDeviceCanAccessPeer___")]
   public static extern int cuDeviceCanAccessPeer(out int jarg1, int jarg2, int jarg3);

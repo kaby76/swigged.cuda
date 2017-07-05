@@ -10,6 +10,7 @@
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 using CUdevprop = System.IntPtr;
+using CUsurfObject = System.IntPtr;
 
 namespace Swigged.Cuda {
 
@@ -717,13 +718,33 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuSurfRefSetArray(CUsurfref hSurfRef, CUfunction hArray, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfRefSetArray(hSurfRef, hArray, Flags);
+    return ret;
+  }
+
+  public static CUresult cuSurfRefGetArray(out CUarray phArray, CUsurfref hSurfRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfRefGetArray(out phArray, hSurfRef);
+    return ret;
+  }
+
   public static CUresult cuTexObjectDestroy(ulong texObject) {
     CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectDestroy(texObject);
     return ret;
   }
 
-  public static CUresult cuSurfObjectDestroy(ulong surfObject) {
+  public static CUresult cuSurfObjectCreate(out CUsurfObject pSurfObject, out CUDA_RESOURCE_DESC pResDesc) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectCreate(out pSurfObject, out pResDesc);
+    return ret;
+  }
+
+  public static CUresult cuSurfObjectDestroy(CUsurfObject surfObject) {
     CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectDestroy(surfObject);
+    return ret;
+  }
+
+  public static CUresult cuSurfObjectGetResourceDesc(out CUDA_RESOURCE_DESC pResDesc, CUsurfObject surfObject) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectGetResourceDesc(out pResDesc, surfObject);
     return ret;
   }
 

@@ -2673,6 +2673,36 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMult
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfRefSetArray___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUsurfref arg1 = (CUsurfref) 0 ;
+  CUarray arg2 = (CUarray) 0 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUsurfref)jarg1; 
+  arg2 = (CUarray)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuSurfRefSetArray(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfRefGetArray___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUarray *arg1 = (CUarray *) 0 ;
+  CUsurfref arg2 = (CUsurfref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUarray *)jarg1; 
+  arg2 = (CUsurfref)jarg2; 
+  result = (CUresult)cuSurfRefGetArray(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectDestroy___(unsigned long long jarg1) {
   int jresult ;
   CUtexObject arg1 ;
@@ -2685,6 +2715,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectDestroy___(unsigned lo
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfObjectCreate___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUsurfObject *arg1 = (CUsurfObject *) 0 ;
+  CUDA_RESOURCE_DESC *arg2 = (CUDA_RESOURCE_DESC *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUsurfObject *)jarg1; 
+  arg2 = (CUDA_RESOURCE_DESC *)jarg2; 
+  result = (CUresult)cuSurfObjectCreate(arg1,(CUDA_RESOURCE_DESC_st const *)arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfObjectDestroy___(unsigned long long jarg1) {
   int jresult ;
   CUsurfObject arg1 ;
@@ -2692,6 +2736,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfObjectDestroy___(unsigned l
   
   arg1 = (CUsurfObject)jarg1; 
   result = (CUresult)cuSurfObjectDestroy(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfObjectGetResourceDesc___(void * jarg1, unsigned long long jarg2) {
+  int jresult ;
+  CUDA_RESOURCE_DESC *arg1 = (CUDA_RESOURCE_DESC *) 0 ;
+  CUsurfObject arg2 ;
+  CUresult result;
+  
+  arg1 = (CUDA_RESOURCE_DESC *)jarg1; 
+  arg2 = (CUsurfObject)jarg2; 
+  result = (CUresult)cuSurfObjectGetResourceDesc(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }

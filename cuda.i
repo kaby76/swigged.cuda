@@ -99,8 +99,6 @@
 %typemap(imtype) float * "out float"
 %typemap(csin) float * "out $csinput"
    
-   CUstreamBatchMemOpParams
-
 %typemap(cstype) char ** pStr "out System.IntPtr"
 %typemap(imtype) char ** pStr "out System.IntPtr"
 %typemap(csin) char ** pStr "out $csinput"
@@ -433,10 +431,10 @@
 //%ignore cuStreamWaitEvent;
 //%ignore cuStreamWaitValue32;
 //%ignore cuStreamWriteValue32;
-%ignore cuSurfObjectCreate;
-%ignore cuSurfObjectGetResourceDesc;
-%ignore cuSurfRefGetArray;
-%ignore cuSurfRefSetArray;
+//%ignore cuSurfObjectCreate;
+//%ignore cuSurfObjectGetResourceDesc;
+//%ignore cuSurfRefGetArray;
+//%ignore cuSurfRefSetArray;
 %ignore cuTexObjectCreate;
 %ignore cuTexObjectCreate;
 %ignore cuTexObjectCreate;
@@ -587,6 +585,28 @@
 %typemap(csin)  CUstreamBatchMemOpParams "$csinput"
 
 
-   
+%typemap(cstype) CUDA_RESOURCE_DESC * "out CUDA_RESOURCE_DESC"
+%typemap(imtype)  CUDA_RESOURCE_DESC * "out CUDA_RESOURCE_DESC"
+%typemap(csin)  CUDA_RESOURCE_DESC * "out $csinput"
+%typemap(cstype) CUDA_RESOURCE_DESC "CUDA_RESOURCE_DESC"
+%typemap(imtype)  CUDA_RESOURCE_DESC "CUDA_RESOURCE_DESC"
+%typemap(csin)  CUDA_RESOURCE_DESC "$csinput"
+
+
+%typemap(cstype) CUsurfref * "out CUsurfref"
+%typemap(imtype)  CUsurfref * "out CUsurfref"
+%typemap(csin)  CUsurfref * "out $csinput"
+%typemap(cstype) CUsurfref "CUsurfref"
+%typemap(imtype)  CUsurfref "CUsurfref"
+%typemap(csin)  CUsurfref "$csinput"
+
+%typemap(cstype) CUsurfObject * "out CUsurfObject"
+%typemap(imtype)  CUsurfObject * "out CUsurfObject"
+%typemap(csin)  CUsurfObject * "out $csinput"
+%typemap(cstype) CUsurfObject "CUsurfObject"
+%typemap(imtype)  CUsurfObject "CUsurfObject"
+%typemap(csin)  CUsurfObject "$csinput"
+
+
 %include <stdint.i>
 %include "cuda.h"
