@@ -165,6 +165,24 @@
 %typemap(csin)  void * p "$csinput"
 
 
+// Used in cuLinkCreate_v2, cuLinkAddData_v2, cuLinkAddFile_v2.
+%typemap(cstype) void ** optionValues "System.IntPtr"
+%typemap(imtype)  void ** optionValues "System.IntPtr"
+%typemap(csin)  void ** optionValues "$csinput"
+
+// cuLinkComplete
+%typemap(cstype) void ** cubinOut "out System.IntPtr"
+%typemap(imtype)  void ** cubinOut "out System.IntPtr"
+%typemap(csin)  void ** cubinOut "out $csinput"
+
+// cuLinkComplete
+// Note, sizeOut is optional, but we have to require it as it is an
+// "out" parameter.
+%typemap(cstype) size_t * sizeOut "out SizeT"
+%typemap(imtype) size_t * sizeOut "out SizeT"
+%typemap(csin) size_t * sizeOut "out $csinput"
+
+
 %typemap(cstype)  CUcontext * pctx "out CUcontext"
 %typemap(imtype)  CUcontext * pctx "out CUcontext"
 %typemap(csin)  CUcontext * pctx "out $csinput"
@@ -328,10 +346,10 @@
 //%ignore cuIpcOpenEventHandle;
 //%ignore cuIpcOpenMemHandle;
 //%ignore cuLaunchGridAsync;
-%ignore cuLinkAddData_v2;
-%ignore cuLinkAddFile_v2;
-%ignore cuLinkComplete;
-%ignore cuLinkCreate_v2;
+//%ignore cuLinkAddData_v2;
+//%ignore cuLinkAddFile_v2;
+//%ignore cuLinkComplete;
+//%ignore cuLinkCreate_v2;
 %ignore cuMemcpy2D;
 %ignore cuMemcpy2D_v2;
 %ignore cuMemcpy2DAsync;

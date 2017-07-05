@@ -1081,6 +1081,88 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuModuleGetGlobal_v2___(void * ja
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLinkCreate_v2___(unsigned int jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  int jresult ;
+  unsigned int arg1 ;
+  CUjit_option *arg2 = (CUjit_option *) 0 ;
+  void **arg3 = (void **) 0 ;
+  CUlinkState *arg4 = (CUlinkState *) 0 ;
+  CUresult result;
+  
+  arg1 = (unsigned int)jarg1; 
+  arg2 = (CUjit_option *)jarg2; 
+  arg3 = (void **)jarg3; 
+  arg4 = (CUlinkState *)jarg4; 
+  result = (CUresult)cuLinkCreate_v2(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLinkAddData_v2___(void * jarg1, int jarg2, void * jarg3, unsigned long jarg4, char * jarg5, unsigned int jarg6, void * jarg7, void * jarg8) {
+  int jresult ;
+  CUlinkState arg1 = (CUlinkState) 0 ;
+  CUjitInputType arg2 ;
+  void *arg3 = (void *) 0 ;
+  size_t arg4 ;
+  char *arg5 = (char *) 0 ;
+  unsigned int arg6 ;
+  CUjit_option *arg7 = (CUjit_option *) 0 ;
+  void **arg8 = (void **) 0 ;
+  CUresult result;
+  
+  arg1 = (CUlinkState)jarg1; 
+  arg2 = (CUjitInputType)jarg2; 
+  arg3 = (void *)jarg3; 
+  arg4 = (size_t)jarg4; 
+  arg5 = (char *)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (CUjit_option *)jarg7; 
+  arg8 = (void **)jarg8; 
+  result = (CUresult)cuLinkAddData_v2(arg1,arg2,arg3,arg4,(char const *)arg5,arg6,arg7,arg8);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLinkAddFile_v2___(void * jarg1, int jarg2, char * jarg3, unsigned int jarg4, void * jarg5, void * jarg6) {
+  int jresult ;
+  CUlinkState arg1 = (CUlinkState) 0 ;
+  CUjitInputType arg2 ;
+  char *arg3 = (char *) 0 ;
+  unsigned int arg4 ;
+  CUjit_option *arg5 = (CUjit_option *) 0 ;
+  void **arg6 = (void **) 0 ;
+  CUresult result;
+  
+  arg1 = (CUlinkState)jarg1; 
+  arg2 = (CUjitInputType)jarg2; 
+  arg3 = (char *)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (CUjit_option *)jarg5; 
+  arg6 = (void **)jarg6; 
+  result = (CUresult)cuLinkAddFile_v2(arg1,arg2,(char const *)arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLinkComplete___(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  CUlinkState arg1 = (CUlinkState) 0 ;
+  void **arg2 = (void **) 0 ;
+  size_t *arg3 = (size_t *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUlinkState)jarg1; 
+  arg2 = (void **)jarg2; 
+  arg3 = (size_t *)jarg3; 
+  result = (CUresult)cuLinkComplete(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLinkDestroy___(void * jarg1) {
   int jresult ;
   CUlinkState arg1 = (CUlinkState) 0 ;

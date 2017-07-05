@@ -240,6 +240,26 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuLinkCreate_v2(uint numOptions, out CUjit_option options, System.IntPtr optionValues, out CUlinkState stateOut) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkCreate_v2(numOptions, out options, optionValues, out stateOut);
+    return ret;
+  }
+
+  public static CUresult cuLinkAddData_v2(CUlinkState state, CUjitInputType type, System.IntPtr data, uint size, string name, uint numOptions, out CUjit_option options, System.IntPtr optionValues) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddData_v2(state, (int)type, data, size, name, numOptions, out options, optionValues);
+    return ret;
+  }
+
+  public static CUresult cuLinkAddFile_v2(CUlinkState state, CUjitInputType type, string path, uint numOptions, out CUjit_option options, System.IntPtr optionValues) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddFile_v2(state, (int)type, path, numOptions, out options, optionValues);
+    return ret;
+  }
+
+  public static CUresult cuLinkComplete(CUlinkState state, out System.IntPtr cubinOut, out SizeT sizeOut) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkComplete(state, out cubinOut, out sizeOut);
+    return ret;
+  }
+
   public static CUresult cuLinkDestroy(CUlinkState state) {
     CUresult ret = (CUresult)CudaPINVOKE.cuLinkDestroy(state);
     return ret;
