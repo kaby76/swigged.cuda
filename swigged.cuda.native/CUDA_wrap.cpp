@@ -1639,6 +1639,54 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAtoA_v2___(void * jarg1, 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy2D_v2___(void * jarg1) {
+  int jresult ;
+  CUDA_MEMCPY2D *arg1 = (CUDA_MEMCPY2D *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY2D *)jarg1; 
+  result = (CUresult)cuMemcpy2D_v2((CUDA_MEMCPY2D_st const *)arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy2DUnaligned_v2___(void * jarg1) {
+  int jresult ;
+  CUDA_MEMCPY2D *arg1 = (CUDA_MEMCPY2D *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY2D *)jarg1; 
+  result = (CUresult)cuMemcpy2DUnaligned_v2((CUDA_MEMCPY2D_st const *)arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy3D_v2___(void * jarg1) {
+  int jresult ;
+  CUDA_MEMCPY3D *arg1 = (CUDA_MEMCPY3D *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY3D *)jarg1; 
+  result = (CUresult)cuMemcpy3D_v2((CUDA_MEMCPY3D_st const *)arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy3DPeer___(void * jarg1) {
+  int jresult ;
+  CUDA_MEMCPY3D_PEER *arg1 = (CUDA_MEMCPY3D_PEER *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY3D_PEER *)jarg1; 
+  result = (CUresult)cuMemcpy3DPeer((CUDA_MEMCPY3D_PEER_st const *)arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAsync___(void * jarg1, void * jarg2, unsigned long jarg3, void * jarg4) {
   int jresult ;
   CUdeviceptr arg1 ;
@@ -1768,6 +1816,48 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpyAtoHAsync_v2___(void * ja
   arg4 = (size_t)jarg4; 
   arg5 = (CUstream)jarg5; 
   result = (CUresult)cuMemcpyAtoHAsync_v2(arg1,arg2,arg3,arg4,arg5);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy2DAsync_v2___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUDA_MEMCPY2D *arg1 = (CUDA_MEMCPY2D *) 0 ;
+  CUstream arg2 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY2D *)jarg1; 
+  arg2 = (CUstream)jarg2; 
+  result = (CUresult)cuMemcpy2DAsync_v2((CUDA_MEMCPY2D_st const *)arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy3DAsync_v2___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUDA_MEMCPY3D *arg1 = (CUDA_MEMCPY3D *) 0 ;
+  CUstream arg2 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY3D *)jarg1; 
+  arg2 = (CUstream)jarg2; 
+  result = (CUresult)cuMemcpy3DAsync_v2((CUDA_MEMCPY3D_st const *)arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuMemcpy3DPeerAsync___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUDA_MEMCPY3D_PEER *arg1 = (CUDA_MEMCPY3D_PEER *) 0 ;
+  CUstream arg2 = (CUstream) 0 ;
+  CUresult result;
+  
+  arg1 = (CUDA_MEMCPY3D_PEER *)jarg1; 
+  arg2 = (CUstream)jarg2; 
+  result = (CUresult)cuMemcpy3DPeerAsync((CUDA_MEMCPY3D_PEER_st const *)arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }

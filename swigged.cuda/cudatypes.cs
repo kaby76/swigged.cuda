@@ -1,9 +1,10 @@
-using System;
-using System.Runtime.InteropServices;
 
 namespace Swigged.Cuda {
+    using System;
+    using System.Runtime.InteropServices;
+    using CUdeviceptr = System.IntPtr;
 
-[StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
 public struct CUcontext
 {
 	public IntPtr Pointer;
@@ -117,6 +118,7 @@ public struct CUlinkState
         uint NumChannels; /**< Channels per array element */
     };
 
+    [StructLayout(LayoutKind.Sequential)]
     public struct CUDA_ARRAY3D_DESCRIPTOR
     {
         uint Width;         /**< Width of 3D array */
@@ -128,6 +130,7 @@ public struct CUlinkState
         uint Flags;         /**< Flags */
     }
 
+    [StructLayout(LayoutKind.Sequential)]
     public struct CUDA_RESOURCE_DESC
     {
         private byte
@@ -139,4 +142,62 @@ public struct CUlinkState
             b60, b61, b62, b63, b64, b65, b66, b67, b68, b69,
             b70, b71, b72, b73;
     }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CUDA_MEMCPY2D
+    {
+        uint srcXInBytes;   /**< Source X in bytes */
+        uint srcY;          /**< Source Y */
+        CUmemorytype srcMemoryType; /**< Source memory type (host, device, array) */
+        System.IntPtr srcHost;        /**< Source host pointer */
+        CUdeviceptr srcDevice;      /**< Source device pointer */
+        CUarray srcArray;           /**< Source array reference */
+        uint srcPitch;      /**< Source pitch (ignored when src is array) */
+
+        uint dstXInBytes;   /**< Destination X in bytes */
+        uint dstY;          /**< Destination Y */
+        CUmemorytype dstMemoryType; /**< Destination memory type (host, device, array) */
+        System.IntPtr dstHost;              /**< Destination host pointer */
+        CUdeviceptr dstDevice;      /**< Destination device pointer */
+        CUarray dstArray;           /**< Destination array reference */
+        uint dstPitch;      /**< Destination pitch (ignored when dst is array) */
+
+        uint WidthInBytes;  /**< Width of 2D memory copy in bytes */
+        uint Height;        /**< Height of 2D memory copy */
+    }
+
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CUDA_MEMCPY3D
+    {
+        uint srcXInBytes;   /**< Source X in bytes */
+        uint srcY;          /**< Source Y */
+        uint srcZ;          /**< Source Z */
+        uint srcLOD;        /**< Source LOD */
+        CUmemorytype srcMemoryType; /**< Source memory type (host, device, array) */
+        System.IntPtr srcHost;        /**< Source host pointer */
+        CUdeviceptr srcDevice;      /**< Source device pointer */
+        CUarray srcArray;           /**< Source array reference */
+        System.IntPtr reserved0;            /**< Must be NULL */
+        uint srcPitch;      /**< Source pitch (ignored when src is array) */
+        uint srcHeight;     /**< Source height (ignored when src is array; may be 0 if Depth==1) */
+
+        uint dstXInBytes;   /**< Destination X in bytes */
+        uint dstY;          /**< Destination Y */
+        uint dstZ;          /**< Destination Z */
+        uint dstLOD;        /**< Destination LOD */
+        CUmemorytype dstMemoryType; /**< Destination memory type (host, device, array) */
+        System.IntPtr dstHost;              /**< Destination host pointer */
+        CUdeviceptr dstDevice;      /**< Destination device pointer */
+        CUarray dstArray;           /**< Destination array reference */
+        System.IntPtr reserved1;            /**< Must be NULL */
+        uint dstPitch;      /**< Destination pitch (ignored when dst is array) */
+        uint dstHeight;     /**< Destination height (ignored when dst is array; may be 0 if Depth==1) */
+
+        uint WidthInBytes;  /**< Width of 3D memory copy in bytes */
+        uint Height;        /**< Height of 3D memory copy */
+        uint Depth;         /**< Depth of 3D memory copy */
+    }
+
+
 }
