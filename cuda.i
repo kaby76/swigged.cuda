@@ -608,5 +608,28 @@
 %typemap(csin)  CUsurfObject "$csinput"
 
 
+%typemap(cstype) CUDA_MEMCPY2D * "out CUDA_MEMCPY2D"
+%typemap(imtype)  CUDA_MEMCPY2D * "out CUDA_MEMCPY2D"
+%typemap(csin)  CUDA_MEMCPY2D * "out $csinput"
+%typemap(cstype) CUDA_MEMCPY2D "CUDA_MEMCPY2D"
+%typemap(imtype)  CUDA_MEMCPY2D "CUDA_MEMCPY2D"
+%typemap(csin)  CUDA_MEMCPY2D "$csinput"
+
+%typemap(cstype) CUDA_MEMCPY3D * "out CUDA_MEMCPY3D"
+%typemap(imtype)  CUDA_MEMCPY3D * "out CUDA_MEMCPY3D"
+%typemap(csin)  CUDA_MEMCPY3D * "out $csinput"
+%typemap(cstype) CUDA_MEMCPY3D "CUDA_MEMCPY3D"
+%typemap(imtype)  CUDA_MEMCPY3D "CUDA_MEMCPY3D"
+%typemap(csin)  CUDA_MEMCPY3D "$csinput"
+
+%typemap(cstype) CUDA_MEMCPY3D_PEER * "out CUDA_MEMCPY3D_PEER"
+%typemap(imtype)  CUDA_MEMCPY3D_PEER * "out CUDA_MEMCPY3D_PEER"
+%typemap(csin)  CUDA_MEMCPY3D_PEER * "out $csinput"
+%typemap(cstype) CUDA_MEMCPY3D_PEER "CUDA_MEMCPY3D_PEER"
+%typemap(imtype)  CUDA_MEMCPY3D_PEER "CUDA_MEMCPY3D_PEER"
+%typemap(csin)  CUDA_MEMCPY3D_PEER "$csinput"
+
+
+   
 %include <stdint.i>
 %include "cuda.h"

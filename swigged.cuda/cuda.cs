@@ -413,23 +413,23 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuMemcpy2D_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st pCopy) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2D_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st.getCPtr(pCopy));
+  public static CUresult cuMemcpy2D_v2(out CUDA_MEMCPY2D pCopy) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2D_v2(out pCopy);
     return ret;
   }
 
-  public static CUresult cuMemcpy2DUnaligned_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st pCopy) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2DUnaligned_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st.getCPtr(pCopy));
+  public static CUresult cuMemcpy2DUnaligned_v2(out CUDA_MEMCPY2D pCopy) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2DUnaligned_v2(out pCopy);
     return ret;
   }
 
-  public static CUresult cuMemcpy3D_v2(SWIGTYPE_p_CUDA_MEMCPY3D_st pCopy) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3D_v2(SWIGTYPE_p_CUDA_MEMCPY3D_st.getCPtr(pCopy));
+  public static CUresult cuMemcpy3D_v2(out CUDA_MEMCPY3D pCopy) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3D_v2(out pCopy);
     return ret;
   }
 
-  public static CUresult cuMemcpy3DPeer(SWIGTYPE_p_CUDA_MEMCPY3D_PEER_st pCopy) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DPeer(SWIGTYPE_p_CUDA_MEMCPY3D_PEER_st.getCPtr(pCopy));
+  public static CUresult cuMemcpy3DPeer(out CUDA_MEMCPY3D_PEER pCopy) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DPeer(out pCopy);
     return ret;
   }
 
@@ -468,18 +468,18 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuMemcpy2DAsync_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st pCopy, CUstream hStream) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2DAsync_v2(SWIGTYPE_p_CUDA_MEMCPY2D_st.getCPtr(pCopy), hStream);
+  public static CUresult cuMemcpy2DAsync_v2(out CUDA_MEMCPY2D pCopy, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy2DAsync_v2(out pCopy, hStream);
     return ret;
   }
 
-  public static CUresult cuMemcpy3DAsync_v2(SWIGTYPE_p_CUDA_MEMCPY3D_st pCopy, CUstream hStream) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DAsync_v2(SWIGTYPE_p_CUDA_MEMCPY3D_st.getCPtr(pCopy), hStream);
+  public static CUresult cuMemcpy3DAsync_v2(out CUDA_MEMCPY3D pCopy, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DAsync_v2(out pCopy, hStream);
     return ret;
   }
 
-  public static CUresult cuMemcpy3DPeerAsync(SWIGTYPE_p_CUDA_MEMCPY3D_PEER_st pCopy, CUstream hStream) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DPeerAsync(SWIGTYPE_p_CUDA_MEMCPY3D_PEER_st.getCPtr(pCopy), hStream);
+  public static CUresult cuMemcpy3DPeerAsync(out CUDA_MEMCPY3D_PEER pCopy, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpy3DPeerAsync(out pCopy, hStream);
     return ret;
   }
 
