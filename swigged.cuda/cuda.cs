@@ -557,6 +557,51 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuStreamCreate(out CUstream phStream, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamCreate(out phStream, Flags);
+    return ret;
+  }
+
+  public static CUresult cuStreamCreateWithPriority(out CUstream phStream, uint flags, int priority) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamCreateWithPriority(out phStream, flags, priority);
+    return ret;
+  }
+
+  public static CUresult cuStreamGetPriority(CUstream hStream, out int priority) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamGetPriority(hStream, out priority);
+    return ret;
+  }
+
+  public static CUresult cuStreamGetFlags(CUstream hStream, out uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamGetFlags(hStream, out flags);
+    return ret;
+  }
+
+  public static CUresult cuStreamWaitEvent(CUstream hStream, CUevent hEvent, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamWaitEvent(hStream, hEvent, Flags);
+    return ret;
+  }
+
+  public static CUresult cuStreamAttachMemAsync(CUstream hStream, System.IntPtr dptr, uint length, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamAttachMemAsync(hStream, dptr, length, flags);
+    return ret;
+  }
+
+  public static CUresult cuStreamQuery(CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamQuery(hStream);
+    return ret;
+  }
+
+  public static CUresult cuStreamSynchronize(CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamSynchronize(hStream);
+    return ret;
+  }
+
+  public static CUresult cuStreamDestroy_v2(CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamDestroy_v2(hStream);
+    return ret;
+  }
+
   public static CUresult cuEventCreate(out CUcontext phEvent, uint Flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuEventCreate(out phEvent, Flags);
     return ret;
@@ -584,6 +629,16 @@ public class Cuda {
 
   public static CUresult cuEventElapsedTime(out float pMilliseconds, CUevent hStart, CUevent hEnd) {
     CUresult ret = (CUresult)CudaPINVOKE.cuEventElapsedTime(out pMilliseconds, hStart, hEnd);
+    return ret;
+  }
+
+  public static CUresult cuStreamWaitValue32(CUstream stream, System.IntPtr addr, uint value, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamWaitValue32(stream, addr, value, flags);
+    return ret;
+  }
+
+  public static CUresult cuStreamWriteValue32(CUstream stream, System.IntPtr addr, uint value, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamWriteValue32(stream, addr, value, flags);
     return ret;
   }
 

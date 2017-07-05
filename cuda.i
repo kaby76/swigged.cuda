@@ -88,6 +88,9 @@
 %typemap(cstype) int * pi "out int"
 %typemap(imtype) int * pi "out int"
 %typemap(csin) int * pi "out $csinput"
+%typemap(cstype) int * priority "out int"
+%typemap(imtype) int * priority "out int"
+%typemap(csin) int * priority "out $csinput"
 
 %typemap(cstype) int * value "out int"
 %typemap(imtype) int * value "out int"
@@ -96,7 +99,7 @@
 %typemap(imtype) float * "out float"
 %typemap(csin) float * "out $csinput"
    
-
+   CUstreamBatchMemOpParams
 
 %typemap(cstype) char ** pStr "out System.IntPtr"
 %typemap(imtype) char ** pStr "out System.IntPtr"
@@ -414,23 +417,22 @@
 %ignore cuParamSetTexRef;
 %ignore CUstream;
 %ignore CUstream_st;
-%ignore cuStreamAddCallback;
-%ignore cuStreamAttachMemAsync;
-%ignore cuStreamBatchMemOp;
+//%ignore cuStreamAddCallback;
+//%ignore cuStreamAttachMemAsync;
 %ignore cuStreamBatchMemOp;
 %ignore CUstreamBatchMemOpParams;
 %ignore CUstreamBatchMemOpParams_union;
-%ignore cuStreamCreate;
-%ignore cuStreamCreateWithPriority;
-%ignore cuStreamDestroy;
-%ignore cuStreamDestroy_v2;
-%ignore cuStreamGetFlags;
-%ignore cuStreamGetPriority;
-%ignore cuStreamQuery;
-%ignore cuStreamSynchronize;
-%ignore cuStreamWaitEvent;
-%ignore cuStreamWaitValue32;
-%ignore cuStreamWriteValue32;
+//%ignore cuStreamCreate;
+//%ignore cuStreamCreateWithPriority;
+//%ignore cuStreamDestroy;
+//%ignore cuStreamDestroy_v2;
+//%ignore cuStreamGetFlags;
+//%ignore cuStreamGetPriority;
+//%ignore cuStreamQuery;
+//%ignore cuStreamSynchronize;
+//%ignore cuStreamWaitEvent;
+//%ignore cuStreamWaitValue32;
+//%ignore cuStreamWriteValue32;
 %ignore cuSurfObjectCreate;
 %ignore cuSurfObjectGetResourceDesc;
 %ignore cuSurfRefGetArray;
@@ -569,7 +571,22 @@
 %typemap(imtype)  CUarray "CUfunction"
 %typemap(csin)  CUarray "$csinput"
 
-   
+%ignore CUstreamBatchMemOpParams;
+%ignore CUstreamBatchMemOpParams_union;
+%ignore CUstreamMemOpWaitValueParams_st;
+%ignore CUstreamMemOpWriteValueParams_st;
+%ignore CUstreamMemOpFlushRemoteWritesParams_st;
+%ignore cuStreamAddCallback;
+
+
+%typemap(cstype) CUstreamBatchMemOpParams * "out CUstreamBatchMemOpParams"
+%typemap(imtype)  CUstreamBatchMemOpParams * "out CUstreamBatchMemOpParams"
+%typemap(csin)  CUstreamBatchMemOpParams * "out $csinput"
+%typemap(cstype) CUstreamBatchMemOpParams "CUstreamBatchMemOpParams"
+%typemap(imtype)  CUstreamBatchMemOpParams "CUstreamBatchMemOpParams"
+%typemap(csin)  CUstreamBatchMemOpParams "$csinput"
+
+
    
 %include <stdint.i>
 %include "cuda.h"
