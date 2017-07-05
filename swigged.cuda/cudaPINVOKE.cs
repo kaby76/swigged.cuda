@@ -452,6 +452,30 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyDtoD_v2___")]
   public static extern int cuMemcpyDtoD_v2(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyDtoA_v2___")]
+  public static extern int cuMemcpyDtoA_v2(CUfunction jarg1, uint jarg2, System.IntPtr jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyAtoD_v2___")]
+  public static extern int cuMemcpyAtoD_v2(System.IntPtr jarg1, CUfunction jarg2, uint jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyAtoH_v2___")]
+  public static extern int cuMemcpyAtoH_v2(System.IntPtr jarg1, CUfunction jarg2, uint jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyAtoA_v2___")]
+  public static extern int cuMemcpyAtoA_v2(CUfunction jarg1, uint jarg2, CUfunction jarg3, uint jarg4, uint jarg5);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyAsync___")]
+  public static extern int cuMemcpyAsync(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, CUstream jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyDtoHAsync_v2___")]
+  public static extern int cuMemcpyDtoHAsync_v2(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, CUstream jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyDtoDAsync_v2___")]
+  public static extern int cuMemcpyDtoDAsync_v2(System.IntPtr jarg1, System.IntPtr jarg2, uint jarg3, CUstream jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemcpyAtoHAsync_v2___")]
+  public static extern int cuMemcpyAtoHAsync_v2(System.IntPtr jarg1, CUfunction jarg2, uint jarg3, uint jarg4, CUstream jarg5);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuMemsetD8_v2___")]
   public static extern int cuMemsetD8_v2(System.IntPtr jarg1, byte jarg2, uint jarg3);
 
@@ -491,8 +515,20 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventCreate___")]
   public static extern int cuEventCreate(out CUcontext jarg1, uint jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventRecord___")]
+  public static extern int cuEventRecord(CUevent jarg1, CUstream jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventQuery___")]
+  public static extern int cuEventQuery(CUevent jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventSynchronize___")]
+  public static extern int cuEventSynchronize(CUevent jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventDestroy_v2___")]
   public static extern int cuEventDestroy_v2(CUevent jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuEventElapsedTime___")]
+  public static extern int cuEventElapsedTime(out float jarg1, CUevent jarg2, CUevent jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuFuncGetAttribute___")]
   public static extern int cuFuncGetAttribute(out int jarg1, int jarg2, CUfunction jarg3);
@@ -529,6 +565,9 @@ class CudaPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLaunchGrid___")]
   public static extern int cuLaunchGrid(CUfunction jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLaunchGridAsync___")]
+  public static extern int cuLaunchGridAsync(CUfunction jarg1, int jarg2, int jarg3, CUstream jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMultiprocessor___")]
   public static extern int cuOccupancyMaxActiveBlocksPerMultiprocessor(out int jarg1, CUfunction jarg2, int jarg3, uint jarg4);

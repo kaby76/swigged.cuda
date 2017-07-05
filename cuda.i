@@ -73,10 +73,14 @@
 %typemap(cstype) int * pi "out int"
 %typemap(imtype) int * pi "out int"
 %typemap(csin) int * pi "out $csinput"
+
 %typemap(cstype) int * value "out int"
 %typemap(imtype) int * value "out int"
 %typemap(csin) int * value "out $csinput"
-
+%typemap(cstype) float * "out float"
+%typemap(imtype) float * "out float"
+%typemap(csin) float * "out $csinput"
+   
 
 
 %typemap(cstype) char ** pStr "out System.IntPtr"
@@ -298,10 +302,10 @@
 %ignore CUdevprop_st;
 //%ignore cuEventCreate;
 //%ignore cuEventDestroy_v2;
-%ignore cuEventElapsedTime;
-%ignore cuEventQuery;
-%ignore cuEventRecord;
-%ignore cuEventSynchronize;
+//%ignore cuEventElapsedTime;
+//%ignore cuEventQuery;
+//%ignore cuEventRecord;
+//%ignore cuEventSynchronize;
 %ignore cuGraphicsMapResources;
 %ignore cuGraphicsMapResources;
 %ignore CUgraphicsResource;
@@ -323,7 +327,7 @@
 %ignore CUipcMemHandle_st;
 //%ignore cuIpcOpenEventHandle;
 //%ignore cuIpcOpenMemHandle;
-%ignore cuLaunchGridAsync;
+//%ignore cuLaunchGridAsync;
 %ignore cuLinkAddData_v2;
 %ignore cuLinkAddFile_v2;
 %ignore cuLinkComplete;
@@ -343,16 +347,16 @@
 %ignore cuMemcpy3DPeer;
 %ignore cuMemcpy3DPeerAsync;
 %ignore cuMemcpy3DPeerAsync;
-%ignore cuMemcpyAsync;
-%ignore cuMemcpyAtoA_v2;
-%ignore cuMemcpyAtoD_v2;
-%ignore cuMemcpyAtoH_v2;
-%ignore cuMemcpyAtoHAsync_v2;
-%ignore cuMemcpyDtoA_v2;
-%ignore cuMemcpyDtoDAsync;
-%ignore cuMemcpyDtoDAsync_v2;
-%ignore cuMemcpyDtoHAsync;
-%ignore cuMemcpyDtoHAsync_v2;
+//%ignore cuMemcpyAsync;
+//%ignore cuMemcpyAtoA_v2;
+//%ignore cuMemcpyAtoD_v2;
+//%ignore cuMemcpyAtoH_v2;
+//%ignore cuMemcpyAtoHAsync_v2;
+//%ignore cuMemcpyDtoA_v2;
+//%ignore cuMemcpyDtoDAsync;
+//%ignore cuMemcpyDtoDAsync_v2;
+//%ignore cuMemcpyDtoHAsync;
+//%ignore cuMemcpyDtoHAsync_v2;
 %ignore cuMemcpyHtoA_v2;
 %ignore cuMemcpyHtoAAsync;
 %ignore cuMemcpyHtoAAsync_v2;
@@ -523,6 +527,14 @@
 // jarg2); Note: Pointer to user allocated CUipcMemHandle to return the handle in.
 // int cuIpcOpenMemHandle(out CUdeviceptr jarg1, CUipcMemHandle jarg2,
 // uint jarg3); OK
+
+
+%typemap(cstype) CUarray * "out CUarray"
+%typemap(imtype)  CUarray * "out CUarray"
+%typemap(csin)  CUarray * "out $csinput"
+%typemap(cstype) CUarray "CUfunction"
+%typemap(imtype)  CUarray "CUfunction"
+%typemap(csin)  CUarray "$csinput"
 
    
    

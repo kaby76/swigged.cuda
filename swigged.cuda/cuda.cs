@@ -367,6 +367,46 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuMemcpyDtoA_v2(CUfunction dstArray, uint dstOffset, System.IntPtr srcDevice, uint ByteCount) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoA_v2(dstArray, dstOffset, srcDevice, ByteCount);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyAtoD_v2(System.IntPtr dstDevice, CUfunction srcArray, uint srcOffset, uint ByteCount) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAtoD_v2(dstDevice, srcArray, srcOffset, ByteCount);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyAtoH_v2(System.IntPtr dstHost, CUfunction srcArray, uint srcOffset, uint ByteCount) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAtoH_v2(dstHost, srcArray, srcOffset, ByteCount);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyAtoA_v2(CUfunction dstArray, uint dstOffset, CUfunction srcArray, uint srcOffset, uint ByteCount) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAtoA_v2(dstArray, dstOffset, srcArray, srcOffset, ByteCount);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyAsync(System.IntPtr dst, System.IntPtr src, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAsync(dst, src, ByteCount, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyDtoHAsync_v2(System.IntPtr dstHost, System.IntPtr srcDevice, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoHAsync_v2(dstHost, srcDevice, ByteCount, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyDtoDAsync_v2(System.IntPtr dstDevice, System.IntPtr srcDevice, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyDtoDAsync_v2(dstDevice, srcDevice, ByteCount, hStream);
+    return ret;
+  }
+
+  public static CUresult cuMemcpyAtoHAsync_v2(System.IntPtr dstHost, CUfunction srcArray, uint srcOffset, uint ByteCount, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuMemcpyAtoHAsync_v2(dstHost, srcArray, srcOffset, ByteCount, hStream);
+    return ret;
+  }
+
   public static CUresult cuMemsetD8_v2(System.IntPtr dstDevice, byte uc, uint N) {
     CUresult ret = (CUresult)CudaPINVOKE.cuMemsetD8_v2(dstDevice, uc, N);
     return ret;
@@ -432,8 +472,28 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuEventRecord(CUevent hEvent, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventRecord(hEvent, hStream);
+    return ret;
+  }
+
+  public static CUresult cuEventQuery(CUevent hEvent) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventQuery(hEvent);
+    return ret;
+  }
+
+  public static CUresult cuEventSynchronize(CUevent hEvent) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventSynchronize(hEvent);
+    return ret;
+  }
+
   public static CUresult cuEventDestroy_v2(CUevent hEvent) {
     CUresult ret = (CUresult)CudaPINVOKE.cuEventDestroy_v2(hEvent);
+    return ret;
+  }
+
+  public static CUresult cuEventElapsedTime(out float pMilliseconds, CUevent hStart, CUevent hEnd) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuEventElapsedTime(out pMilliseconds, hStart, hEnd);
     return ret;
   }
 
@@ -494,6 +554,11 @@ public class Cuda {
 
   public static CUresult cuLaunchGrid(CUfunction f, int grid_width, int grid_height) {
     CUresult ret = (CUresult)CudaPINVOKE.cuLaunchGrid(f, grid_width, grid_height);
+    return ret;
+  }
+
+  public static CUresult cuLaunchGridAsync(CUfunction f, int grid_width, int grid_height, CUstream hStream) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunchGridAsync(f, grid_width, grid_height, hStream);
     return ret;
   }
 
