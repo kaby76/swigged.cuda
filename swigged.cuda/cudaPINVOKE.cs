@@ -685,11 +685,53 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags___")]
   public static extern int cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(out int jarg1, CUfunction jarg2, int jarg3, uint jarg4, uint jarg5);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetArray___")]
+  public static extern int cuTexRefSetArray(CUtexref jarg1, CUfunction jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetMipmappedArray___")]
+  public static extern int cuTexRefSetMipmappedArray(CUtexref jarg1, CUmipmappedArray jarg2, uint jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetAddress_v2___")]
+  public static extern int cuTexRefSetAddress_v2(out SizeT jarg1, CUtexref jarg2, System.IntPtr jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetAddress2D_v3___")]
+  public static extern int cuTexRefSetAddress2D_v3(CUtexref jarg1, out CUDA_ARRAY_DESCRIPTOR jarg2, System.IntPtr jarg3, uint jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetFormat___")]
+  public static extern int cuTexRefSetFormat(CUtexref jarg1, CUarray_format jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetAddressMode___")]
+  public static extern int cuTexRefSetAddressMode(CUtexref jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetFilterMode___")]
+  public static extern int cuTexRefSetFilterMode(CUtexref jarg1, CUfilter_mode jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetMipmapFilterMode___")]
+  public static extern int cuTexRefSetMipmapFilterMode(CUtexref jarg1, CUfilter_mode jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetMipmapLevelBias___")]
+  public static extern int cuTexRefSetMipmapLevelBias(CUtexref jarg1, float jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetMipmapLevelClamp___")]
+  public static extern int cuTexRefSetMipmapLevelClamp(CUtexref jarg1, float jarg2, float jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetMaxAnisotropy___")]
+  public static extern int cuTexRefSetMaxAnisotropy(CUtexref jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetBorderColor___")]
+  public static extern int cuTexRefSetBorderColor(CUtexref jarg1, out float jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefSetFlags___")]
+  public static extern int cuTexRefSetFlags(CUtexref jarg1, uint jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetAddress_v2___")]
   public static extern int cuTexRefGetAddress_v2(out CUdeviceptr jarg1, CUtexref jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetArray___")]
   public static extern int cuTexRefGetArray(out CUarray jarg1, CUtexref jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetMipmappedArray___")]
+  public static extern int cuTexRefGetMipmappedArray(out CUmipmappedArray jarg1, CUtexref jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetAddressMode___")]
   public static extern int cuTexRefGetAddressMode(out CUaddress_mode jarg1, CUtexref jarg2, int jarg3);
@@ -699,6 +741,18 @@ class CudaPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetFormat___")]
   public static extern int cuTexRefGetFormat(out CUarray_format jarg1, out int jarg2, CUtexref jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetMipmapFilterMode___")]
+  public static extern int cuTexRefGetMipmapFilterMode(out CUfilter_mode jarg1, CUtexref jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetMipmapLevelBias___")]
+  public static extern int cuTexRefGetMipmapLevelBias(out float jarg1, CUtexref jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetMipmapLevelClamp___")]
+  public static extern int cuTexRefGetMipmapLevelClamp(out float jarg1, out float jarg2, CUtexref jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetMaxAnisotropy___")]
+  public static extern int cuTexRefGetMaxAnisotropy(out int jarg1, CUtexref jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuTexRefGetBorderColor___")]
   public static extern int cuTexRefGetBorderColor(out float jarg1, CUtexref jarg2);

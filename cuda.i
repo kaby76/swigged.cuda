@@ -91,6 +91,9 @@
 %typemap(cstype) int * priority "out int"
 %typemap(imtype) int * priority "out int"
 %typemap(csin) int * priority "out $csinput"
+   %typemap(cstype) int * pmaxAniso "out int"
+   %typemap(imtype) int * pmaxAniso "out int"
+   %typemap(csin) int * pmaxAniso "out $csinput"
 
 %typemap(cstype) int * value "out int"
 %typemap(imtype) int * value "out int"
@@ -111,6 +114,11 @@
 %typemap(imtype) size_t * bytes "out SizeT"
 %typemap(csin) size_t * bytes "out $csinput"
 
+   %typemap(cstype) size_t * ByteOffset "out SizeT"
+   %typemap(imtype) size_t * ByteOffset "out SizeT"
+   %typemap(csin) size_t * ByteOffset "out $csinput"
+   
+   
 %typemap(cstype) size_t * pvalue "out SizeT"
 %typemap(imtype) size_t * pvalue "out SizeT"
 %typemap(csin) size_t * pvalue "out $csinput"
@@ -450,27 +458,27 @@
 //%ignore cuTexRefGetFilterMode;
 //%ignore cuTexRefGetFlags;
 //%ignore cuTexRefGetFormat;
-%ignore cuTexRefGetMaxAnisotropy;
-%ignore cuTexRefGetMipmapFilterMode;
-%ignore cuTexRefGetMipmapLevelBias;
-%ignore cuTexRefGetMipmapLevelClamp;
-%ignore cuTexRefGetMipmappedArray;
-%ignore cuTexRefSetAddress2D;
-%ignore cuTexRefSetAddress2D_v2;
-%ignore cuTexRefSetAddress2D_v3;
-%ignore cuTexRefSetAddress_v2;
-%ignore cuTexRefSetAddressMode;
-%ignore cuTexRefSetArray;
-%ignore cuTexRefSetBorderColor;
-%ignore cuTexRefSetFilterMode;
-%ignore cuTexRefSetFlags;
-%ignore cuTexRefSetFormat;
-%ignore cuTexRefSetMaxAnisotropy;
-%ignore cuTexRefSetMipmapFilterMode;
-%ignore cuTexRefSetMipmapLevelBias;
-%ignore cuTexRefSetMipmapLevelClamp;
-%ignore cuTexRefSetMipmappedArray;
-%ignore cuArray3DGetDescriptor;
+//%ignore cuTexRefGetMaxAnisotropy;
+//%ignore cuTexRefGetMipmapFilterMode;
+//%ignore cuTexRefGetMipmapLevelBias;
+//%ignore cuTexRefGetMipmapLevelClamp;
+//%ignore cuTexRefGetMipmappedArray;
+//%ignore cuTexRefSetAddress2D;
+//%ignore cuTexRefSetAddress2D_v2;
+//%ignore cuTexRefSetAddress2D_v3;
+//%ignore cuTexRefSetAddress_v2;
+//%ignore cuTexRefSetAddressMode;
+//%ignore cuTexRefSetArray;
+//%ignore cuTexRefSetBorderColor;
+//%ignore cuTexRefSetFilterMode;
+//%ignore cuTexRefSetFlags;
+//%ignore cuTexRefSetFormat;
+//%ignore cuTexRefSetMaxAnisotropy;
+//%ignore cuTexRefSetMipmapFilterMode;
+//%ignore cuTexRefSetMipmapLevelBias;
+//%ignore cuTexRefSetMipmapLevelClamp;
+//%ignore cuTexRefSetMipmappedArray;
+//%ignore cuArray3DGetDescriptor;
 
 
 
@@ -656,6 +664,13 @@
 %typemap(cstype) CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
 %typemap(imtype) CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
 %typemap(csin) CUDA_TEXTURE_DESC "$csinput"
+
+   %typemap(cstype)CUDA_ARRAY_DESCRIPTOR * "out CUDA_ARRAY_DESCRIPTOR"
+   %typemap(imtype) CUDA_ARRAY_DESCRIPTOR * "out CUDA_ARRAY_DESCRIPTOR"
+   %typemap(csin) CUDA_ARRAY_DESCRIPTOR * "out $csinput"
+   %typemap(cstype) CUDA_ARRAY_DESCRIPTOR "CUDA_ARRAY_DESCRIPTOR"
+   %typemap(imtype) CUDA_ARRAY_DESCRIPTOR "CUDA_ARRAY_DESCRIPTOR"
+   %typemap(csin) CUDA_ARRAY_DESCRIPTOR "$csinput"
 
 %typemap(cstype) CUtexObject * "out CUtexObject"
 %typemap(imtype)  CUtexObject * "out CUtexObject"

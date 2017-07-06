@@ -2763,6 +2763,206 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMult
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetArray___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUarray arg2 = (CUarray) 0 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUarray)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuTexRefSetArray(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetMipmappedArray___(void * jarg1, void * jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUmipmappedArray arg2 = (CUmipmappedArray) 0 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUmipmappedArray)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuTexRefSetMipmappedArray(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetAddress_v2___(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4) {
+  int jresult ;
+  size_t *arg1 = (size_t *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUdeviceptr arg3 ;
+  size_t arg4 ;
+  CUresult result;
+  
+  arg1 = (size_t *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  arg3 = (CUdeviceptr)jarg3; 
+  arg4 = (size_t)jarg4; 
+  result = (CUresult)cuTexRefSetAddress_v2(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetAddress2D_v3___(void * jarg1, void * jarg2, void * jarg3, unsigned long jarg4) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUDA_ARRAY_DESCRIPTOR *arg2 = (CUDA_ARRAY_DESCRIPTOR *) 0 ;
+  CUdeviceptr arg3 ;
+  size_t arg4 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUDA_ARRAY_DESCRIPTOR *)jarg2; 
+  arg3 = (CUdeviceptr)jarg3; 
+  arg4 = (size_t)jarg4; 
+  result = (CUresult)cuTexRefSetAddress2D_v3(arg1,(CUDA_ARRAY_DESCRIPTOR_st const *)arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetFormat___(void * jarg1, int jarg2, int jarg3) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUarray_format arg2 ;
+  int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUarray_format)jarg2; 
+  arg3 = (int)jarg3; 
+  result = (CUresult)cuTexRefSetFormat(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetAddressMode___(void * jarg1, int jarg2, int jarg3) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  int arg2 ;
+  CUaddress_mode arg3 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (CUaddress_mode)jarg3; 
+  result = (CUresult)cuTexRefSetAddressMode(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetFilterMode___(void * jarg1, int jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUfilter_mode arg2 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUfilter_mode)jarg2; 
+  result = (CUresult)cuTexRefSetFilterMode(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetMipmapFilterMode___(void * jarg1, int jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUfilter_mode arg2 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (CUfilter_mode)jarg2; 
+  result = (CUresult)cuTexRefSetMipmapFilterMode(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetMipmapLevelBias___(void * jarg1, float jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  float arg2 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (float)jarg2; 
+  result = (CUresult)cuTexRefSetMipmapLevelBias(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetMipmapLevelClamp___(void * jarg1, float jarg2, float jarg3) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  float arg2 ;
+  float arg3 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (float)jarg2; 
+  arg3 = (float)jarg3; 
+  result = (CUresult)cuTexRefSetMipmapLevelClamp(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetMaxAnisotropy___(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  unsigned int arg2 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  result = (CUresult)cuTexRefSetMaxAnisotropy(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetBorderColor___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  float *arg2 = (float *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (float *)jarg2; 
+  result = (CUresult)cuTexRefSetBorderColor(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefSetFlags___(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  unsigned int arg2 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  result = (CUresult)cuTexRefSetFlags(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetAddress_v2___(void * jarg1, void * jarg2) {
   int jresult ;
   CUdeviceptr *arg1 = (CUdeviceptr *) 0 ;
@@ -2786,6 +2986,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetArray___(void * jarg1,
   arg1 = (CUarray *)jarg1; 
   arg2 = (CUtexref)jarg2; 
   result = (CUresult)cuTexRefGetArray(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetMipmappedArray___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUmipmappedArray *arg1 = (CUmipmappedArray *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUmipmappedArray *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetMipmappedArray(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }
@@ -2832,6 +3046,64 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetFormat___(void * jarg1
   arg2 = (int *)jarg2; 
   arg3 = (CUtexref)jarg3; 
   result = (CUresult)cuTexRefGetFormat(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetMipmapFilterMode___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUfilter_mode *arg1 = (CUfilter_mode *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUfilter_mode *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetMipmapFilterMode(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetMipmapLevelBias___(void * jarg1, void * jarg2) {
+  int jresult ;
+  float *arg1 = (float *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (float *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetMipmapLevelBias(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetMipmapLevelClamp___(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  float *arg1 = (float *) 0 ;
+  float *arg2 = (float *) 0 ;
+  CUtexref arg3 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (float *)jarg1; 
+  arg2 = (float *)jarg2; 
+  arg3 = (CUtexref)jarg3; 
+  result = (CUresult)cuTexRefGetMipmapLevelClamp(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetMaxAnisotropy___(void * jarg1, void * jarg2) {
+  int jresult ;
+  int *arg1 = (int *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (int *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetMaxAnisotropy(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }

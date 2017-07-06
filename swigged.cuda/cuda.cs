@@ -754,6 +754,71 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuTexRefSetArray(CUtexref hTexRef, CUfunction hArray, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetArray(hTexRef, hArray, Flags);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetMipmappedArray(CUtexref hTexRef, CUmipmappedArray hMipmappedArray, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetMipmappedArray(hTexRef, hMipmappedArray, Flags);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetAddress_v2(out SizeT ByteOffset, CUtexref hTexRef, System.IntPtr dptr, uint bytes) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetAddress_v2(out ByteOffset, hTexRef, dptr, bytes);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetAddress2D_v3(CUtexref hTexRef, out CUDA_ARRAY_DESCRIPTOR desc, System.IntPtr dptr, uint Pitch) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetAddress2D_v3(hTexRef, out desc, dptr, Pitch);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetFormat(CUtexref hTexRef, CUarray_format fmt, int NumPackedComponents) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetFormat(hTexRef, fmt, NumPackedComponents);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetAddressMode(CUtexref hTexRef, int dim, CUaddress_mode am) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetAddressMode(hTexRef, dim, (int)am);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetFilterMode(CUtexref hTexRef, CUfilter_mode fm) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetFilterMode(hTexRef, fm);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetMipmapFilterMode(CUtexref hTexRef, CUfilter_mode fm) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetMipmapFilterMode(hTexRef, fm);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetMipmapLevelBias(CUtexref hTexRef, float bias) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetMipmapLevelBias(hTexRef, bias);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetMipmapLevelClamp(CUtexref hTexRef, float minMipmapLevelClamp, float maxMipmapLevelClamp) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetMipmapLevelClamp(hTexRef, minMipmapLevelClamp, maxMipmapLevelClamp);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetMaxAnisotropy(CUtexref hTexRef, uint maxAniso) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetMaxAnisotropy(hTexRef, maxAniso);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetBorderColor(CUtexref hTexRef, out float pBorderColor) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetBorderColor(hTexRef, out pBorderColor);
+    return ret;
+  }
+
+  public static CUresult cuTexRefSetFlags(CUtexref hTexRef, uint Flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefSetFlags(hTexRef, Flags);
+    return ret;
+  }
+
   public static CUresult cuTexRefGetAddress_v2(out CUdeviceptr pdptr, CUtexref hTexRef) {
     CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetAddress_v2(out pdptr, hTexRef);
     return ret;
@@ -761,6 +826,11 @@ public class Cuda {
 
   public static CUresult cuTexRefGetArray(out CUarray phArray, CUtexref hTexRef) {
     CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetArray(out phArray, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetMipmappedArray(out CUmipmappedArray phMipmappedArray, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetMipmappedArray(out phMipmappedArray, hTexRef);
     return ret;
   }
 
@@ -776,6 +846,26 @@ public class Cuda {
 
   public static CUresult cuTexRefGetFormat(out CUarray_format pFormat, out int pNumChannels, CUtexref hTexRef) {
     CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetFormat(out pFormat, out pNumChannels, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetMipmapFilterMode(out CUfilter_mode pfm, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetMipmapFilterMode(out pfm, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetMipmapLevelBias(out float pbias, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetMipmapLevelBias(out pbias, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetMipmapLevelClamp(out float pminMipmapLevelClamp, out float pmaxMipmapLevelClamp, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetMipmapLevelClamp(out pminMipmapLevelClamp, out pmaxMipmapLevelClamp, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetMaxAnisotropy(out int pmaxAniso, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetMaxAnisotropy(out pmaxAniso, hTexRef);
     return ret;
   }
 
