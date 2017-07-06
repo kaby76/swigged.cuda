@@ -665,5 +665,24 @@
 %typemap(csin)  CUtexObject "$csinput"
 
 
+%typemap(cstype) CUtexref * "out CUtexref"
+%typemap(imtype)  CUtexref * "out CUtexref"
+%typemap(csin)  CUtexref * "out $csinput"
+%typemap(cstype) CUtexref "CUtexref"
+%typemap(imtype)  CUtexref "CUtexref"
+%typemap(csin)  CUtexref "$csinput"
+
+%typemap(cstype) CUarray_format * "out CUarray_format"
+%typemap(imtype)  CUarray_format * "out CUarray_format"
+%typemap(csin)  CUarray_format * "out $csinput"
+%typemap(cstype) CUarray_format "CUarray_format"
+%typemap(imtype)  CUarray_format "CUarray_format"
+%typemap(csin)  CUarray_format "$csinput"
+
+%typemap(cstype) int * pNumChannels "out int"
+%typemap(imtype)  int * pNumChannels "out int"
+%typemap(csin)  int * pNumChannels "out $csinput"
+
+   
 %include <stdint.i>
 %include "cuda.h"

@@ -2763,6 +2763,132 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuOccupancyMaxActiveBlocksPerMult
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetAddress_v2___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUdeviceptr *arg1 = (CUdeviceptr *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUdeviceptr *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetAddress_v2(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetArray___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUarray *arg1 = (CUarray *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUarray *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetArray(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetAddressMode___(void * jarg1, void * jarg2, int jarg3) {
+  int jresult ;
+  CUaddress_mode *arg1 = (CUaddress_mode *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUaddress_mode *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  arg3 = (int)jarg3; 
+  result = (CUresult)cuTexRefGetAddressMode(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetFilterMode___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUfilter_mode *arg1 = (CUfilter_mode *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUfilter_mode *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetFilterMode(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetFormat___(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  CUarray_format *arg1 = (CUarray_format *) 0 ;
+  int *arg2 = (int *) 0 ;
+  CUtexref arg3 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUarray_format *)jarg1; 
+  arg2 = (int *)jarg2; 
+  arg3 = (CUtexref)jarg3; 
+  result = (CUresult)cuTexRefGetFormat(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetBorderColor___(void * jarg1, void * jarg2) {
+  int jresult ;
+  float *arg1 = (float *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (float *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetBorderColor(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefGetFlags___(void * jarg1, void * jarg2) {
+  int jresult ;
+  unsigned int *arg1 = (unsigned int *) 0 ;
+  CUtexref arg2 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (unsigned int *)jarg1; 
+  arg2 = (CUtexref)jarg2; 
+  result = (CUresult)cuTexRefGetFlags(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefCreate___(void * jarg1) {
+  int jresult ;
+  CUtexref *arg1 = (CUtexref *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUtexref *)jarg1; 
+  result = (CUresult)cuTexRefCreate(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexRefDestroy___(void * jarg1) {
+  int jresult ;
+  CUtexref arg1 = (CUtexref) 0 ;
+  CUresult result;
+  
+  arg1 = (CUtexref)jarg1; 
+  result = (CUresult)cuTexRefDestroy(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfRefSetArray___(void * jarg1, void * jarg2, unsigned int jarg3) {
   int jresult ;
   CUsurfref arg1 = (CUsurfref) 0 ;

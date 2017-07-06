@@ -754,6 +754,51 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuTexRefGetAddress_v2(out CUdeviceptr pdptr, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetAddress_v2(out pdptr, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetArray(out CUarray phArray, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetArray(out phArray, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetAddressMode(out CUaddress_mode pam, CUtexref hTexRef, int dim) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetAddressMode(out pam, hTexRef, dim);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetFilterMode(out CUfilter_mode pfm, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetFilterMode(out pfm, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetFormat(out CUarray_format pFormat, out int pNumChannels, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetFormat(out pFormat, out pNumChannels, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetBorderColor(out float pBorderColor, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetBorderColor(out pBorderColor, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefGetFlags(out uint pFlags, CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefGetFlags(out pFlags, hTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefCreate(out CUtexref pTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefCreate(out pTexRef);
+    return ret;
+  }
+
+  public static CUresult cuTexRefDestroy(CUtexref hTexRef) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexRefDestroy(hTexRef);
+    return ret;
+  }
+
   public static CUresult cuSurfRefSetArray(CUsurfref hSurfRef, CUfunction hArray, uint Flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuSurfRefSetArray(hSurfRef, hArray, Flags);
     return ret;
