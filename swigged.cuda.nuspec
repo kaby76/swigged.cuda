@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>8.0.3-alpha</version>
+    <version>8.0.4-alpha</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,13 +23,16 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v8.0) for Windows (x86, x64), Ubuntu (x64).</description>
     <releaseNotes>
-* Version 8.0.3
+* Version 8.0.4-alpha
+Only Windows released. Enmasse addition of Driver API.
+       
+* Version 8.0.3-alpha
 Only Windows released. Fixed cuDeviceGetName.
        
-* Version 8.0.2
+* Version 8.0.2-alpha
 Only Windows released. Fixed cuDeviceGetName.
        
-* Version 8.0.1
+* Version 8.0.1-alpha
 Initial revision. Only Windows released.
        
 Object files provided in this package are a Release build in Net Standard 1.1.
