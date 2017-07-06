@@ -11,7 +11,8 @@ using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 using CUdevprop = System.IntPtr;
 using CUsurfObject = System.IntPtr;
-
+using CUtexObject = System.IntPtr;
+   
 namespace Swigged.Cuda {
 
 public class Cuda {
@@ -763,13 +764,33 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuTexObjectDestroy(ulong texObject) {
+  public static CUresult cuTexObjectCreate(out CUtexObject pTexObject, CUDA_RESOURCE_DESC pResDesc, CUDA_TEXTURE_DESC pTexDesc, CUDA_RESOURCE_VIEW_DESC pResViewDesc) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectCreate(out pTexObject, pResDesc, pTexDesc, pResViewDesc);
+    return ret;
+  }
+
+  public static CUresult cuTexObjectDestroy(CUtexObject texObject) {
     CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectDestroy(texObject);
     return ret;
   }
 
-  public static CUresult cuSurfObjectCreate(out CUsurfObject pSurfObject, out CUDA_RESOURCE_DESC pResDesc) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectCreate(out pSurfObject, out pResDesc);
+  public static CUresult cuTexObjectGetResourceDesc(CUDA_RESOURCE_DESC pResDesc, CUtexObject texObject) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectGetResourceDesc(pResDesc, texObject);
+    return ret;
+  }
+
+  public static CUresult cuTexObjectGetTextureDesc(out CUDA_TEXTURE_DESC pTexDesc, CUtexObject texObject) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectGetTextureDesc(out pTexDesc, texObject);
+    return ret;
+  }
+
+  public static CUresult cuTexObjectGetResourceViewDesc(out CUDA_RESOURCE_VIEW_DESC pResViewDesc, CUtexObject texObject) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuTexObjectGetResourceViewDesc(out pResViewDesc, texObject);
+    return ret;
+  }
+
+  public static CUresult cuSurfObjectCreate(out CUsurfObject pSurfObject, CUDA_RESOURCE_DESC pResDesc) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectCreate(out pSurfObject, pResDesc);
     return ret;
   }
 
@@ -778,8 +799,8 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuSurfObjectGetResourceDesc(out CUDA_RESOURCE_DESC pResDesc, CUsurfObject surfObject) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectGetResourceDesc(out pResDesc, surfObject);
+  public static CUresult cuSurfObjectGetResourceDesc(CUDA_RESOURCE_DESC pResDesc, CUsurfObject surfObject) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuSurfObjectGetResourceDesc(pResDesc, surfObject);
     return ret;
   }
 

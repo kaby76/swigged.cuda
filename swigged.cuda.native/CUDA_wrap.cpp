@@ -2793,6 +2793,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuSurfRefGetArray___(void * jarg1
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectCreate___(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  int jresult ;
+  CUtexObject *arg1 = (CUtexObject *) 0 ;
+  CUDA_RESOURCE_DESC *arg2 = (CUDA_RESOURCE_DESC *) 0 ;
+  CUDA_TEXTURE_DESC *arg3 = (CUDA_TEXTURE_DESC *) 0 ;
+  CUDA_RESOURCE_VIEW_DESC *arg4 = (CUDA_RESOURCE_VIEW_DESC *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUtexObject *)jarg1; 
+  arg2 = (CUDA_RESOURCE_DESC *)jarg2; 
+  arg3 = (CUDA_TEXTURE_DESC *)jarg3; 
+  arg4 = (CUDA_RESOURCE_VIEW_DESC *)jarg4; 
+  result = (CUresult)cuTexObjectCreate(arg1,(CUDA_RESOURCE_DESC_st const *)arg2,(CUDA_TEXTURE_DESC_st const *)arg3,(CUDA_RESOURCE_VIEW_DESC_st const *)arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectDestroy___(unsigned long long jarg1) {
   int jresult ;
   CUtexObject arg1 ;
@@ -2800,6 +2818,48 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectDestroy___(unsigned lo
   
   arg1 = (CUtexObject)jarg1; 
   result = (CUresult)cuTexObjectDestroy(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectGetResourceDesc___(void * jarg1, unsigned long long jarg2) {
+  int jresult ;
+  CUDA_RESOURCE_DESC *arg1 = (CUDA_RESOURCE_DESC *) 0 ;
+  CUtexObject arg2 ;
+  CUresult result;
+  
+  arg1 = (CUDA_RESOURCE_DESC *)jarg1; 
+  arg2 = (CUtexObject)jarg2; 
+  result = (CUresult)cuTexObjectGetResourceDesc(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectGetTextureDesc___(void * jarg1, unsigned long long jarg2) {
+  int jresult ;
+  CUDA_TEXTURE_DESC *arg1 = (CUDA_TEXTURE_DESC *) 0 ;
+  CUtexObject arg2 ;
+  CUresult result;
+  
+  arg1 = (CUDA_TEXTURE_DESC *)jarg1; 
+  arg2 = (CUtexObject)jarg2; 
+  result = (CUresult)cuTexObjectGetTextureDesc(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuTexObjectGetResourceViewDesc___(void * jarg1, unsigned long long jarg2) {
+  int jresult ;
+  CUDA_RESOURCE_VIEW_DESC *arg1 = (CUDA_RESOURCE_VIEW_DESC *) 0 ;
+  CUtexObject arg2 ;
+  CUresult result;
+  
+  arg1 = (CUDA_RESOURCE_VIEW_DESC *)jarg1; 
+  arg2 = (CUtexObject)jarg2; 
+  result = (CUresult)cuTexObjectGetResourceViewDesc(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }

@@ -4,6 +4,7 @@ namespace Swigged.Cuda
     using System;
     using System.Runtime.InteropServices;
     using CUdeviceptr = System.IntPtr;
+    using SizeT = System.UInt64;
 
     [StructLayout(LayoutKind.Sequential)]
     public struct CUcontext
@@ -371,9 +372,72 @@ namespace Swigged.Cuda
         uint Depth; /**< Depth of 3D memory copy */
     }
 
+    
     [StructLayout(LayoutKind.Sequential)]
     public struct CUDA_MEMCPY3D_PEER
     {
         private System.IntPtr stuff;
     }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CUDA_RESOURCE_VIEW_DESC
+    {
+	    CUresourceViewFormat format;   /**< Resource view format */
+        SizeT width;                  /**< Width of the resource view */
+	    SizeT height;                 /**< Height of the resource view */
+	    SizeT depth;                  /**< Depth of the resource view */
+	    uint firstMipmapLevel; /**< First defined mipmap level */
+	    uint lastMipmapLevel;  /**< Last defined mipmap level */
+	    uint firstLayer;       /**< First layer index */
+	    uint lastLayer;        /**< Last layer index */
+        uint reserved1;
+        uint reserved2;
+        uint reserved3;
+        uint reserved4;
+        uint reserved5;
+        uint reserved6;
+        uint reserved7;
+        uint reserved8;
+        uint reserved9;
+        uint reserved10;
+        uint reserved11;
+        uint reserved12;
+        uint reserved13;
+        uint reserved14;
+        uint reserved15;
+        uint reserved16;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct  CUDA_TEXTURE_DESC
+    {
+        CUaddress_mode addressMode1;  /**< Address modes */
+        CUaddress_mode addressMode2;  /**< Address modes */
+        CUaddress_mode addressMode3;  /**< Address modes */
+        CUfilter_mode filterMode;       /**< Filter mode */
+        uint flags;             /**< Flags */
+        uint maxAnisotropy;     /**< Maximum anisotropy ratio */
+        CUfilter_mode mipmapFilterMode; /**< Mipmap filter mode */
+        float mipmapLevelBias;          /**< Mipmap level bias */
+        float minMipmapLevelClamp;      /**< Mipmap minimum level clamp */
+        float maxMipmapLevelClamp;      /**< Mipmap maximum level clamp */
+        float borderColor1;           /**< Border Color */
+        float borderColor2;           /**< Border Color */
+        float borderColor3;           /**< Border Color */
+        float borderColor4;           /**< Border Color */
+        int reserved1;
+        int reserved2;
+        int reserved3;
+        int reserved4;
+        int reserved5;
+        int reserved6;
+        int reserved7;
+        int reserved8;
+        int reserved9;
+        int reserved10;
+        int reserved11;
+        int reserved12;
+    }
+
+
 }

@@ -435,21 +435,21 @@
 //%ignore cuSurfObjectGetResourceDesc;
 //%ignore cuSurfRefGetArray;
 //%ignore cuSurfRefSetArray;
-%ignore cuTexObjectCreate;
-%ignore cuTexObjectCreate;
-%ignore cuTexObjectCreate;
-%ignore cuTexObjectGetResourceDesc;
-%ignore cuTexObjectGetResourceViewDesc;
-%ignore cuTexObjectGetTextureDesc;   
-%ignore cuTexRefCreate;
-%ignore cuTexRefDestroy;
-%ignore cuTexRefGetAddress_v2;
-%ignore cuTexRefGetAddressMode;
-%ignore cuTexRefGetArray;
-%ignore cuTexRefGetBorderColor;
-%ignore cuTexRefGetFilterMode;
-%ignore cuTexRefGetFlags;
-%ignore cuTexRefGetFormat;
+//%ignore cuTexObjectCreate;
+//%ignore cuTexObjectCreate;
+//%ignore cuTexObjectCreate;
+//%ignore cuTexObjectGetResourceDesc;
+//%ignore cuTexObjectGetResourceViewDesc;
+//%ignore cuTexObjectGetTextureDesc;   
+//%ignore cuTexRefCreate;
+//%ignore cuTexRefDestroy;
+//%ignore cuTexRefGetAddress_v2;
+//%ignore cuTexRefGetAddressMode;
+//%ignore cuTexRefGetArray;
+//%ignore cuTexRefGetBorderColor;
+//%ignore cuTexRefGetFilterMode;
+//%ignore cuTexRefGetFlags;
+//%ignore cuTexRefGetFormat;
 %ignore cuTexRefGetMaxAnisotropy;
 %ignore cuTexRefGetMipmapFilterMode;
 %ignore cuTexRefGetMipmapLevelBias;
@@ -585,9 +585,9 @@
 %typemap(csin)  CUstreamBatchMemOpParams "$csinput"
 
 
-%typemap(cstype) CUDA_RESOURCE_DESC * "out CUDA_RESOURCE_DESC"
-%typemap(imtype)  CUDA_RESOURCE_DESC * "out CUDA_RESOURCE_DESC"
-%typemap(csin)  CUDA_RESOURCE_DESC * "out $csinput"
+%typemap(cstype) CUDA_RESOURCE_DESC * "CUDA_RESOURCE_DESC"
+%typemap(imtype)  CUDA_RESOURCE_DESC * "CUDA_RESOURCE_DESC"
+%typemap(csin)  CUDA_RESOURCE_DESC * "$csinput"
 %typemap(cstype) CUDA_RESOURCE_DESC "CUDA_RESOURCE_DESC"
 %typemap(imtype)  CUDA_RESOURCE_DESC "CUDA_RESOURCE_DESC"
 %typemap(csin)  CUDA_RESOURCE_DESC "$csinput"
@@ -629,7 +629,41 @@
 %typemap(imtype)  CUDA_MEMCPY3D_PEER "CUDA_MEMCPY3D_PEER"
 %typemap(csin)  CUDA_MEMCPY3D_PEER "$csinput"
 
+%typemap(cstype) const CUDA_RESOURCE_VIEW_DESC * "CUDA_RESOURCE_VIEW_DESC"
+%typemap(imtype)  const CUDA_RESOURCE_VIEW_DESC * "CUDA_RESOURCE_VIEW_DESC"
+%typemap(csin)  const CUDA_RESOURCE_VIEW_DESC * "$csinput"
+%typemap(cstype) const CUDA_RESOURCE_VIEW_DESC "CUDA_RESOURCE_VIEW_DESC"
+%typemap(imtype)  const CUDA_RESOURCE_VIEW_DESC "CUDA_RESOURCE_VIEW_DESC"
+%typemap(csin)  const CUDA_RESOURCE_VIEW_DESC "$csinput"
 
-   
+%typemap(cstype) CUDA_RESOURCE_VIEW_DESC * "out CUDA_RESOURCE_VIEW_DESC"
+%typemap(imtype) CUDA_RESOURCE_VIEW_DESC * "out CUDA_RESOURCE_VIEW_DESC"
+%typemap(csin) CUDA_RESOURCE_VIEW_DESC * "out $csinput"
+%typemap(cstype) CUDA_RESOURCE_VIEW_DESC "CUDA_RESOURCE_VIEW_DESC"
+%typemap(imtype) CUDA_RESOURCE_VIEW_DESC "CUDA_RESOURCE_VIEW_DESC"
+%typemap(csin) CUDA_RESOURCE_VIEW_DESC "$csinput"
+
+%typemap(cstype) const CUDA_TEXTURE_DESC * "CUDA_TEXTURE_DESC"
+%typemap(imtype)  const CUDA_TEXTURE_DESC * "CUDA_TEXTURE_DESC"
+%typemap(csin)  const CUDA_TEXTURE_DESC * "$csinput"
+%typemap(cstype) const CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
+%typemap(imtype)  const CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
+%typemap(csin)  const CUDA_TEXTURE_DESC "$csinput"
+
+%typemap(cstype)CUDA_TEXTURE_DESC * "out CUDA_TEXTURE_DESC"
+%typemap(imtype) CUDA_TEXTURE_DESC * "out CUDA_TEXTURE_DESC"
+%typemap(csin) CUDA_TEXTURE_DESC * "out $csinput"
+%typemap(cstype) CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
+%typemap(imtype) CUDA_TEXTURE_DESC "CUDA_TEXTURE_DESC"
+%typemap(csin) CUDA_TEXTURE_DESC "$csinput"
+
+%typemap(cstype) CUtexObject * "out CUtexObject"
+%typemap(imtype)  CUtexObject * "out CUtexObject"
+%typemap(csin)  CUtexObject * "out $csinput"
+%typemap(cstype) CUtexObject "CUtexObject"
+%typemap(imtype)  CUtexObject "CUtexObject"
+%typemap(csin)  CUtexObject "$csinput"
+
+
 %include <stdint.i>
 %include "cuda.h"
