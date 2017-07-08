@@ -1,15 +1,19 @@
 # swigged.cuda.8.0
 
-This project is a C# [SWIG](http://swig.org)-generated wrapper API for the CUDA Driver API version 8.0 that targets Net Standard 1.1.
-Virtually all of the API is exposed.
+This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API version 8.0 in C#, compiled
+under Net Standard 1.1.
 
-The interface with the Driver API is very basic. For example, arrays must be marshaled into a pinned array, and
-an address of the array converted into an System.IntPtr for use with the wrapper API.
+Virtually all of the API is exposed. However, the interface with the Driver API is minimal.
+For example, arrays must be marshaled into a pinned array, and an address of the array converted into an
+System.IntPtr for use with the wrapper API.
 
-The purpose of this wrapper API is to expose the latest CUDA Driver API to a GP-GPU extension to C# that I am
-writing. Consequently, be forewarned that I use only a subset of the Driver API, and much of the API is untested.
-However, this wrapper is Net Standard 1.1 compliant. Therefore, it is can be used in almost any Net Framework,
-Net Standard, or Net Core app or library.
+Also, the purpose of this wrapper API is for support of [Campy](http://campynet.com/), an
+extension to C# for GP-GPU programming that I am writing. Consequently, be forewarned that
+I use only a subset of the Driver API, and much of the API is untested. (At some point, this will change.)
+
+This wrapper is Net Standard 1.1 compliant. Therefore, it is can be used in almost any Net Framework,
+Net Standard, or Net Core app or library. However, it has not been ported to Linux, and it is untested under
+Mono.
 
 # Targets
 
