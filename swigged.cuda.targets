@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>  
+        <BuildDependsOn>
+        SwigCudaPreBuildEvent;
+        $(BuildDependsOn);  
+        </BuildDependsOn>  
+    </PropertyGroup>
+    <Target
+      Name="SwigCudaPreBuildEvent"
+      Condition="'$(SwigCudaPreBuildEvent)'!=''"
+      DependsOnTargets="$(PreBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(SwigCudaPreBuildEvent)" />
+  </Target>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">copy "..\..\..\packages\swigged.cuda.8.0.6\win10\lib\x86\*.* </SwigCudaPreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "..\..\..\packages\swigged.cuda.8.0.6\win10\lib\x64\*.* </SwigCudaPreBuildEvent>
+  </PropertyGroup>
+</Project>
