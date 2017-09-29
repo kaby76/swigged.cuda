@@ -674,13 +674,28 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuStreamWaitValue64(CUstream stream, System.IntPtr addr, ulong value, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamWaitValue64(stream, addr, value, flags);
+    return ret;
+  }
+
   public static CUresult cuStreamWriteValue32(CUstream stream, System.IntPtr addr, uint value, uint flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuStreamWriteValue32(stream, addr, value, flags);
     return ret;
   }
 
+  public static CUresult cuStreamWriteValue64(CUstream stream, System.IntPtr addr, ulong value, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamWriteValue64(stream, addr, value, flags);
+    return ret;
+  }
+
   public static CUresult cuFuncGetAttribute(out int pi, CUfunction_attribute attrib, CUfunction hfunc) {
     CUresult ret = (CUresult)CudaPINVOKE.cuFuncGetAttribute(out pi, (int)attrib, hfunc);
+    return ret;
+  }
+
+  public static CUresult cuFuncSetAttribute(CUfunction hfunc, CUfunction_attribute attrib, int value) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuFuncSetAttribute(hfunc, (int)attrib, value);
     return ret;
   }
 
@@ -696,6 +711,16 @@ public class Cuda {
 
   public static CUresult cuLaunchKernel(CUfunction f, uint gridDimX, uint gridDimY, uint gridDimZ, uint blockDimX, uint blockDimY, uint blockDimZ, uint sharedMemBytes, CUstream hStream, System.IntPtr kernelParams, System.IntPtr extra) {
     CUresult ret = (CUresult)CudaPINVOKE.cuLaunchKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, kernelParams, extra);
+    return ret;
+  }
+
+  public static CUresult cuLaunchCooperativeKernel(CUfunction f, uint gridDimX, uint gridDimY, uint gridDimZ, uint blockDimX, uint blockDimY, uint blockDimZ, uint sharedMemBytes, CUstream hStream, System.IntPtr kernelParams) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunchCooperativeKernel(f, gridDimX, gridDimY, gridDimZ, blockDimX, blockDimY, blockDimZ, sharedMemBytes, hStream, kernelParams);
+    return ret;
+  }
+
+  public static CUresult cuLaunchCooperativeKernelMultiDevice(CUDA_LAUNCH_PARAMS launchParamsList, uint numDevices, uint flags) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLaunchCooperativeKernelMultiDevice(launchParamsList, numDevices, flags);
     return ret;
   }
 
@@ -944,11 +969,6 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuDeviceGetP2PAttribute(out int value, CUdevice_P2PAttribute attrib, int srcDevice, int dstDevice) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetP2PAttribute(out value, (int)attrib, srcDevice, dstDevice);
-    return ret;
-  }
-
   public static CUresult cuCtxEnablePeerAccess(CUcontext peerContext, uint Flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuCtxEnablePeerAccess(peerContext, Flags);
     return ret;
@@ -956,6 +976,11 @@ public class Cuda {
 
   public static CUresult cuCtxDisablePeerAccess(CUcontext peerContext) {
     CUresult ret = (CUresult)CudaPINVOKE.cuCtxDisablePeerAccess(peerContext);
+    return ret;
+  }
+
+  public static CUresult cuDeviceGetP2PAttribute(out int value, CUdevice_P2PAttribute attrib, int srcDevice, int dstDevice) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetP2PAttribute(out value, (int)attrib, srcDevice, dstDevice);
     return ret;
   }
 
@@ -973,6 +998,8 @@ public class Cuda {
   public static readonly int CU_MEMHOSTREGISTER_PORTABLE = CudaPINVOKE.CU_MEMHOSTREGISTER_PORTABLE_get();
   public static readonly int CU_MEMHOSTREGISTER_DEVICEMAP = CudaPINVOKE.CU_MEMHOSTREGISTER_DEVICEMAP_get();
   public static readonly int CU_MEMHOSTREGISTER_IOMEMORY = CudaPINVOKE.CU_MEMHOSTREGISTER_IOMEMORY_get();
+  public static readonly int CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_PRE_LAUNCH_SYNC = CudaPINVOKE.CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_PRE_LAUNCH_SYNC_get();
+  public static readonly int CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_POST_LAUNCH_SYNC = CudaPINVOKE.CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_POST_LAUNCH_SYNC_get();
   public static readonly int CUDA_ARRAY3D_LAYERED = CudaPINVOKE.CUDA_ARRAY3D_LAYERED_get();
   public static readonly int CUDA_ARRAY3D_2DARRAY = CudaPINVOKE.CUDA_ARRAY3D_2DARRAY_get();
   public static readonly int CUDA_ARRAY3D_SURFACE_LDST = CudaPINVOKE.CUDA_ARRAY3D_SURFACE_LDST_get();

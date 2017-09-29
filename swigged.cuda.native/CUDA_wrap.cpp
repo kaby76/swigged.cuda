@@ -351,7 +351,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda___CUDA_API_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(8000);
+  result = (int)(9000);
   jresult = result; 
   return jresult;
 }
@@ -361,7 +361,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CUDA_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(8000);
+  result = (int)(9000);
   jresult = result; 
   return jresult;
 }
@@ -432,6 +432,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CU_MEMHOSTREGISTER_IOMEMORY_get__
   int result;
   
   result = (int)(0x04);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_PRE_LAUNCH_SYNC_get___() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x01);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CUDA_COOPERATIVE_LAUNCH_MULTI_DEVICE_NO_POST_LAUNCH_SYNC_get___() {
+  int jresult ;
+  int result;
+  
+  result = (int)(0x02);
   jresult = result; 
   return jresult;
 }
@@ -2489,6 +2509,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamWaitValue32___(void * jar
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamWaitValue64___(void * jarg1, void * jarg2, unsigned long long jarg3, unsigned int jarg4) {
+  int jresult ;
+  CUstream arg1 = (CUstream) 0 ;
+  CUdeviceptr arg2 ;
+  cuuint64_t arg3 ;
+  unsigned int arg4 ;
+  CUresult result;
+  
+  arg1 = (CUstream)jarg1; 
+  arg2 = (CUdeviceptr)jarg2; 
+  arg3 = (cuuint64_t)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  result = (CUresult)cuStreamWaitValue64(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamWriteValue32___(void * jarg1, void * jarg2, unsigned int jarg3, unsigned int jarg4) {
   int jresult ;
   CUstream arg1 = (CUstream) 0 ;
@@ -2507,6 +2545,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamWriteValue32___(void * ja
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamWriteValue64___(void * jarg1, void * jarg2, unsigned long long jarg3, unsigned int jarg4) {
+  int jresult ;
+  CUstream arg1 = (CUstream) 0 ;
+  CUdeviceptr arg2 ;
+  cuuint64_t arg3 ;
+  unsigned int arg4 ;
+  CUresult result;
+  
+  arg1 = (CUstream)jarg1; 
+  arg2 = (CUdeviceptr)jarg2; 
+  arg3 = (cuuint64_t)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  result = (CUresult)cuStreamWriteValue64(arg1,arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuFuncGetAttribute___(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   int *arg1 = (int *) 0 ;
@@ -2518,6 +2574,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuFuncGetAttribute___(void * jarg
   arg2 = (CUfunction_attribute)jarg2; 
   arg3 = (CUfunction)jarg3; 
   result = (CUresult)cuFuncGetAttribute(arg1,arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuFuncSetAttribute___(void * jarg1, int jarg2, int jarg3) {
+  int jresult ;
+  CUfunction arg1 = (CUfunction) 0 ;
+  CUfunction_attribute arg2 ;
+  int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUfunction)jarg1; 
+  arg2 = (CUfunction_attribute)jarg2; 
+  arg3 = (int)jarg3; 
+  result = (CUresult)cuFuncSetAttribute(arg1,arg2,arg3);
   jresult = (int)result; 
   return jresult;
 }
@@ -2578,6 +2650,52 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLaunchKernel___(void * jarg1, u
   arg10 = (void **)jarg10; 
   arg11 = (void **)jarg11; 
   result = (CUresult)cuLaunchKernel(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLaunchCooperativeKernel___(void * jarg1, unsigned int jarg2, unsigned int jarg3, unsigned int jarg4, unsigned int jarg5, unsigned int jarg6, unsigned int jarg7, unsigned int jarg8, void * jarg9, void * jarg10) {
+  int jresult ;
+  CUfunction arg1 = (CUfunction) 0 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  unsigned int arg6 ;
+  unsigned int arg7 ;
+  unsigned int arg8 ;
+  CUstream arg9 = (CUstream) 0 ;
+  void **arg10 = (void **) 0 ;
+  CUresult result;
+  
+  arg1 = (CUfunction)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (unsigned int)jarg4; 
+  arg5 = (unsigned int)jarg5; 
+  arg6 = (unsigned int)jarg6; 
+  arg7 = (unsigned int)jarg7; 
+  arg8 = (unsigned int)jarg8; 
+  arg9 = (CUstream)jarg9; 
+  arg10 = (void **)jarg10; 
+  result = (CUresult)cuLaunchCooperativeKernel(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuLaunchCooperativeKernelMultiDevice___(void * jarg1, unsigned int jarg2, unsigned int jarg3) {
+  int jresult ;
+  CUDA_LAUNCH_PARAMS *arg1 = (CUDA_LAUNCH_PARAMS *) 0 ;
+  unsigned int arg2 ;
+  unsigned int arg3 ;
+  CUresult result;
+  
+  arg1 = (CUDA_LAUNCH_PARAMS *)jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  result = (CUresult)cuLaunchCooperativeKernelMultiDevice(arg1,arg2,arg3);
   jresult = (int)result; 
   return jresult;
 }
@@ -3319,24 +3437,6 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceCanAccessPeer___(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetP2PAttribute___(void * jarg1, int jarg2, int jarg3, int jarg4) {
-  int jresult ;
-  int *arg1 = (int *) 0 ;
-  CUdevice_P2PAttribute arg2 ;
-  CUdevice arg3 ;
-  CUdevice arg4 ;
-  CUresult result;
-  
-  arg1 = (int *)jarg1; 
-  arg2 = (CUdevice_P2PAttribute)jarg2; 
-  arg3 = (CUdevice)jarg3; 
-  arg4 = (CUdevice)jarg4; 
-  result = (CUresult)cuDeviceGetP2PAttribute(arg1,arg2,arg3,arg4);
-  jresult = (int)result; 
-  return jresult;
-}
-
-
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuCtxEnablePeerAccess___(void * jarg1, unsigned int jarg2) {
   int jresult ;
   CUcontext arg1 = (CUcontext) 0 ;
@@ -3358,6 +3458,24 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuCtxDisablePeerAccess___(void * 
   
   arg1 = (CUcontext)jarg1; 
   result = (CUresult)cuCtxDisablePeerAccess(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetP2PAttribute___(void * jarg1, int jarg2, int jarg3, int jarg4) {
+  int jresult ;
+  int *arg1 = (int *) 0 ;
+  CUdevice_P2PAttribute arg2 ;
+  CUdevice arg3 ;
+  CUdevice arg4 ;
+  CUresult result;
+  
+  arg1 = (int *)jarg1; 
+  arg2 = (CUdevice_P2PAttribute)jarg2; 
+  arg3 = (CUdevice)jarg3; 
+  arg4 = (CUdevice)jarg4; 
+  result = (CUresult)cuDeviceGetP2PAttribute(arg1,arg2,arg3,arg4);
   jresult = (int)result; 
   return jresult;
 }

@@ -439,5 +439,19 @@ namespace Swigged.Cuda
         int reserved12;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CUDA_LAUNCH_PARAMS
+    {
+	    CUfunction function;         /**< Kernel to launch */
+	    uint gridDimX;       /**< Width of grid in blocks */
+	    uint gridDimY;       /**< Height of grid in blocks */
+	    uint gridDimZ;       /**< Depth of grid in blocks */
+	    uint blockDimX;      /**< X dimension of each thread block */
+	    uint blockDimY;      /**< Y dimension of each thread block */
+	    uint blockDimZ;      /**< Z dimension of each thread block */
+	    uint sharedMemBytes; /**< Dynamic shared-memory size per thread block in bytes */
+	    CUstream hStream;            /**< Stream identifier */
+	    IntPtr[] kernelParams;       /**< Array of pointers to kernel parameters */
+    }
 
 }

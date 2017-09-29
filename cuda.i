@@ -339,6 +339,8 @@
 %ignore CUDA_RESOURCE_VIEW_DESC_st;
 %ignore CUDA_TEXTURE_DESC;
 %ignore CUDA_TEXTURE_DESC_st;
+%ignore CUDA_LAUNCH_PARAMS;
+%ignore CUDA_LAUNCH_PARAMS_st;
 //%ignore cuDeviceGetProperties;
 %ignore CUdevprop;
 %ignore CUdevprop_st;
@@ -583,6 +585,14 @@
 %typemap(cstype) int * pNumChannels "out int"
 %typemap(imtype)  int * pNumChannels "out int"
 %typemap(csin)  int * pNumChannels "out $csinput"
+
+   %typemap(cstype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
+   %typemap(imtype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
+   %typemap(csin) CUDA_LAUNCH_PARAMS * "$csinput"
+   %typemap(cstype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
+   %typemap(imtype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
+   %typemap(csin) CUDA_LAUNCH_PARAMS "$csinput"
+
 
    
 %include <stdint.i>

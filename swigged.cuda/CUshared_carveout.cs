@@ -10,12 +10,10 @@
 
 namespace Swigged.Cuda {
 
-public enum CUstreamWaitValue_flags {
-  CU_STREAM_WAIT_VALUE_GEQ = 0x0,
-  CU_STREAM_WAIT_VALUE_EQ = 0x1,
-  CU_STREAM_WAIT_VALUE_AND = 0x2,
-  CU_STREAM_WAIT_VALUE_NOR = 0x3,
-  CU_STREAM_WAIT_VALUE_FLUSH = 1 << 30
+public enum CUshared_carveout {
+  CU_SHAREDMEM_CARVEOUT_DEFAULT = -1,
+  CU_SHAREDMEM_CARVEOUT_MAX_SHARED = 100,
+  CU_SHAREDMEM_CARVEOUT_MAX_L1 = 0
 }
 
 }
