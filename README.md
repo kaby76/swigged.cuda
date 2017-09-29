@@ -1,6 +1,6 @@
-# swigged.cuda.8.0
+# swigged.cuda
 
-This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API version 8.0 in C#, compiled
+This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API in C#, compiled
 under Net Standard 1.1.
 
 Virtually all of the API is exposed. However, the interface with the Driver API is minimal.
@@ -32,7 +32,7 @@ application, either un-check "Prefer 32-bit" if you want to run as 64-bit app, o
 
 *You will need to copy swigged.cuda.native.dll to the executable directory.*
 
-Note, CUDA 8.0 development normally requires VS 2015. However, there is no such restriction when using Swigged.cuda.
+Note, CUDA development normally requires VS 2015. However, there is no such restriction when using Swigged.cuda.
 However, if you intend to build a private copy of the wrapper API, you will need VS 2015 to compile the native libary
 of Swigged.cuda.
 
