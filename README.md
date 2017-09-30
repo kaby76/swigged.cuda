@@ -1,5 +1,8 @@
 # swigged.cuda
 
+### Status
+[![Build Status](https://travis-ci.org/kaby76/swigged.cuda.svg?branch=master)](https://travis-ci.org/kaby76/swigged.cuda)
+
 This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API in C#, compiled
 under Net Standard 1.1.
 
