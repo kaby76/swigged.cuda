@@ -4,5 +4,6 @@ mono: none
 dotnet: 2.0.0
 dist: trusty
 script:
+ - cd swigged.cuda
  - dotnet restore
  - dotnet build
