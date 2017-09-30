@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swigged.cuda", "swigged.cuda.csproj", "{02A8CDCF-FD71-4BEF-80A7-612165B6A036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "..\ConsoleApp1\ConsoleApp1.csproj", "{CC6C38D6-469F-45B6-AE46-8A4A0034530C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17BACCEB-2435-4752-93E3-0E9F4F772113}"
 	ProjectSection(SolutionItems) = preProject
 		..\cuda.i = ..\cuda.i
