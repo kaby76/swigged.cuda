@@ -108,6 +108,9 @@ BB0_2:
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
             res = Cuda.cuMemcpyDtoH_v2(pointer, dptr, 11*sizeof(int));
             if (res != CUresult.CUDA_SUCCESS) throw new Exception();
+            for (int i = 0; i < 11; ++i)
+                System.Console.Write((char)v[i]);
+            System.Console.WriteLine();
             Cuda.cuCtxDestroy_v2(cuContext);
         }
     }
