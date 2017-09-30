@@ -1,0 +1,2 @@
+language: csharp
+solution: swigged.cuda/swigged.cuda.sln
