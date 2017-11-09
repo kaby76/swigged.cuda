@@ -222,6 +222,11 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuModuleLoadDataEx(out CUmodule module, System.IntPtr image, uint numOptions, CUjit_option[] options, System.IntPtr optionValues) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuModuleLoadDataEx(out module, image, numOptions, options, optionValues);
+    return ret;
+  }
+
   public static CUresult cuModuleLoadFatBinary(out CUmodule module, System.IntPtr fatCubin) {
     CUresult ret = (CUresult)CudaPINVOKE.cuModuleLoadFatBinary(out module, fatCubin);
     return ret;
@@ -242,18 +247,18 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuLinkCreate_v2(uint numOptions, out CUjit_option options, System.IntPtr optionValues, out CUlinkState stateOut) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuLinkCreate_v2(numOptions, out options, optionValues, out stateOut);
+  public static CUresult cuLinkCreate_v2(uint numOptions, CUjit_option[] options, System.IntPtr optionValues, out CUlinkState stateOut) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkCreate_v2(numOptions, options, optionValues, out stateOut);
     return ret;
   }
 
-  public static CUresult cuLinkAddData_v2(CUlinkState state, CUjitInputType type, System.IntPtr data, uint size, string name, uint numOptions, out CUjit_option options, System.IntPtr optionValues) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddData_v2(state, (int)type, data, size, name, numOptions, out options, optionValues);
+  public static CUresult cuLinkAddData_v2(CUlinkState state, CUjitInputType type, System.IntPtr data, uint size, string name, uint numOptions, CUjit_option[] options, System.IntPtr optionValues) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddData_v2(state, (int)type, data, size, name, numOptions, options, optionValues);
     return ret;
   }
 
-  public static CUresult cuLinkAddFile_v2(CUlinkState state, CUjitInputType type, string path, uint numOptions, out CUjit_option options, System.IntPtr optionValues) {
-    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddFile_v2(state, (int)type, path, numOptions, out options, optionValues);
+  public static CUresult cuLinkAddFile_v2(CUlinkState state, CUjitInputType type, string path, uint numOptions, CUjit_option[] options, System.IntPtr optionValues) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuLinkAddFile_v2(state, (int)type, path, numOptions, options, optionValues);
     return ret;
   }
 

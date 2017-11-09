@@ -1041,6 +1041,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuModuleLoadData___(void * jarg1,
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuModuleLoadDataEx___(void * jarg1, void * jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
+  int jresult ;
+  CUmodule *arg1 = (CUmodule *) 0 ;
+  void *arg2 = (void *) 0 ;
+  unsigned int arg3 ;
+  CUjit_option *arg4 = (CUjit_option *) 0 ;
+  void **arg5 = (void **) 0 ;
+  CUresult result;
+  
+  arg1 = (CUmodule *)jarg1; 
+  arg2 = (void *)jarg2; 
+  arg3 = (unsigned int)jarg3; 
+  arg4 = (CUjit_option *)jarg4; 
+  arg5 = (void **)jarg5; 
+  result = (CUresult)cuModuleLoadDataEx(arg1,(void const *)arg2,arg3,arg4,arg5);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuModuleLoadFatBinary___(void * jarg1, void * jarg2) {
   int jresult ;
   CUmodule *arg1 = (CUmodule *) 0 ;

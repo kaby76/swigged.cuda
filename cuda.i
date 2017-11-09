@@ -246,9 +246,9 @@
 %typemap(imtype) CUfilter_mode "CUfilter_mode"
 %typemap(csin) CUfilter_mode "$csinput"
 
-%typemap(cstype) CUjit_option * "out CUjit_option"
-%typemap(imtype) CUjit_option * "out CUjit_option"
-%typemap(csin) CUjit_option * "out $csinput"
+%typemap(cstype) CUjit_option * "CUjit_option[]"
+%typemap(imtype) CUjit_option * "CUjit_option[]"
+%typemap(csin) CUjit_option * "$csinput"
 %typemap(cstype) CUjit_option "CUjit_option"
 %typemap(imtype) CUjit_option "CUjit_option"
 %typemap(csin) CUjit_option "$csinput"
@@ -363,7 +363,6 @@
 %ignore CUipcMemHandle_st;
 %ignore cuModuleGetSurfRef;
 %ignore cuModuleGetTexRef;
-%ignore cuModuleLoadDataEx;
 %ignore cuOccupancyMaxPotentialBlockSize;
 %ignore cuOccupancyMaxPotentialBlockSizeWithFlags;
 %ignore cuParamSetTexRef;

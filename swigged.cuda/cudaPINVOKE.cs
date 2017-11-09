@@ -373,6 +373,9 @@ class CudaPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuModuleLoadData___")]
   public static extern int cuModuleLoadData(out CUmodule jarg1, System.IntPtr jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuModuleLoadDataEx___")]
+  public static extern int cuModuleLoadDataEx(out CUmodule jarg1, System.IntPtr jarg2, uint jarg3, CUjit_option[] jarg4, System.IntPtr jarg5);
+
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuModuleLoadFatBinary___")]
   public static extern int cuModuleLoadFatBinary(out CUmodule jarg1, System.IntPtr jarg2);
 
@@ -386,13 +389,13 @@ class CudaPINVOKE {
   public static extern int cuModuleGetGlobal_v2(out CUdeviceptr jarg1, out SizeT jarg2, CUmodule jarg3, string jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLinkCreate_v2___")]
-  public static extern int cuLinkCreate_v2(uint jarg1, out CUjit_option jarg2, System.IntPtr jarg3, out CUlinkState jarg4);
+  public static extern int cuLinkCreate_v2(uint jarg1, CUjit_option[] jarg2, System.IntPtr jarg3, out CUlinkState jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLinkAddData_v2___")]
-  public static extern int cuLinkAddData_v2(CUlinkState jarg1, int jarg2, System.IntPtr jarg3, uint jarg4, string jarg5, uint jarg6, out CUjit_option jarg7, System.IntPtr jarg8);
+  public static extern int cuLinkAddData_v2(CUlinkState jarg1, int jarg2, System.IntPtr jarg3, uint jarg4, string jarg5, uint jarg6, CUjit_option[] jarg7, System.IntPtr jarg8);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLinkAddFile_v2___")]
-  public static extern int cuLinkAddFile_v2(CUlinkState jarg1, int jarg2, string jarg3, uint jarg4, out CUjit_option jarg5, System.IntPtr jarg6);
+  public static extern int cuLinkAddFile_v2(CUlinkState jarg1, int jarg2, string jarg3, uint jarg4, CUjit_option[] jarg5, System.IntPtr jarg6);
 
   [global::System.Runtime.InteropServices.DllImport("swigged-cuda-native", EntryPoint="CSharp_SwiggedfCuda_cuLinkComplete___")]
   public static extern int cuLinkComplete(CUlinkState jarg1, out System.IntPtr jarg2, out SizeT jarg3);

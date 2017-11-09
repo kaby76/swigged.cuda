@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.0.1</version>
+    <version>9.0.2</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.0) for Windows (x86, x64).</description>
     <releaseNotes>
+* Version 9.0.2
+Fixed cuLinkCreate and other functions that depend on options parameter.
+
 * Version 9.0.1
 Updating .targets file so that "copy" step of proper native library works regardless whether you "nuget"
 for a Net Framework, Standard, or Core project. Rest of package is essentially unchanged.
