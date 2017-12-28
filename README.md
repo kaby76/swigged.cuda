@@ -4,9 +4,10 @@
 [![Build Status](https://travis-ci.org/kaby76/swigged.cuda.svg?branch=master)](https://travis-ci.org/kaby76/swigged.cuda)
 
 This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9 in C#, compiled
-under Net Standard 1.1. Note, older releases of the NVIDIA GPU Toolkit are not supported; version 9.x must be installed,
-and you must have a NVIDIA GPU Pascal or newer installed. I am dropping support of 32-bit targets, as NVIDIA GPU Toolkit
-drops support for 32-bit targets at all!
+under Net Standard 1.1. This project targets CUDA GPU Computing Toolkit version 9.0.176, Visual Studio 2017 15.4.5,
+and 64-bit GPU targets. Older releases of the NVIDIA GPU Toolkit are not supported. The Toolkit version 9 must be installed,
+and you must have a NVIDIA GPU Pascal or newer installed. Support of 32-bit targets has been dropped, since the Toolkit
+drops support for 32-bit targets!
 
 Virtually all of the API is exposed. However, the thunking with the Driver API is minimal.
 For example, you must manuall marshal arrays into a pinned array, and convert the pinned array handle into a System.IntPtr address for use with swigged.cuda.
@@ -158,6 +159,12 @@ BB0_2:
     }
 }
 ~~~~
+
+## Console example provided in the source code
+
+Please see https://github.com/kaby76/swigged.cuda/tree/master/ConsoleApp1 for
+a stand-alone example that uses the Swigged.CUDA API from Nuget.
+
 
 ## Alternative CUDA Driver APIs for C#
 
