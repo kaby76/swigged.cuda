@@ -3,8 +3,9 @@
 ### Status
 [![Build Status](https://travis-ci.org/kaby76/swigged.cuda.svg?branch=master)](https://travis-ci.org/kaby76/swigged.cuda)
 
-This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API in C#, compiled
-under Net Standard 1.1.
+This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9 in C#, compiled
+under Net Standard 1.1. Note, older releases of the NVIDIA GPU Toolkit are not supported; version 9.x must be installed,
+and you must have a NVIDIA GPU Pascal or newer installed.
 
 Virtually all of the API is exposed. However, the thunking with the Driver API is minimal.
 For example, you must manuall marshal arrays into a pinned array, and convert the pinned array handle into a System.IntPtr address for use with swigged.cuda.
@@ -168,9 +169,3 @@ Although it is very good, it just isn't compatible with Net Standard and Net Cor
 
 I haven't tried this, but it looks like a fine wrapper library, albeit it does not seem to expose
 the CUDA Driver API, rather the CUDA Runtime API, NPP, and CUBLAS.
-
-##### Other APIs
-
-ILGPU does contains a wrapper library for the CUDA Driver API, but it is
-not a stand-alone API, and it is only a small subset sufficient for compilation
-of C# into PTX.
