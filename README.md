@@ -5,7 +5,8 @@
 
 This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9 in C#, compiled
 under Net Standard 1.1. Note, older releases of the NVIDIA GPU Toolkit are not supported; version 9.x must be installed,
-and you must have a NVIDIA GPU Pascal or newer installed.
+and you must have a NVIDIA GPU Pascal or newer installed. I am dropping support of 32-bit targets, as NVIDIA GPU Toolkit
+drops support for 32-bit targets at all!
 
 Virtually all of the API is exposed. However, the thunking with the Driver API is minimal.
 For example, you must manuall marshal arrays into a pinned array, and convert the pinned array handle into a System.IntPtr address for use with swigged.cuda.
@@ -19,7 +20,7 @@ Net Standard, or Net Core app or library. However, it has not been ported to Lin
 
 # Targets
 
-* Windows 10 (x86 and x64)
+* Windows 10 (x64)
 
 ## Using the API from NuGet
 
@@ -30,13 +31,14 @@ download the package from NuGet (https://www.nuget.org/packages/swigged.cuda) an
 add the package "swigged.cuda" from the nuget package manager console.
 
 Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
-application, either un-check "Prefer 32-bit" if you want to run as 64-bit app, or checked if you want to run as a 32-bit app.
+application, uncheck "Prefer 32-bit".
+Note--You must uncheck Prefer 32-bit because the NVIDIA GPU Toolkit version 9 does not support
+32-bit targets at all.
 
-*You will need to copy swigged.cuda.native.dll to the executable directory.*
+*You may need to copy swigged.cuda.native.dll to the executable directory.*
 
-Note, CUDA development normally requires VS 2015. However, there is no such restriction when using Swigged.cuda.
-However, if you intend to build a private copy of the wrapper API, you will need VS 2015 to compile the native libary
-of Swigged.cuda.
+Note, you must be using Visual Studio 2017 version 15.4.5 or earlier of VS 2017.
+Unfortunately, the GPU Toolkit Version 9 does not work with Visual Studio 15.5.x!!
 
 # Example #
 

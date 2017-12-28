@@ -13,9 +13,11 @@
     <Exec WorkingDirectory="$(OutDir)" Command="$(SwigCudaPreBuildEvent)" />
   </Target>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">copy "$(SolutionDir)packages\swigged.cuda.9.0.2\win10\lib\x86\*.* </SwigCudaPreBuildEvent>
+    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'true'">
+      <ErrorText>This project requires 'Prefer 32-bit' to be unset/unchecked (i.e., 64-bit target). NVIDIA GPU Toolkit version 9+ no longer supports 32-bit targets.</ErrorText>
+    </SwigCudaPreBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(SolutionDir)packages\swigged.cuda.9.0.2\win10\lib\x64\*.* </SwigCudaPreBuildEvent>
+    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(SolutionDir)packages\swigged.cuda.9.0.3\win10\lib\x64\*.* </SwigCudaPreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.0.2</version>
+    <version>9.0.3</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -21,8 +21,11 @@
     <licenseUrl>https://github.com/kaby76/swigged.cuda/blob/master/license</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A C# wrapper API of CUDA Driver API (v9.0) for Windows (x86, x64).</description>
+    <description>A C# wrapper API of CUDA Driver API (v9.0.176) for Windows (x64).</description>
     <releaseNotes>
+* Version 9.0.3
+Removed x86 Windows target libraries. NVIDIA GPU Computing Toolkit Version 9 does not support 32-bit target GPUs.
+
 * Version 9.0.2
 Fixed cuLinkCreate and other functions that depend on options parameter.
 
@@ -81,30 +84,15 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
       <group targetFramework="net452" />
       <group targetFramework="net46" />
       <group targetFramework="net461" />
-      <group targetFramework="net462">
-	<dependency id="System.Console" version="[4.0.0,)" />
-	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
-	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
-	<dependency id="System.Runtime" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
-	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
-	<dependency id="System.Runtime.InteropServices" version="[4.1.0,)" />
-      </group>
-      <group targetFramework="net47">
-	<dependency id="System.Console" version="[4.0.0,)" />
-	<dependency id="System.IO.FileSystem" version="[4.0.1,)" />
-	<dependency id="System.IO.FileSystem.Primitives" version="[4.0.1,)" />
-	<dependency id="System.Runtime" version="[4.1.0,)" />
-	<dependency id="System.Runtime.Extensions" version="[4.1.0,)" />
-	<dependency id="System.Runtime.InteropServices.RuntimeInformation" version="[4.3.0,)" />
-      </group>
-
+      <group targetFramework="net462" />
+      <group targetFramework="net47" />
       <group targetFramework="netcore1.0" />
       <group targetFramework="netcore1.1" />
       <group targetFramework="netstandard1.5" />
       <group targetFramework="netstandard1.6" />
-      <group targetFramework="netstandard2.0" />
-      
+      <group targetFramework="netstandard2.0" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
 <!--      <group targetFramework="Xamarin.iOS10">
       <group targetFramework="Xamarin.Mac20">      
       <group targetFramework="MonoAndroid">
@@ -120,11 +108,9 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
      does not understand "x86" or "x64" platform targets, place these
      in an non-Nuget directory (i.e., not "build", "lib", etc.).
      -->
-    <file src="swigged.cuda.native\x86\Release\swigged-cuda-native.dll" target="win10\lib\x86" />
-    <file src="swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
-
-    <file src="swigged.cuda\bin\Release\netstandard1.1\swigged.cuda.dll" target="lib\netstandard1.1" />
-    <file src="swigged.cuda.targets" target="build\swigged.cuda.targets" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
+    <file src="..\swigged.cuda\bin\Release\netstandard1.1\swigged.cuda.dll" target="lib\netstandard1.1" />
+    <file src="..\swigged.cuda.targets" target="build\swigged.cuda.targets" />
     
   </files>
 </package>
