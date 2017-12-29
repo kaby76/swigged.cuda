@@ -1,7 +1,9 @@
-# swigged.cuda
+# Swigged.CUDA
 
-### Status
+## Status
 [![Build Status](https://travis-ci.org/kaby76/swigged.cuda.svg?branch=master)](https://travis-ci.org/kaby76/swigged.cuda)
+
+## Introduction
 
 This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9 in C#, compiled
 under Net Standard 1.1. This project targets CUDA GPU Computing Toolkit version 9.0.176, Visual Studio 2017 15.4.5,
@@ -16,9 +18,24 @@ Alternatively, please study the example below and the example in the source code
 This wrapper is Net Standard 1.1 compliant. Therefore, it is can be used in almost any Net Framework,
 Net Standard, or Net Core app or library. However, it has not been ported to Linux, and it is minimally tested under Mono.
 
-# Targets
+## What is Swigged.CUDA?
 
-* Windows 10 (x64)
+Swigged.CUDA is a low-level API for NET programmers to
+access the CUDA Driver API. If you want to run against the
+CUDA Runtime API, you will need to look elsewhere. Swigged.CUDA
+is not an API for writing kernels in C#. Instead, you must write
+your kernels in CUDA C++ and generate either PTX, CUBIN, or OBJ files
+that Swigged.CUDA can use.
+
+## Targets
+
+* Version 9.0.176.1 of Swigged.CUDA is targeted for Windows 10 (x64), CUDA GPU Computing Toolkit 9.0.176, and Visual Studio 2017 15.4.5.
+
+## Where can I get Swigged.CUDA?
+
+You can access the source for Swigged.CUDA at Github: https://github.com/kaby76/swigged.cuda . Alternatively,
+you can download a pre-build Nuget package from Nuget:  https://www.nuget.org/packages/swigged.cuda/ .
+
 
 ## Using the API from NuGet
 
@@ -39,7 +56,7 @@ I was in error.*
 *Note, you must be using Visual Studio 2017 version 15.4.5 or earlier of VS 2017.
 Unfortunately, Version 9 of the GPU Computing Toolkit does not work with Visual Studio 15.5.1!*
 
-# Example #
+## Example ##
 
 ~~~~
 using System;
