@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.0.3</version>
+    <version>9.0.176.1</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,8 +23,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.0.176) for Windows (x64).</description>
     <releaseNotes>
-* Version 9.0.3
-Removed x86 Windows target libraries. NVIDIA GPU Computing Toolkit Version 9 does not support 32-bit target GPUs.
+* Version 9.0.176.1
+Adopting version numbers that reflect NVIDIA GPU Computing Toolkit. Removed x86 Windows target library because the Toolkit does not support 32-bit target GPUs. In .NUSPEC file, specifying NETStandard.Library. It should suffice for all supported NET frameworks (CORE, Standard, Framework, ...).
 
 * Version 9.0.2
 Fixed cuLinkCreate and other functions that depend on options parameter.
@@ -86,6 +86,7 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
       <group targetFramework="net461" />
       <group targetFramework="net462" />
       <group targetFramework="net47" />
+      <group targetFramework="net471" />
       <group targetFramework="netcore1.0" />
       <group targetFramework="netcore1.1" />
       <group targetFramework="netstandard1.5" />

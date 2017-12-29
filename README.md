@@ -33,13 +33,14 @@ add the package "swigged.cuda" from the nuget package manager console.
 
 Set up the build of your C# application with Platform = "AnyCPU", Configuration = "Debug" or "Release". In the Properties for the
 application, uncheck "Prefer 32-bit".
-Note--You must uncheck Prefer 32-bit because the NVIDIA GPU Toolkit version 9 does not support
-32-bit targets at all.
+Note--You must uncheck Prefer 32-bit because the NVIDIA GPU Toolkit version 9 does not support 32-bit targets at all.
 
-*You may need to copy swigged.cuda.native.dll to the executable directory.*
+*You may need to copy swigged.cuda.native.dll to the executable directory, or change the swigged.cuda.targets file
+in your package directory, if you changed the paths for compiler and linker output to non-standard locations, or if
+I was in error.*
 
-Note, you must be using Visual Studio 2017 version 15.4.5 or earlier of VS 2017.
-Unfortunately, the GPU Toolkit Version 9 does not work with Visual Studio 15.5.x!!
+*Note, you must be using Visual Studio 2017 version 15.4.5 or earlier of VS 2017.
+Unfortunately, Version 9 of the GPU Computing Toolkit does not work with Visual Studio 15.5.1!*
 
 # Example #
 

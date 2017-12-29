@@ -18,6 +18,6 @@
     </SwigCudaPreBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(SolutionDir)packages\swigged.cuda.9.0.3\win10\lib\x64\*.* </SwigCudaPreBuildEvent>
+    <SwigCudaPreBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(SolutionDir)packages\swigged.cuda.9.0.176\win10\lib\x64\*.* </SwigCudaPreBuildEvent>
   </PropertyGroup>
 </Project>
