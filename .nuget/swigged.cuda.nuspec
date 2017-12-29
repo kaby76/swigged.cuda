@@ -79,18 +79,42 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
     ... Not sure if they work. --> 
     <dependencies>
-      <group targetFramework="net45" />
-      <group targetFramework="net451" />
-      <group targetFramework="net452" />
-      <group targetFramework="net46" />
-      <group targetFramework="net461" />
-      <group targetFramework="net462" />
-      <group targetFramework="net47" />
-      <group targetFramework="net471" />
-      <group targetFramework="netcore1.0" />
-      <group targetFramework="netcore1.1" />
-      <group targetFramework="netstandard1.5" />
-      <group targetFramework="netstandard1.6" />
+      <group targetFramework="net45" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net451" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net452" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net46" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net461" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net462" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net47" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="net471" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="netcore1.0" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="netcore1.1" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="netstandard1.5" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
+      <group targetFramework="netstandard1.6" >
+	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+      </group>
       <group targetFramework="netstandard2.0" >
 	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
       </group>
