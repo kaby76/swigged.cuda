@@ -10,10 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\cuda.i = ..\cuda.i
 		..\generate.bat = ..\generate.bat
 		..\license = ..\license
-		..\.nuget\nuget.exe = ..\nuget.exe
-		..\.nuget\pack.bat = ..\pack.bat
+		..\.nuget\nuget.exe = ..\.nuget\nuget.exe
+		..\.nuget\pack.bat = ..\.nuget\pack.bat
 		..\README.md = ..\README.md
-		..\.nuget\swigged.cuda.nuspec = ..\swigged.cuda.nuspec
+		..\.nuget\swigged.cuda.nuspec = ..\.nuget\swigged.cuda.nuspec
 	EndProjectSection
 EndProject
 Global

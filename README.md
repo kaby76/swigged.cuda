@@ -9,12 +9,9 @@ and 64-bit GPU targets. Older releases of the NVIDIA GPU Toolkit are not support
 and you must have a NVIDIA GPU Pascal or newer installed. Support of 32-bit targets has been dropped, since the Toolkit
 drops support for 32-bit targets!
 
-Virtually all of the API is exposed. However, the thunking with the Driver API is minimal.
-For example, you must manuall marshal arrays into a pinned array, and convert the pinned array handle into a System.IntPtr address for use with swigged.cuda.
-
-Also, the purpose of this wrapper API is for support of [Campy](http://campynet.com/), an
-extension to C# for GP-GPU programming that I am writing. Consequently, be forewarned that
-I use only a subset of the Driver API, and much of the API is untested. (At some point, this will change.)
+Of the entire GPU Computing Toolkit API, only the Driver API is exposed. There is at the moment no documentation
+for the Swigged.CUDA API, but it mirrors that of the Driver API.
+Alternatively, please study the example below and the example in the source code on Github.
 
 This wrapper is Net Standard 1.1 compliant. Therefore, it is can be used in almost any Net Framework,
 Net Standard, or Net Core app or library. However, it has not been ported to Linux, and it is minimally tested under Mono.
