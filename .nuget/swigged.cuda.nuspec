@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.0.176.1</version>
+    <version>9.0.176.3</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -17,12 +17,18 @@
 
     <!-- License, project, icon links for the gallery -->
     <projectUrl>https://github.com/kaby76/swigged.cuda</projectUrl>
-<!--    <iconUrl>https://raw.github.com/kaby76/swigged-cuda/master/logo.png</iconUrl> -->
+    <iconUrl>https://raw.githubusercontent.com/kaby76/swigged.cuda/master/Nvidia_CUDA_Logo.jpg</iconUrl>
     <licenseUrl>https://github.com/kaby76/swigged.cuda/blob/master/license</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.0.176) for Windows (x64).</description>
     <releaseNotes>
+* Version 9.0.176.3
+Fixing restore and build issues--apparently somewhere along the way, the projectdir\packages directory no longer exists. Use userprofile\.nuget\packages directory.
+
+* Version 9.0.176.2
+--- do not use ---
+
 * Version 9.0.176.1
 Adopting version numbers that reflect NVIDIA GPU Computing Toolkit. Removed x86 Windows target library because the Toolkit does not support 32-bit target GPUs. In .NUSPEC file, specifying NETStandard.Library. It should suffice for all supported NET frameworks (CORE, Standard, Framework, ...).
 
@@ -69,7 +75,7 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     <copyright>Copyright © 2017</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
-    <tags>CUDA SWIG native c# compilers bindings pinvoke Windows </tags>
+    <tags>CUDA GPU NVIDIA SWIG native c# compilers bindings pinvoke Windows </tags>
 
     <!-- Dependencies are automatically installed when the package is
     installed -->
@@ -80,43 +86,43 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     ... Not sure if they work. --> 
     <dependencies>
       <group targetFramework="net45" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net451" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net452" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net46" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net461" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net462" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net47" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net471" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netcore1.0" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netcore1.1" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netstandard1.5" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netstandard1.6" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netstandard2.0" >
-	 <dependency id="NETStandard.Library" version="[2.0.1,)" />
+	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
 <!--      <group targetFramework="Xamarin.iOS10">
       <group targetFramework="Xamarin.Mac20">      
