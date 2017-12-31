@@ -7,13 +7,14 @@
 // Do not make changes to this file unless you know what you are doing--modify
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
+
+namespace Swigged.Cuda {
+
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 using CUdevprop = System.IntPtr;
 using CUsurfObject = System.IntPtr;
 using CUtexObject = System.IntPtr;
-   
-namespace Swigged.Cuda {
 
 public class Cuda {
  

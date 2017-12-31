@@ -453,5 +453,4 @@ namespace Swigged.Cuda
 	    CUstream hStream;            /**< Stream identifier */
 	    IntPtr[] kernelParams;       /**< Array of pointers to kernel parameters */
     }
-
 }

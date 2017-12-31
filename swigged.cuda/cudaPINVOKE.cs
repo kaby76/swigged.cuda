@@ -7,13 +7,14 @@
 // Do not make changes to this file unless you know what you are doing--modify
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
+
+namespace Swigged.Cuda {
+
 using SizeT = System.UInt64;
 using CUdeviceptr = System.IntPtr;
 using CUdevprop = System.IntPtr;
 using CUsurfObject = System.IntPtr;
 using CUtexObject = System.IntPtr;
-
-namespace Swigged.Cuda {
 
 class CudaPINVOKE {
 
@@ -59,7 +60,7 @@ class CudaPINVOKE {
                                 ExceptionArgumentDelegate argumentOutOfRangeDelegate);
 
     static void SetPendingApplicationException(string message) {
-      SWIGPendingException.Set(new global::System.Exception(message, SWIGPendingException.Retrieve()));
+      SWIGPendingException.Set(new global::System.ApplicationException(message, SWIGPendingException.Retrieve()));
     }
     static void SetPendingArithmeticException(string message) {
       SWIGPendingException.Set(new global::System.ArithmeticException(message, SWIGPendingException.Retrieve()));
@@ -89,7 +90,7 @@ class CudaPINVOKE {
       SWIGPendingException.Set(new global::System.OverflowException(message, SWIGPendingException.Retrieve()));
     }
     static void SetPendingSystemException(string message) {
-      SWIGPendingException.Set(new global::System.Exception(message, SWIGPendingException.Retrieve()));
+      SWIGPendingException.Set(new global::System.SystemException(message, SWIGPendingException.Retrieve()));
     }
 
     static void SetPendingArgumentException(string message, string paramName) {
@@ -146,7 +147,7 @@ class CudaPINVOKE {
 
     public static void Set(global::System.Exception e) {
       if (pendingException != null)
-        throw new global::System.Exception("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
+        throw new global::System.ApplicationException("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
       pendingException = e;
       lock(typeof(CudaPINVOKE)) {
         numExceptionsPending++;

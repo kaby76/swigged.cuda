@@ -6,6 +6,35 @@
 #include "cuda.h"
 %}
 
+//Into Intermediate (P/Invoke) Class
+%pragma(csharp) imclassimports=%{
+using SizeT = System.UInt64;
+using CUdeviceptr = System.IntPtr;
+using CUdevprop = System.IntPtr;
+using CUsurfObject = System.IntPtr;
+using CUtexObject = System.IntPtr;
+%}
+
+//Into Generated Module Class (for globals, etc.)
+%pragma(csharp) moduleimports=%{
+using SizeT = System.UInt64;
+using CUdeviceptr = System.IntPtr;
+using CUdevprop = System.IntPtr;
+using CUsurfObject = System.IntPtr;
+using CUtexObject = System.IntPtr;
+%}
+
+//Into each generated C# Wrapper class
+%typemap(csimports) SWIGTYPE %{
+using SizeT = System.UInt64;
+using CUdeviceptr = System.IntPtr;
+using CUdevprop = System.IntPtr;
+using CUsurfObject = System.IntPtr;
+using CUtexObject = System.IntPtr;
+%}
+
+
+
 
 // enums, ints, bools, longs, unsigned.
 

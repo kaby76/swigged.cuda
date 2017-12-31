@@ -351,7 +351,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda___CUDA_API_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(9000);
+  result = (int)(9010);
   jresult = result; 
   return jresult;
 }
@@ -361,7 +361,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CUDA_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(9000);
+  result = (int)(9010);
   jresult = result; 
   return jresult;
 }
