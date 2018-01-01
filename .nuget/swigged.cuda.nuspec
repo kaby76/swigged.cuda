@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.0.176.3</version>
+    <version>9.1.85.1</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.0.176) for Windows (x64).</description>
     <releaseNotes>
+* Version 9.1.85.1
+Release for Version 9.1.85 of the NVIDIA CUDA GPU Computing Toolkit. Compiling this API under NetStandard 2.0.
+       
 * Version 9.0.176.3
 Fixing restore and build issues--apparently somewhere along the way, the projectdir\packages directory no longer exists. Use userprofile\.nuget\packages directory.
 
@@ -131,6 +134,10 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
       
     </dependencies>
 
+    <references>
+       <reference file="swigged.cuda.dll" />
+    </references>
+
   </metadata>
   
   <files>
@@ -140,7 +147,7 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
      in an non-Nuget directory (i.e., not "build", "lib", etc.).
      -->
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
-    <file src="..\swigged.cuda\bin\Release\netstandard1.1\swigged.cuda.dll" target="lib\netstandard1.1" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib" />
     <file src="..\swigged.cuda.targets" target="build\swigged.cuda.targets" />
     
   </files>

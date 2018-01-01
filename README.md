@@ -6,7 +6,7 @@
 ## Introduction
 
 This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9 in C#, compiled
-under Net Standard 1.1. This project targets CUDA GPU Computing Toolkit version 9.0.176, Visual Studio 2017 15.4.5,
+under Net Standard 2.0. This project targets CUDA GPU Computing Toolkit version 9.1.85, Visual Studio 2017 15.4.5,
 and 64-bit GPU targets. Older releases of the NVIDIA GPU Toolkit are not supported. The Toolkit version 9 must be installed,
 and you must have a NVIDIA GPU Pascal or newer installed. Support of 32-bit targets has been dropped, since the Toolkit
 drops support for 32-bit targets!
@@ -29,7 +29,7 @@ that Swigged.CUDA can use.
 
 ## Targets
 
-* Version 9.0.176.1 of Swigged.CUDA is targeted for Windows 10 (x64), CUDA GPU Computing Toolkit 9.0.176, and Visual Studio 2017 15.4.5.
+* Version 9.1.85.1 of Swigged.CUDA is targeted for Windows 10 (x64), CUDA GPU Computing Toolkit 9.1.85, and Visual Studio 2017 15.4.5.
 
 ## Where can I get Swigged.CUDA?
 

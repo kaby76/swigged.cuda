@@ -1,1 +1,2 @@
-nuget pack swigged.cuda.nuspec -Version 9.0.176.3 -Properties 'Configuration=Release;Platform=x86;'
+del swigged.cuda.9.1.85.1.nupkg
+nuget pack swigged.cuda.nuspec -Version 9.1.85.1 -Properties 'Configuration=Release;Platform=x86;'
