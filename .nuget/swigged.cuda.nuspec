@@ -43,7 +43,7 @@ Updating .targets file so that "copy" step of proper native library works regard
 for a Net Framework, Standard, or Core project. Rest of package is essentially unchanged.
 
 * Version 9.0.0
-Updated to latest NVIDIA GPU Computing Toolkit, version 9.0 (CUDA Toolkit v9.0.176), Sep 22, 2017. For the latest changes to the API, see http://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html.
+Updated to latest NVIDIA GPU Computing Toolkit, version 9.0 (CUDA GPU Toolkit v9.0.176), Sep 22, 2017. For the latest changes to the API, see http://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html.
 
 * Version 8.0.6
 Updated .targets file for Windows builds.
@@ -75,7 +75,7 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     </releaseNotes>
 
     <!-- Copyright information -->
-    <copyright>Copyright © 2017</copyright>
+    <copyright>Copyright © 2017-2018</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
     <tags>CUDA GPU NVIDIA SWIG native c# compilers bindings pinvoke Windows </tags>
