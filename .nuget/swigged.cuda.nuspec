@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.1.85.1</version>
+    <version>9.1.85.2</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,6 +23,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.0.176) for Windows (x64).</description>
     <releaseNotes>
+* Version 9.1.85.2
+After MUCH trial and error, I have updated the .NUSPEC file to support Net Framework and Core correctly. Unfortunately, the rules for each target platform changes with each target platform.
+
 * Version 9.1.85.1
 Release for Version 9.1.85 of the NVIDIA CUDA GPU Computing Toolkit. Compiling this API under NetStandard 2.0.
        
@@ -134,21 +137,56 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
       
     </dependencies>
 
-    <references>
-       <reference file="swigged.cuda.dll" />
-    </references>
-
   </metadata>
   
   <files>
-    <!-- There are two possible native dll's, for
-     Release configuration, and x86 or x64 platform targets. As Nuget
-     does not understand "x86" or "x64" platform targets, place these
-     in an non-Nuget directory (i.e., not "build", "lib", etc.).
+
+     <file src="..\swigged.cuda.targets" target="build\swigged.cuda.targets" />
+
+     <!-- There are two possible dll's, one for
+     for the Release assembly, and the other a native x64 target.
+
+     Note: By trial and error, if you want to target a particular
+     framework, you HAVE TO copy the swigged.cuda.dll to each target
+     directory path. It will not work to have it only in /lib of the
+     nuget package.
+
+     Note2: By trial and error, I found out that you cannot include
+     file swigged-cuda-native.dll in any of the net framework targets.
+     Otherwise, it complains it cannot
+     make a reference to that dll, not create a reference
+     to swigged.cuda.dll, and fail to install the nuget package.
+     The native file is referenced by a build copy step that copies
+     the native dll to the location of the executable.
+
+     Note3: By trial and error, I found out that you MUST include
+     file swigged-cuda-native.dll in the net core and standard
+     targets. Copying the native dll to the directory of the
+     executable DOES NOT WORK.
+
      -->
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib" />
-    <file src="..\swigged.cuda.targets" target="build\swigged.cuda.targets" />
+
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net45" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net451" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net452" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net46" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net461" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net462" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net47" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net471" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcore1.0" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcore1.1" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard1.5" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard1.6" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard2.0" />
+
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netcore1.0" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netcore1.1" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard1.5" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard1.6" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard2.0" />
     
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
+
   </files>
 </package>
