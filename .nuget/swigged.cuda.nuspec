@@ -91,18 +91,6 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     undocumented strings: ".NETFramework4.6.2", ".NETFramework4.5.2",
     ... Not sure if they work. --> 
     <dependencies>
-      <group targetFramework="net45" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="net451" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="net452" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="net46" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
       <group targetFramework="net461" >
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
@@ -115,25 +103,9 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
       <group targetFramework="net471" >
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
-      <group targetFramework="netcore1.0" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="netcore1.1" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="netstandard1.5" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
-      <group targetFramework="netstandard1.6" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
-      </group>
       <group targetFramework="netstandard2.0" >
 	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
-<!--      <group targetFramework="Xamarin.iOS10">
-      <group targetFramework="Xamarin.Mac20">      
-      <group targetFramework="MonoAndroid">
--->
       
     </dependencies>
 
@@ -165,27 +137,12 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
      executable DOES NOT WORK.
 
      -->
-
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net45" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net451" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net452" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net46" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net461" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net462" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net47" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/net471" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcore1.0" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcore1.1" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard1.5" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard1.6" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard2.0" />
-
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netcore1.0" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netcore1.1" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard1.5" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard1.6" />
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll"  target="lib/netstandard2.0" />
-    
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="win10\lib\x64" />
 
   </files>
