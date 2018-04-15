@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.185.3</version>
+    <version>9.185.5</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,61 +23,17 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.1.85) for Windows (x64).</description>
     <releaseNotes>
-* Version 9.185.3
-Fixing finding native DLL. Fixing version numbers for Nuget.
+* Version 9.185.5
+Fixing .TARGETS file for builds--pre-build events occur before directories are created for NET Core apps. So, delay the events to post build.
 
-* Version 9.1.85.2
-After MUCH trial and error, I have updated the .NUSPEC file to support Net Framework and Core correctly. Unfortunately, the rules for each target platform changes with each target platform.
-
-* Version 9.1.85.1
-Release for Version 9.1.85 of the NVIDIA CUDA GPU Computing Toolkit. Compiling this API under NetStandard 2.0.
-       
-* Version 9.0.176.3
-Fixing restore and build issues--apparently somewhere along the way, the projectdir\packages directory no longer exists. Use userprofile\.nuget\packages directory.
-
-* Version 9.0.176.2
---- do not use ---
-
-* Version 9.0.176.1
-Adopting version numbers that reflect NVIDIA GPU Computing Toolkit. Removed x86 Windows target library because the Toolkit does not support 32-bit target GPUs. In .NUSPEC file, specifying NETStandard.Library. It should suffice for all supported NET frameworks (CORE, Standard, Framework, ...).
-
-* Version 9.0.2
-Fixed cuLinkCreate and other functions that depend on options parameter.
-
-* Version 9.0.1
-Updating .targets file so that "copy" step of proper native library works regardless whether you "nuget"
-for a Net Framework, Standard, or Core project. Rest of package is essentially unchanged.
-
-* Version 9.0.0
-Updated to latest NVIDIA GPU Computing Toolkit, version 9.0 (CUDA GPU Toolkit v9.0.176), Sep 22, 2017. For the latest changes to the API, see http://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html.
-
-* Version 8.0.6
-Updated .targets file for Windows builds.
-
-* Version 8.0.5
-Release for general use.
-       
-* Version 8.0.4-alpha
-Only Windows released. Enmasse addition of Driver API.
-       
-* Version 8.0.3-alpha
-Only Windows released. Fixed cuDeviceGetName.
-       
-* Version 8.0.2-alpha
-Only Windows released. Fixed cuDeviceGetName.
-       
-* Version 8.0.1-alpha
-Initial revision. Only Windows released.
-       
-Object files provided in this package are a Release build in Net Standard 1.1.
+Object files provided in this package are a Release build in Net Standard 2. You must have CUDA 9.1.xxx installed. If using Visual Studio, you must use version 15.4--Microsoft and NVIDIA do not know how to communicate: VS 15.5 or higher does not work with CUDA 9.1.85.
 
 When building with Swigged.CUDA, select Platform = "AnyCPU", config = "Debug" or "Release".
 
 On Windows, in the properties for the executable, un-check "Prefer 32-bit" in Build properties, and check "Enable native code debugging". If you are using Net Core or Standard, this option is unavailable--I'm not sure why it is.
-You must manually copy the file swigged-cuda-native.dll to your executable directory.
-If you are delivering your app, you will need to copy the dll to the directory containing your app.
+You will need to copy the dll to the directory containing your app if the build script does not copy the file to the directory for the build.
 
-For further information, see https://github.com/kaby76/swigged.cuda.8.0.
+For further information, see https://github.com/kaby76/swigged.cuda
     </releaseNotes>
 
     <!-- Copyright information -->
@@ -152,12 +108,7 @@ For further information, see https://github.com/kaby76/swigged.cuda.8.0.
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcoreapp2.0" />
 
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="content/swigged-cuda-native.dll" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/net461" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/net462" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/net47" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/net471" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/netstandard2.0" />
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/netcoreapp2.0" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/native/" />
 
   </files>
 </package>
