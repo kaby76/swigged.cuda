@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>  
-        <BuildDependsOn>
-        SwigCudaPostBuildEvent;
-        $(BuildDependsOn);  
-        </BuildDependsOn>  
-    </PropertyGroup>
-    <Target
-      Name="SwigCudaPostBuildEvent"
-      Condition="'$(SwigCudaPostBuildEvent)'!=''"
-      DependsOnTargets="$(PostBuildEventDependsOn)">
-    <Exec WorkingDirectory="$(OutDir)" Command="$(SwigCudaPostBuildEvent)" />
-  </Target>
-  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigCudaPostBuildEvent Condition="'$(Prefer32Bit)' == 'true'">
-      <ErrorText>This project requires 'Prefer 32-bit' to be unset/unchecked (i.e., 64-bit target). NVIDIA GPU Toolkit version 9+ no longer supports 32-bit targets.</ErrorText>
-    </SwigCudaPostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-    <SwigCudaPostBuildEvent Condition="'$(Prefer32Bit)' == 'false'">copy "$(userprofile)\.nuget\packages\swigged.cuda\9.185.5\content\*.* </SwigCudaPostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\..\lib\native\swigged-cuda-native.dll">
+      <Link>swigged-cuda-native.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
