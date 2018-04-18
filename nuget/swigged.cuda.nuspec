@@ -107,7 +107,6 @@ For further information, see https://github.com/kaby76/swigged.cuda
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netstandard2.0" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcoreapp2.0" />
 
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="content/swigged-cuda-native.dll" />
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/native/" />
 
   </files>

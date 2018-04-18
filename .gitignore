@@ -12,3 +12,4 @@ ConsoleApp1/Project2/vc140.pdb
 ConsoleApp1/x64/
 ConsoleApp1/packages/
 ConsoleApp1/.vs/
+*.nupkg
