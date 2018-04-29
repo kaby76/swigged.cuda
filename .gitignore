@@ -13,3 +13,5 @@ ConsoleApp1/x64/
 ConsoleApp1/packages/
 ConsoleApp1/.vs/
 *.nupkg
+swigged.cuda.native/obj/
+swigged.cuda.native/bin/
