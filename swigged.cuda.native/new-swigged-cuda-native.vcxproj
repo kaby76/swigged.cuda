@@ -65,11 +65,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>/usr/local/cuda-9.1/include/;$(IncludePath)</IncludePath>
     <LibraryPath>/usr/local/cuda-9.1/lib64</LibraryPath>
+    <TargetName>swigged-cuda-native</TargetName>
+    <RemoteCppCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCppCompileToolExe>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>/usr/local/cuda-9.1/include/;$(IncludePath)</IncludePath>
     <LibraryPath>/usr/local/cuda-9.1/lib64</LibraryPath>
     <RemoteCppCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCppCompileToolExe>
+    <TargetName>swigged-cuda-native</TargetName>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="CUDA_wrap.cpp" />
@@ -79,7 +82,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
       <LibraryDependencies>cuda;%(LibraryDependencies)</LibraryDependencies>
+      <AdditionalLibraryDirectories>/usr/local/cuda-9.1/lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ClCompile>
+      <PositionIndependentCode>true</PositionIndependentCode>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
