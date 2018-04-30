@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.185.5</version>
+    <version>9.185.6</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -21,10 +21,10 @@
     <licenseUrl>https://github.com/kaby76/swigged.cuda/blob/master/license</licenseUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A C# wrapper API of CUDA Driver API (v9.1.85) for Windows (x64).</description>
+    <description>A C# wrapper API of CUDA Driver API (v9.1.85) for Windows and Ubuntu (x64).</description>
     <releaseNotes>
-* Version 9.185.5
-Fixing .TARGETS file for builds--pre-build events occur before directories are created for NET Core apps. So, delay the events to post build.
+* Version 9.185.6
+Adding Ubuntu target.
 
 Object files provided in this package are a Release build in Net Standard 2. You must have CUDA 9.1.xxx installed. If using Visual Studio, you must use version 15.4--Microsoft and NVIDIA do not know how to communicate: VS 15.5 or higher does not work with CUDA 9.1.85.
 
@@ -108,6 +108,7 @@ For further information, see https://github.com/kaby76/swigged.cuda
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.dll" target="lib/netcoreapp2.0" />
 
     <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native.dll" target="lib/native/" />
+    <file src="..\swigged.cuda.native\bin\x64\Release\swigged-cuda-native.so" target="lib/native/" />
 
   </files>
 </package>
