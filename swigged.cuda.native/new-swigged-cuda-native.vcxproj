@@ -69,6 +69,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>/usr/local/cuda-9.1/include/;$(IncludePath)</IncludePath>
     <LibraryPath>/usr/local/cuda-9.1/lib64</LibraryPath>
+    <RemoteCppCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCppCompileToolExe>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="CUDA_wrap.cpp" />
@@ -82,7 +83,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
-      <LibraryDependencies>cudadevrt;%(LibraryDependencies)</LibraryDependencies>
+      <LibraryDependencies>cuda;%(LibraryDependencies)</LibraryDependencies>
       <AdditionalOptions>
       </AdditionalOptions>
       <VerboseOutput>true</VerboseOutput>
