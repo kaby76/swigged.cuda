@@ -5,11 +5,9 @@
 
 ## Introduction
 
-This project is a [SWIG](http://swig.org)-generated wrapper for the CUDA Driver API Version 9.x in C#, compiled
-under Net Standard 2.0. It targets the CUDA GPU Computing Toolkit, and a 64-bit GPU target.
-The Toolkit version 9 must be installed,
-and you must have a NVIDIA GPU Pascal or newer installed. Support of 32-bit targets has been dropped, since the NVIDIA Toolkit
-drops support for 32-bit targets!
+This project is a [SWIG](http://swig.org)-generated wrapper for the NVIDIA CUDA Driver API Version 9.x in C#, compiled
+under Net Standard 2.0, targetting Windows and Ubuntu, and 64-bit NVIDIA GPU Kepler or newer installed. Support of 32-bit targets
+has been dropped due to NVIDIA no longer supporting 32-bit targets.
 
 Of the entire GPU Computing Toolkit API, only the Driver API is exposed. There is at the moment no documentation
 for the Swigged.CUDA API, but it mirrors that of the Driver API.
@@ -18,15 +16,17 @@ Alternatively, please study the example below and the example in the source code
 ## What is Swigged.CUDA?
 
 Swigged.CUDA is a low-level API for NET programmers to
-access the CUDA Driver API. If you want to run against the
-CUDA Runtime API, you will need to look elsewhere. Swigged.CUDA
-is not an API for writing kernels in C#. If you want that,
-see my companion project [Campy](http://campynet.com). Swigged.CUDA supports
+access the CUDA Driver API. Swigged.CUDA supports
 execution of compiled CUDA/C++ kernels in either PTX, CUBIN, or OBJ files.
+If you want to run against the
+CUDA Runtime API, you will need to look elsewhere.
+Swigged.CUDA is not an API for writing kernels in C#. If you want that,
+see my companion project [Campy](http://campynet.com). 
 
 ## Targets
 
-* Windows (x64), CUDA GPU Computing Toolkit 9.x, NET Core/Framework/Standard.
+* Windows 10 (x64), Ubuntu 16.04 (x64), CUDA GPU Computing Toolkit 9.x,
+NET Core 2.0/Framework 4.6.1+/Standard 2.0.
 
 ## Where can I get Swigged.CUDA?
 
