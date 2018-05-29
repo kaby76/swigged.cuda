@@ -208,7 +208,9 @@ additional examples.
 
 
 "ManagedCuda aims an easy integration of NVidia's CUDA in .net applications written in C#, Visual Basic or any other .net language."
-Although it is very good, it just isn't compatible with Net Standard and Net Core apps and libraries.
+Although it is very good, it just isn't compatible with Net Standard and Net Core apps and libraries--which is why
+I wrote Swigged.CUDA. The project hasn't been updated for a while, but there was a recent fork in the repo
+to add Net Standard compatibility.
 
 ##### CSCuda https://www.nuget.org/packages/CSCuda/  https://github.com/DNRY/CSCuda
 
