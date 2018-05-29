@@ -98,7 +98,7 @@ For further information, see https://github.com/kaby76/swigged.cuda
 
      -->
 
-    <file src="swigged.cuda.targets" target="build\swigged.cuda.9.185.7.targets" />
+    <file src="swigged.cuda.targets" target="build\swigged.cuda.targets" />
 
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.185.7.dll" target="lib/net461" />
     <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.185.7.dll" target="lib/net462" />
