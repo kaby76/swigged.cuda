@@ -161,7 +161,7 @@ cat - << HERE > test.csproj
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="swigged.cuda" Version="9.185.7" />
+    <PackageReference Include="swigged.cuda" Version="9.288.1" />
   </ItemGroup>
 
 </Project>
