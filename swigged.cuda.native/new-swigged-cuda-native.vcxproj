@@ -63,19 +63,19 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>/usr/local/cuda-9.1/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>/usr/local/cuda-9.1/lib64</LibraryPath>
-    <TargetName>swigged-cuda-native-9-185-7</TargetName>
+    <IncludePath>/usr/local/cuda-9.2/include/;$(IncludePath)</IncludePath>
+    <LibraryPath>/usr/local/cuda-9.2/lib64</LibraryPath>
+    <TargetName>swigged-cuda-native-9-288-1</TargetName>
     <RemoteCppCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCppCompileToolExe>
     <TargetExt>.so</TargetExt>
     <RemoteCCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCCompileToolExe>
     <RemoteLdToolExe>/home/ken/kens-link.sh</RemoteLdToolExe>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>/usr/local/cuda-9.1/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>/usr/local/cuda-9.1/lib64</LibraryPath>
+    <IncludePath>/usr/local/cuda-9.2/include/;$(IncludePath)</IncludePath>
+    <LibraryPath>/usr/local/cuda-9.2/lib64</LibraryPath>
     <RemoteCppCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCppCompileToolExe>
-    <TargetName>swigged-cuda-native-9-185-7</TargetName>
+    <TargetName>swigged-cuda-native-9-288-1</TargetName>
     <TargetExt>.so</TargetExt>
     <RemoteCCompileToolExe>/home/ken/kens-nvcc.sh</RemoteCCompileToolExe>
     <RemoteLdToolExe>/home/ken/kens-link.sh</RemoteLdToolExe>
@@ -88,7 +88,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
       <LibraryDependencies>cuda;%(LibraryDependencies)</LibraryDependencies>
-      <AdditionalLibraryDirectories>/usr/local/cuda-9.1/lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>/usr/local/cuda-9.2/lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
       <PositionIndependentCode>true</PositionIndependentCode>
@@ -101,7 +101,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <VerboseOutput>true</VerboseOutput>
-      <AdditionalLibraryDirectories>/usr/local/cuda-9.1/lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>/usr/local/cuda-9.2/lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
       <AdditionalOptions>

@@ -73,6 +73,11 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuDeviceGetUuid(out CUuuid uuid, int dev) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuDeviceGetUuid(out uuid, dev);
+    return ret;
+  }
+
   public static CUresult cuDeviceTotalMem_v2(out SizeT bytes, int dev) {
     CUresult ret = (CUresult)CudaPINVOKE.cuDeviceTotalMem_v2(out bytes, dev);
     return ret;
@@ -338,7 +343,7 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuIpcOpenEventHandle(out CUcontext phEvent, CUipcEventHandle handle) {
+  public static CUresult cuIpcOpenEventHandle(out CUevent phEvent, CUipcEventHandle handle) {
     CUresult ret = (CUresult)CudaPINVOKE.cuIpcOpenEventHandle(out phEvent, handle);
     if (CudaPINVOKE.SWIGPendingException.Pending) throw CudaPINVOKE.SWIGPendingException.Retrieve();
     return ret;
@@ -620,6 +625,11 @@ public class Cuda {
     return ret;
   }
 
+  public static CUresult cuStreamGetCtx(CUstream hStream, out CUcontext pctx) {
+    CUresult ret = (CUresult)CudaPINVOKE.cuStreamGetCtx(hStream, out pctx);
+    return ret;
+  }
+
   public static CUresult cuStreamWaitEvent(CUstream hStream, CUevent hEvent, uint Flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuStreamWaitEvent(hStream, hEvent, Flags);
     return ret;
@@ -645,7 +655,7 @@ public class Cuda {
     return ret;
   }
 
-  public static CUresult cuEventCreate(out CUcontext phEvent, uint Flags) {
+  public static CUresult cuEventCreate(out CUevent phEvent, uint Flags) {
     CUresult ret = (CUresult)CudaPINVOKE.cuEventCreate(out phEvent, Flags);
     return ret;
   }

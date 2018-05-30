@@ -235,6 +235,13 @@ using CUtexObject = System.IntPtr;
 %typemap(imtype) size_t * sizeOut "out SizeT"
 %typemap(csin) size_t * sizeOut "out $csinput"
 
+%typemap(cstype)  CUuuid * uuid "out CUuuid"
+%typemap(imtype)  CUuuid * uuid "out CUuuid"
+%typemap(imtype)  CUuuid * pExportTableId "CUuuid"
+%typemap(csin)  CUuuid * uuid "out $csinput"
+%typemap(cstype)  CUuuid "CUuuid"
+%typemap(imtype)  CUuuid "CUuuid"
+%typemap(csin)  CUuuid "$csinput"
 
 %typemap(cstype)  CUcontext * pctx "out CUcontext"
 %typemap(imtype)  CUcontext * pctx "out CUcontext"
@@ -243,8 +250,8 @@ using CUtexObject = System.IntPtr;
 %typemap(imtype)  CUcontext "CUcontext"
 %typemap(csin)  CUcontext "$csinput"
 
-%typemap(cstype)  CUevent * "out CUcontext"
-%typemap(imtype)  CUevent * "out CUcontext"
+%typemap(cstype)  CUevent * "out CUevent"
+%typemap(imtype)  CUevent * "out CUevent"
 %typemap(csin)  CUevent * "out $csinput"
 %typemap(cstype)  CUevent "CUevent"
 %typemap(imtype)  CUevent "CUevent"
@@ -614,13 +621,12 @@ using CUtexObject = System.IntPtr;
 %typemap(imtype)  int * pNumChannels "out int"
 %typemap(csin)  int * pNumChannels "out $csinput"
 
-   %typemap(cstype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
-   %typemap(imtype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
-   %typemap(csin) CUDA_LAUNCH_PARAMS * "$csinput"
-   %typemap(cstype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
-   %typemap(imtype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
-   %typemap(csin) CUDA_LAUNCH_PARAMS "$csinput"
-
+%typemap(cstype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
+%typemap(imtype) CUDA_LAUNCH_PARAMS * "CUDA_LAUNCH_PARAMS"
+%typemap(csin) CUDA_LAUNCH_PARAMS * "$csinput"
+%typemap(cstype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
+%typemap(imtype) CUDA_LAUNCH_PARAMS "CUDA_LAUNCH_PARAMS"
+%typemap(csin) CUDA_LAUNCH_PARAMS "$csinput"
 
    
 %include <stdint.i>

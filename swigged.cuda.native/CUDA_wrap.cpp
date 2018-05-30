@@ -351,7 +351,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda___CUDA_API_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(9010);
+  result = (int)(9020);
   jresult = result; 
   return jresult;
 }
@@ -361,7 +361,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_CUDA_VERSION_get___() {
   int jresult ;
   int result;
   
-  result = (int)(9010);
+  result = (int)(9020);
   jresult = result; 
   return jresult;
 }
@@ -640,6 +640,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetCount___(void * jarg1)
   
   arg1 = (int *)jarg1; 
   result = (CUresult)cuDeviceGetCount(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuDeviceGetUuid___(void * jarg1, int jarg2) {
+  int jresult ;
+  CUuuid *arg1 = (CUuuid *) 0 ;
+  CUdevice arg2 ;
+  CUresult result;
+  
+  arg1 = (CUuuid *)jarg1; 
+  arg2 = (CUdevice)jarg2; 
+  result = (CUresult)cuDeviceGetUuid(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }
@@ -2356,6 +2370,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamGetFlags___(void * jarg1,
   arg1 = (CUstream)jarg1; 
   arg2 = (unsigned int *)jarg2; 
   result = (CUresult)cuStreamGetFlags(arg1,arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SwiggedfCuda_cuStreamGetCtx___(void * jarg1, void * jarg2) {
+  int jresult ;
+  CUstream arg1 = (CUstream) 0 ;
+  CUcontext *arg2 = (CUcontext *) 0 ;
+  CUresult result;
+  
+  arg1 = (CUstream)jarg1; 
+  arg2 = (CUcontext *)jarg2; 
+  result = (CUresult)cuStreamGetCtx(arg1,arg2);
   jresult = (int)result; 
   return jresult;
 }
