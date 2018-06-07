@@ -1,11 +1,7 @@
 #!/bin/bash
 
-export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-echo =========
-echo Calling kens-nvcc.sh: $*
-echo =========
+export PATH="/usr/local/cuda-9.2/bin${PATH:+:${PATH}}"
+export LD_LIBRARY_PATH="/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 
 nvccargs=""
 
@@ -21,8 +17,6 @@ do
 	    ;;
 	-x) # specifies the language
 	    nvccargs="$nvccargs -x cu "
-echo compile type is $1
-echo nvccargs is now $nvccargs
 	    shift
 	    ;;
 	-I)
@@ -59,9 +53,7 @@ echo nvccargs is now $nvccargs
 	    ;;
 	
     esac
-echo yo nvccargs is now $nvccargs
-
 done
 
-echo nvcc --verbose -c $nvccargs
-nvcc --verbose -c -rdc=true --compiler-options "-fpermissive" $nvccargs
+g++ $nvccargs
+exit 0
