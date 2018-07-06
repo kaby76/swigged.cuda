@@ -80,9 +80,9 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\x64\$(Configuration)\</OutDir>
     <IntDir>x64\$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64;$(LibraryPath)</LibraryPath>
-    <TargetName>swigged-cuda-native-9-185-8</TargetName>
+    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <TargetName>swigged-cuda-native-9-288-1</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -95,9 +95,9 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\x64\$(Configuration)\</OutDir>
     <IntDir>x64\$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64;$(LibraryPath)</LibraryPath>
-    <TargetName>swigged-cuda-native-9-185-8</TargetName>
+    <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <TargetName>swigged-cuda-native-9-288-1</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,7 +134,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CUDA_PATH_V9_1)\lib\x64\cuda.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(CUDA_PATH_V9_2)\lib\x64\cuda.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -180,7 +180,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CUDA_PATH_V9_1)\lib\x64\cuda.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(CUDA_PATH_V9_2)\lib\x64\cuda.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
