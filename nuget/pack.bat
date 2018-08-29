@@ -1,1 +1,1 @@
-nuget pack swigged.cuda.nuspec -Version 9.288.1
+nuget pack swigged.cuda.nuspec -Version 9.2148.1

@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>swigged.cuda.9.288.1</AssemblyName>
+    <AssemblyName>swigged.cuda.9.2148.1</AssemblyName>
+    <PackageId>swigged.cuda.9.2148.1</PackageId>
+    <Authors>swigged.cuda.9.2148.1</Authors>
+    <Company>swigged.cuda.9.2148.1</Company>
+    <Product>swigged.cuda.9.2148.1</Product>
   </PropertyGroup>
 
 </Project>

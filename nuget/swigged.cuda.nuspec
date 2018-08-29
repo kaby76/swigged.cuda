@@ -5,7 +5,7 @@
     <id>swigged.cuda</id>
     <title>swigged.cuda</title>
 
-    <version>9.288.1</version>
+    <version>9.2148.1</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ken Domino</authors>
@@ -23,8 +23,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# wrapper API of CUDA Driver API (v9.2.88) for Windows and Ubuntu (x64).</description>
     <releaseNotes>
-* Version 9.288.1
-Release for CUDA GPU Toolkit 9.2.88.
+* Version 9.2148.1
+Release for CUDA GPU Toolkit 9.2.148. NOTE: WINDOWS BUILD ONLY. LINUX BUILD IN NEXT RELEASE!
 
 Object files provided in this package are a Release build in Net Standard 2. You must have CUDA 9.2.88 installed.
 
@@ -37,7 +37,7 @@ For further information, see https://github.com/kaby76/swigged.cuda
     </releaseNotes>
 
     <!-- Copyright information -->
-    <copyright>Copyright © 2017-2018</copyright>
+    <copyright>Copyright Â© 2017-2018</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
     <tags>CUDA GPU NVIDIA SWIG native c# compilers bindings pinvoke Windows </tags>
@@ -51,24 +51,27 @@ For further information, see https://github.com/kaby76/swigged.cuda
     ... Not sure if they work. --> 
     <dependencies>
       <group targetFramework="net461" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+	       <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net462" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+	     <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net47" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+	       <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="net471" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+	       <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netstandard2.0" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+	       <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
       <group targetFramework="netcoreapp2.0" >
-	 <dependency id="NETStandard.Library" version="[2.0.0,)" />
+        <dependency id="NETStandard.Library" version="[2.0.0,)" />
       </group>
-      
+      <group targetFramework="netcoreapp2.1" >
+        <dependency id="NETStandard.Library" version="[2.0.0,)" />
+      </group>
+
     </dependencies>
 
   </metadata>
@@ -100,15 +103,15 @@ For further information, see https://github.com/kaby76/swigged.cuda
 
     <file src="swigged.cuda.targets" target="build\swigged.cuda.targets" />
 
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/net461" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/net462" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/net47" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/net471" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/netstandard2.0" />
-    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.288.1.dll" target="lib/netcoreapp2.1" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/net461" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/net462" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/net47" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/net471" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/netstandard2.0" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/netcoreapp2.0" />
+    <file src="..\swigged.cuda\bin\Release\netstandard2.0\swigged.cuda.9.2148.1.dll" target="lib/netcoreapp2.1" />
 
-    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native-9-288-1.dll" target="lib/native/" />
-    <file src="..\swigged.cuda.native\bin\x64\Release\swigged-cuda-native-9-288-1.so" target="lib/native/" />
+    <file src="..\swigged.cuda.native\x64\Release\swigged-cuda-native-9-2148-1.dll" target="lib/native/" />
 
   </files>
 </package>
