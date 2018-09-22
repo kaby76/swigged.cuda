@@ -82,7 +82,7 @@
     <IntDir>x64\$(Configuration)\</IntDir>
     <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64;$(LibraryPath)</LibraryPath>
-    <TargetName>swigged-cuda-native-9-2148-1</TargetName>
+    <TargetName>swigged-cuda-native-9-2148-2</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -97,7 +97,7 @@
     <IntDir>x64\$(Configuration)\</IntDir>
     <IncludePath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64;$(LibraryPath)</LibraryPath>
-    <TargetName>swigged-cuda-native-9-2148-1</TargetName>
+    <TargetName>swigged-cuda-native-9-2148-2</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

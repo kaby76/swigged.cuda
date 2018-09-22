@@ -65,7 +65,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>/usr/local/cuda-9.2/include/;$(IncludePath)</IncludePath>
     <LibraryPath>/usr/local/cuda-9.2/lib64</LibraryPath>
-    <TargetName>swigged-cuda-native-9-2148-1</TargetName>
+    <TargetName>swigged-cuda-native-9-2148-2</TargetName>
     <RemoteCppCompileToolExe>/home/ken/kens-nvcc-9-2.sh</RemoteCppCompileToolExe>
     <RemoteLdToolExe>/home/ken/kens-link-9-2.sh</RemoteLdToolExe>
     <TargetExt>.so</TargetExt>
@@ -75,7 +75,7 @@
     <LibraryPath>/usr/local/cuda-9.2/lib64</LibraryPath>
     <RemoteCppCompileToolExe>/home/ken/kens-nvcc-9-2.sh</RemoteCppCompileToolExe>
     <RemoteLdToolExe>/home/ken/kens-link-9-2.sh</RemoteLdToolExe>
-    <TargetName>swigged-cuda-native-9-2148-1</TargetName>
+    <TargetName>swigged-cuda-native-9-2148-2</TargetName>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
   <ItemGroup>
